@@ -1,0 +1,433 @@
+%% 05 | Linked List
+
+@@ 206 | Reverse Linked List | Easy | lc | reverse-linked-list | reverse-a-linked-list
+## Solution
+/**
+ * ListNode is defined in DSA.Common:  public int val; public ListNode next;
+ */
+public class Solution
+{
+    public ListNode ReverseList(ListNode head)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(params int[] v) => ListNode.ToArray(new Solution().ReverseList(ListNode.From(v)));
+[Fact] public void Example1() => Assert.Equal(new[] { 5, 4, 3, 2, 1 }, Run(1, 2, 3, 4, 5));
+[Fact] public void Example2() => Assert.Equal(new[] { 2, 1 }, Run(1, 2));
+[Fact] public void Empty() => Assert.Empty(Run());
+[Fact] public void Single() => Assert.Equal(new[] { 1 }, Run(1));
+
+@@ 21 | Merge Two Sorted Lists | Easy | lc | merge-two-sorted-lists | merge-two-sorted-linked-lists
+## Solution
+public class Solution
+{
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] a, int[] b) => ListNode.ToArray(new Solution().MergeTwoLists(ListNode.From(a), ListNode.From(b)));
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 1, 2, 3, 4, 4 }, Run(new[] { 1, 2, 4 }, new[] { 1, 3, 4 }));
+[Fact] public void Example2() => Assert.Empty(Run(new int[0], new int[0]));
+[Fact] public void Example3() => Assert.Equal(new[] { 0 }, Run(new int[0], new[] { 0 }));
+[Fact] public void Disjoint() => Assert.Equal(new[] { -3, 1, 5, 6, 7 }, Run(new[] { 5, 6, 7 }, new[] { -3, 1 }));
+
+@@ 141 | Linked List Cycle | Easy | lc | linked-list-cycle | linked-list-cycle-detection
+## Solution
+// Follow up: O(1) memory.
+public class Solution
+{
+    public bool HasCycle(ListNode head)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static ListNode Build(int[] v, int pos)
+{
+    var nodes = v.Select(x => new ListNode(x)).ToList();
+    for (var i = 0; i + 1 < nodes.Count; i++) nodes[i].next = nodes[i + 1];
+    if (pos >= 0) nodes[^1].next = nodes[pos];
+    return nodes.FirstOrDefault();
+}
+[Fact] public void Example1() => Assert.True(new Solution().HasCycle(Build(new[] { 3, 2, 0, -4 }, 1)));
+[Fact] public void Example2() => Assert.True(new Solution().HasCycle(Build(new[] { 1, 2 }, 0)));
+[Fact] public void Example3() => Assert.False(new Solution().HasCycle(Build(new[] { 1 }, -1)));
+[Fact] public void Empty() => Assert.False(new Solution().HasCycle(null));
+[Fact] public void SelfLoop() => Assert.True(new Solution().HasCycle(Build(new[] { 1 }, 0)));
+[Fact] public void LongNoCycle() => Assert.False(new Solution().HasCycle(Build(Enumerable.Range(0, 1000).ToArray(), -1)));
+
+@@ 143 | Reorder List | Medium | lc | reorder-list | reorder-linked-list
+## Solution
+// L0 -> Ln -> L1 -> Ln-1 -> ... Modify nodes in place (do not change values).
+public class Solution
+{
+    public void ReorderList(ListNode head)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(params int[] v) { var h = ListNode.From(v); new Solution().ReorderList(h); return ListNode.ToArray(h); }
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 4, 2, 3 }, Run(1, 2, 3, 4));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 5, 2, 4, 3 }, Run(1, 2, 3, 4, 5));
+[Fact] public void Single() => Assert.Equal(new[] { 1 }, Run(1));
+[Fact] public void Two() => Assert.Equal(new[] { 1, 2 }, Run(1, 2));
+
+@@ 19 | Remove Nth Node From End of List | Medium | lc | remove-nth-node-from-end-of-list | remove-node-from-end-of-linked-list
+## Solution
+// Follow up: one pass.
+public class Solution
+{
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] v, int n) => ListNode.ToArray(new Solution().RemoveNthFromEnd(ListNode.From(v), n));
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 3, 5 }, Run(new[] { 1, 2, 3, 4, 5 }, 2));
+[Fact] public void Example2() => Assert.Empty(Run(new[] { 1 }, 1));
+[Fact] public void Example3() => Assert.Equal(new[] { 1 }, Run(new[] { 1, 2 }, 1));
+[Fact] public void RemoveHead() => Assert.Equal(new[] { 2, 3 }, Run(new[] { 1, 2, 3 }, 3));
+
+@@ 138 | Copy List With Random Pointer | Medium | lc | copy-list-with-random-pointer | copy-linked-list-with-random-pointer
+## Solution
+// Definition for a Node (provided, do not edit).
+public class Node
+{
+    public int val;
+    public Node next;
+    public Node random;
+
+    public Node(int _val)
+    {
+        val = _val;
+        next = null;
+        random = null;
+    }
+}
+
+public class Solution
+{
+    public Node CopyRandomList(Node head)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+// Each entry is [val, randomIndex] where randomIndex may be null.
+private static Node Build(int?[][] spec)
+{
+    var nodes = spec.Select(s => new Node(s[0].Value)).ToArray();
+    for (var i = 0; i < nodes.Length; i++)
+    {
+        if (i + 1 < nodes.Length) nodes[i].next = nodes[i + 1];
+        if (spec[i][1] != null) nodes[i].random = nodes[spec[i][1].Value];
+    }
+    return nodes.FirstOrDefault();
+}
+private static void Check(int?[][] spec)
+{
+    var head = Build(spec);
+    var originals = new HashSet<Node>();
+    for (var n = head; n != null; n = n.next) originals.Add(n);
+    var copy = new Solution().CopyRandomList(head);
+    var copies = new List<Node>();
+    for (var n = copy; n != null; n = n.next) copies.Add(n);
+    Assert.Equal(spec.Length, copies.Count);
+    for (var i = 0; i < spec.Length; i++)
+    {
+        Assert.DoesNotContain(copies[i], originals);
+        Assert.Equal(spec[i][0], copies[i].val);
+        var r = copies[i].random;
+        if (spec[i][1] == null) Assert.Null(r);
+        else Assert.Same(copies[spec[i][1].Value], r);
+    }
+    // original list must be left intact
+    var orig = new List<Node>();
+    for (var n = head; n != null; n = n.next) orig.Add(n);
+    Assert.Equal(spec.Length, orig.Count);
+    for (var i = 0; i < spec.Length; i++)
+        Assert.Same(spec[i][1] == null ? null : orig[spec[i][1].Value], orig[i].random);
+}
+[Fact] public void Example1() => Check(new[] { new int?[] { 7, null }, new int?[] { 13, 0 }, new int?[] { 11, 4 }, new int?[] { 10, 2 }, new int?[] { 1, 0 } });
+[Fact] public void Example2() => Check(new[] { new int?[] { 1, 1 }, new int?[] { 2, 1 } });
+[Fact] public void Example3() => Check(new[] { new int?[] { 3, null }, new int?[] { 3, 0 }, new int?[] { 3, null } });
+[Fact] public void Empty() => Assert.Null(new Solution().CopyRandomList(null));
+
+@@ 2 | Add Two Numbers | Medium | lc | add-two-numbers | add-two-numbers
+## Solution
+// Digits are stored in reverse order.
+public class Solution
+{
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] a, int[] b) => ListNode.ToArray(new Solution().AddTwoNumbers(ListNode.From(a), ListNode.From(b)));
+[Fact] public void Example1() => Assert.Equal(new[] { 7, 0, 8 }, Run(new[] { 2, 4, 3 }, new[] { 5, 6, 4 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 0 }, Run(new[] { 0 }, new[] { 0 }));
+[Fact] public void Example3() => Assert.Equal(new[] { 8, 9, 9, 9, 0, 0, 0, 1 }, Run(new[] { 9, 9, 9, 9, 9, 9, 9 }, new[] { 9, 9, 9, 9 }));
+[Fact] public void FinalCarry() => Assert.Equal(new[] { 0, 1 }, Run(new[] { 5 }, new[] { 5 }));
+
+@@ 287 | Find The Duplicate Number | Medium | lc | find-the-duplicate-number | find-duplicate-integer
+## Solution
+// Do not modify nums; use only O(1) extra space.
+public class Solution
+{
+    public int FindDuplicate(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int Run(params int[] nums)
+{
+    var copy = (int[])nums.Clone();
+    var r = new Solution().FindDuplicate(nums);
+    Assert.Equal(copy, nums); // must not modify the array
+    return r;
+}
+[Fact] public void Example1() => Assert.Equal(2, Run(1, 3, 4, 2, 2));
+[Fact] public void Example2() => Assert.Equal(3, Run(3, 1, 3, 4, 2));
+[Fact] public void Example3() => Assert.Equal(3, Run(3, 3, 3, 3, 3));
+[Fact] public void Two() => Assert.Equal(1, Run(1, 1));
+
+@@ 92 | Reverse Linked List II | Medium | lc | reverse-linked-list-ii | reverse-linked-list-ii
+## Solution
+// left and right are 1-indexed positions, left <= right.
+public class Solution
+{
+    public ListNode ReverseBetween(ListNode head, int left, int right)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] v, int l, int r) => ListNode.ToArray(new Solution().ReverseBetween(ListNode.From(v), l, r));
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 4, 3, 2, 5 }, Run(new[] { 1, 2, 3, 4, 5 }, 2, 4));
+[Fact] public void Example2() => Assert.Equal(new[] { 5 }, Run(new[] { 5 }, 1, 1));
+[Fact] public void FromHead() => Assert.Equal(new[] { 3, 2, 1, 4 }, Run(new[] { 1, 2, 3, 4 }, 1, 3));
+[Fact] public void Whole() => Assert.Equal(new[] { 2, 1 }, Run(new[] { 1, 2 }, 1, 2));
+
+@@ 622 | Design Circular Queue | Medium | lc | design-circular-queue | design-circular-queue
+## Solution
+// Do not use the built-in Queue.
+public class MyCircularQueue
+{
+    public MyCircularQueue(int k)
+    {
+    }
+
+    public bool EnQueue(int value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool DeQueue()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Front()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Rear()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool IsEmpty()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool IsFull()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var q = new MyCircularQueue(3);
+    Assert.True(q.EnQueue(1));
+    Assert.True(q.EnQueue(2));
+    Assert.True(q.EnQueue(3));
+    Assert.False(q.EnQueue(4));
+    Assert.Equal(3, q.Rear());
+    Assert.True(q.IsFull());
+    Assert.True(q.DeQueue());
+    Assert.True(q.EnQueue(4));
+    Assert.Equal(4, q.Rear());
+}
+[Fact]
+public void EmptyBehaviourAndWrapAround()
+{
+    var q = new MyCircularQueue(2);
+    Assert.True(q.IsEmpty());
+    Assert.False(q.DeQueue());
+    Assert.Equal(-1, q.Front());
+    Assert.Equal(-1, q.Rear());
+    for (var i = 0; i < 10; i++)
+    {
+        Assert.True(q.EnQueue(i));
+        Assert.Equal(i, q.Front());
+        Assert.Equal(i, q.Rear());
+        Assert.True(q.DeQueue());
+    }
+    Assert.True(q.IsEmpty());
+    Assert.False(q.IsFull());
+}
+
+@@ 146 | LRU Cache | Medium | lc | lru-cache | lru-cache
+## Solution
+// Get and Put must each run in O(1) average time.
+public class LRUCache
+{
+    public LRUCache(int capacity)
+    {
+    }
+
+    public int Get(int key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Put(int key, int value)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var c = new LRUCache(2);
+    c.Put(1, 1);
+    c.Put(2, 2);
+    Assert.Equal(1, c.Get(1));
+    c.Put(3, 3); // evicts 2
+    Assert.Equal(-1, c.Get(2));
+    c.Put(4, 4); // evicts 1
+    Assert.Equal(-1, c.Get(1));
+    Assert.Equal(3, c.Get(3));
+    Assert.Equal(4, c.Get(4));
+}
+[Fact]
+public void UpdateRefreshesRecency()
+{
+    var c = new LRUCache(2);
+    c.Put(1, 1);
+    c.Put(2, 2);
+    c.Put(1, 10); // update makes 1 most recent
+    c.Put(3, 3);  // evicts 2
+    Assert.Equal(-1, c.Get(2));
+    Assert.Equal(10, c.Get(1));
+    Assert.Equal(3, c.Get(3));
+}
+[Fact]
+public void CapacityOne()
+{
+    var c = new LRUCache(1);
+    c.Put(2, 1);
+    Assert.Equal(1, c.Get(2));
+    c.Put(3, 2);
+    Assert.Equal(-1, c.Get(2));
+    Assert.Equal(2, c.Get(3));
+}
+
+@@ 460 | LFU Cache | Hard | lc | lfu-cache | lfu-cache
+## Solution
+// Get and Put must each run in O(1) average time. Ties in frequency evict the least recently used key.
+public class LFUCache
+{
+    public LFUCache(int capacity)
+    {
+    }
+
+    public int Get(int key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Put(int key, int value)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var c = new LFUCache(2);
+    c.Put(1, 1);
+    c.Put(2, 2);
+    Assert.Equal(1, c.Get(1));
+    c.Put(3, 3); // evicts 2 (freq 1)
+    Assert.Equal(-1, c.Get(2));
+    Assert.Equal(3, c.Get(3));
+    c.Put(4, 4); // 1 and 3 both freq 2, 1 is LRU -> evict 1
+    Assert.Equal(-1, c.Get(1));
+    Assert.Equal(3, c.Get(3));
+    Assert.Equal(4, c.Get(4));
+}
+[Fact]
+public void PutUpdatesFrequency()
+{
+    var c = new LFUCache(2);
+    c.Put(1, 1);
+    c.Put(2, 2);
+    c.Put(1, 5);   // freq(1) = 2
+    c.Put(3, 3);   // evicts 2
+    Assert.Equal(-1, c.Get(2));
+    Assert.Equal(5, c.Get(1));
+    Assert.Equal(3, c.Get(3));
+}
+
+@@ 23 | Merge K Sorted Lists | Hard | lc | merge-k-sorted-lists | merge-k-sorted-linked-lists
+## Solution
+public class Solution
+{
+    public ListNode MergeKLists(ListNode[] lists)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(params int[][] lists) => ListNode.ToArray(new Solution().MergeKLists(lists.Select(l => ListNode.From(l)).ToArray()));
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 1, 2, 3, 4, 4, 5, 6 }, Run(new[] { 1, 4, 5 }, new[] { 1, 3, 4 }, new[] { 2, 6 }));
+[Fact] public void Example2() => Assert.Empty(Run());
+[Fact] public void Example3() => Assert.Empty(Run(new int[0]));
+[Fact]
+public void ManyLists()
+{
+    var lists = Enumerable.Range(0, 500).Select(i => new[] { i, i + 500, i + 1000 }).ToArray();
+    Assert.Equal(Enumerable.Range(0, 1500).ToArray(), Run(lists));
+}
+
+@@ 25 | Reverse Nodes In K Group | Hard | lc | reverse-nodes-in-k-group | reverse-nodes-in-k-group
+## Solution
+// Follow up: O(1) extra memory.
+public class Solution
+{
+    public ListNode ReverseKGroup(ListNode head, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] v, int k) => ListNode.ToArray(new Solution().ReverseKGroup(ListNode.From(v), k));
+[Fact] public void Example1() => Assert.Equal(new[] { 2, 1, 4, 3, 5 }, Run(new[] { 1, 2, 3, 4, 5 }, 2));
+[Fact] public void Example2() => Assert.Equal(new[] { 3, 2, 1, 4, 5 }, Run(new[] { 1, 2, 3, 4, 5 }, 3));
+[Fact] public void KOne() => Assert.Equal(new[] { 1, 2, 3 }, Run(new[] { 1, 2, 3 }, 1));
+[Fact] public void ExactMultiple() => Assert.Equal(new[] { 3, 2, 1, 6, 5, 4 }, Run(new[] { 1, 2, 3, 4, 5, 6 }, 3));

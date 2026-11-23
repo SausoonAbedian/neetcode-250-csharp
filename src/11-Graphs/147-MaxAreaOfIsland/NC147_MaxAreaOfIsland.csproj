@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC147_MaxAreaOfIsland</RootNamespace>
+  </PropertyGroup>
+</Project>

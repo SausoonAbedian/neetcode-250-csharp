@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC029_TwoSumIIInputArrayIsSorted</RootNamespace>
+  </PropertyGroup>
+</Project>

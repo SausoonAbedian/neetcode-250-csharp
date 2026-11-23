@@ -1,0 +1,162 @@
+%% 17 | Bit Manipulation
+
+@@ 136 | Single Number | Easy | lc | single-number | single-number
+## Solution
+// Linear time, O(1) extra space.
+public class Solution
+{
+    public int SingleNumber(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().SingleNumber(new[] { 2, 2, 1 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().SingleNumber(new[] { 4, 1, 2, 1, 2 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().SingleNumber(new[] { 1 }));
+[Fact] public void Negative() => Assert.Equal(-7, new Solution().SingleNumber(new[] { 3, -7, 3 }));
+
+@@ 191 | Number of 1 Bits | Easy | lc | number-of-1-bits | number-of-one-bits
+## Solution
+public class Solution
+{
+    public int HammingWeight(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().HammingWeight(11));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().HammingWeight(128));
+[Fact] public void Example3() => Assert.Equal(30, new Solution().HammingWeight(2147483645));
+[Fact] public void Zero() => Assert.Equal(0, new Solution().HammingWeight(0));
+
+@@ 338 | Counting Bits | Easy | lc | counting-bits | counting-bits
+## Solution
+// Follow up: O(n) without built-in popcount.
+public class Solution
+{
+    public int[] CountBits(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 0, 1, 1 }, new Solution().CountBits(2));
+[Fact] public void Example2() => Assert.Equal(new[] { 0, 1, 1, 2, 1, 2 }, new Solution().CountBits(5));
+[Fact] public void Zero() => Assert.Equal(new[] { 0 }, new Solution().CountBits(0));
+[Fact] public void Sixteen() => Assert.Equal(new[] { 0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1 }, new Solution().CountBits(16));
+
+@@ 67 | Add Binary | Easy | lc | add-binary | add-binary
+## Solution
+public class Solution
+{
+    public string AddBinary(string a, string b)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("100", new Solution().AddBinary("11", "1"));
+[Fact] public void Example2() => Assert.Equal("10101", new Solution().AddBinary("1010", "1011"));
+[Fact] public void Zeros() => Assert.Equal("0", new Solution().AddBinary("0", "0"));
+[Fact] public void LongerThanLong() => Assert.Equal("1" + new string('0', 100), new Solution().AddBinary(new string('1', 100), "1"));
+
+@@ 190 | Reverse Bits | Easy | lc | reverse-bits | reverse-bits
+## Solution
+// Reverse the bits of a 32-bit unsigned integer.
+public class Solution
+{
+    public uint ReverseBits(uint n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(964176192u, new Solution().ReverseBits(43261596u));
+[Fact] public void Example2() => Assert.Equal(3221225471u, new Solution().ReverseBits(4294967293u));
+[Fact] public void One() => Assert.Equal(2147483648u, new Solution().ReverseBits(1u));
+[Fact] public void Zero() => Assert.Equal(0u, new Solution().ReverseBits(0u));
+
+@@ 268 | Missing Number | Easy | lc | missing-number | missing-number
+## Solution
+// O(1) extra space, O(n) time.
+public class Solution
+{
+    public int MissingNumber(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().MissingNumber(new[] { 3, 0, 1 }));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().MissingNumber(new[] { 0, 1 }));
+[Fact] public void Example3() => Assert.Equal(8, new Solution().MissingNumber(new[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 }));
+[Fact] public void MissingZero() => Assert.Equal(0, new Solution().MissingNumber(new[] { 1 }));
+
+@@ 371 | Sum of Two Integers | Medium | lc | sum-of-two-integers | sum-of-two-integers
+## Solution
+// Do not use the + or - operators.
+public class Solution
+{
+    public int GetSum(int a, int b)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().GetSum(1, 2));
+[Fact] public void Example2() => Assert.Equal(5, new Solution().GetSum(2, 3));
+[Fact] public void Negatives() => Assert.Equal(-3, new Solution().GetSum(-1, -2));
+[Fact] public void MixedSigns() => Assert.Equal(-5, new Solution().GetSum(5, -10));
+[Fact] public void Cancel() => Assert.Equal(0, new Solution().GetSum(-1000, 1000));
+
+@@ 7 | Reverse Integer | Medium | lc | reverse-integer | reverse-integer
+## Solution
+// Return 0 if the result overflows a 32-bit signed int. Assume you cannot store 64-bit integers.
+public class Solution
+{
+    public int Reverse(int x)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(321, new Solution().Reverse(123));
+[Fact] public void Example2() => Assert.Equal(-321, new Solution().Reverse(-123));
+[Fact] public void Example3() => Assert.Equal(21, new Solution().Reverse(120));
+[Fact] public void Overflow() => Assert.Equal(0, new Solution().Reverse(1534236469));
+[Fact] public void MinValue() => Assert.Equal(0, new Solution().Reverse(int.MinValue));
+[Fact] public void JustFits() => Assert.Equal(2147483641, new Solution().Reverse(1463847412));
+
+@@ 201 | Bitwise AND of Numbers Range | Medium | lc | bitwise-and-of-numbers-range | bitwise-and-of-numbers-range
+## Solution
+public class Solution
+{
+    public int RangeBitwiseAnd(int left, int right)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().RangeBitwiseAnd(5, 7));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().RangeBitwiseAnd(0, 0));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().RangeBitwiseAnd(1, 2147483647));
+[Fact] public void Same() => Assert.Equal(12, new Solution().RangeBitwiseAnd(12, 12));
+[Fact] public void TopRangeIsFast() => Assert.Equal(2147483646, new Solution().RangeBitwiseAnd(2147483646, 2147483647));
+
+@@ 3133 | Minimum Array End | Medium | lc | minimum-array-end | minimum-array-end
+## Solution
+public class Solution
+{
+    public long MinEnd(int n, int x)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6L, new Solution().MinEnd(3, 4));
+[Fact] public void Example2() => Assert.Equal(15L, new Solution().MinEnd(2, 7));
+[Fact] public void N1() => Assert.Equal(5L, new Solution().MinEnd(1, 5));
+[Fact] public void LargeIsFast() => Assert.Equal(199_999_999L, new Solution().MinEnd(100_000_000, 1));
+[Fact] public void FillsZeroBits() => Assert.Equal(15L, new Solution().MinEnd(4, 9));

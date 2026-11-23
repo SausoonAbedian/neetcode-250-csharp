@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC196_BestTimeToBuyAndSellStockWithCooldown</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC045_BinarySearch</RootNamespace>
+  </PropertyGroup>
+</Project>

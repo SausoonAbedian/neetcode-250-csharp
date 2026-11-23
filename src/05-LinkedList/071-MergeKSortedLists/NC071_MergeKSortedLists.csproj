@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC071_MergeKSortedLists</RootNamespace>
+  </PropertyGroup>
+</Project>

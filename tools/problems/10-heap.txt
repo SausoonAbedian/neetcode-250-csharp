@@ -1,0 +1,318 @@
+%% 10 | Heap / Priority Queue
+
+@@ 703 | Kth Largest Element In a Stream | Easy | lc | kth-largest-element-in-a-stream | kth-largest-integer-in-a-stream
+## Solution
+public class KthLargest
+{
+    public KthLargest(int k, int[] nums)
+    {
+    }
+
+    public int Add(int val)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var k = new KthLargest(3, new[] { 4, 5, 8, 2 });
+    Assert.Equal(new[] { 4, 5, 5, 8, 8 }, new[] { 3, 5, 10, 9, 4 }.Select(k.Add).ToArray());
+}
+[Fact]
+public void Example2()
+{
+    var k = new KthLargest(4, new[] { 7, 7, 7, 7, 8, 3 });
+    Assert.Equal(new[] { 7, 7, 7, 8 }, new[] { 2, 10, 9, 9 }.Select(k.Add).ToArray());
+}
+[Fact]
+public void StartsEmpty()
+{
+    var k = new KthLargest(1, new int[0]);
+    Assert.Equal(new[] { -3, -2, 4 }, new[] { -3, -2, 4 }.Select(k.Add).ToArray());
+}
+
+@@ 1046 | Last Stone Weight | Easy | lc | last-stone-weight | last-stone-weight
+## Solution
+public class Solution
+{
+    public int LastStoneWeight(int[] stones)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().LastStoneWeight(new[] { 2, 7, 4, 1, 8, 1 }));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().LastStoneWeight(new[] { 1 }));
+[Fact] public void AllCancel() => Assert.Equal(0, new Solution().LastStoneWeight(new[] { 2, 2 }));
+[Fact] public void Remainder() => Assert.Equal(1, new Solution().LastStoneWeight(new[] { 10, 4, 5 }));
+
+@@ 973 | K Closest Points to Origin | Medium | lc | k-closest-points-to-origin | k-closest-points-to-origin
+## Solution
+// Any order. The answer is guaranteed to be unique.
+public class Solution
+{
+    public int[][] KClosest(int[][] points, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameGroups(new[] { new[] { -2, 2 } }, new Solution().KClosest(new[] { new[] { 1, 3 }, new[] { -2, 2 } }, 1), innerOrderMatters: true);
+[Fact] public void Example2() => AssertEx.SameGroups(new[] { new[] { 3, 3 }, new[] { -2, 4 } }, new Solution().KClosest(new[] { new[] { 3, 3 }, new[] { 5, -1 }, new[] { -2, 4 } }, 2), innerOrderMatters: true);
+[Fact] public void All() => AssertEx.SameGroups(new[] { new[] { 0, 1 }, new[] { 1, 0 } }, new Solution().KClosest(new[] { new[] { 0, 1 }, new[] { 1, 0 } }, 2), innerOrderMatters: true);
+
+@@ 215 | Kth Largest Element In An Array | Medium | lc | kth-largest-element-in-an-array | kth-largest-element-in-an-array
+## Solution
+// Can you solve it without sorting?
+public class Solution
+{
+    public int FindKthLargest(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().FindKthLargest(new[] { 3, 2, 1, 5, 6, 4 }, 2));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().FindKthLargest(new[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 }, 4));
+[Fact] public void Single() => Assert.Equal(-1, new Solution().FindKthLargest(new[] { -1 }, 1));
+[Fact]
+public void ManyDuplicatesFast()
+{
+    var nums = Enumerable.Repeat(1, 100_000).ToArray();
+    nums[500] = 2;
+    Assert.Equal(1, new Solution().FindKthLargest(nums, 50_000));
+}
+
+@@ 621 | Task Scheduler | Medium | lc | task-scheduler | task-scheduling
+## Solution
+public class Solution
+{
+    public int LeastInterval(char[] tasks, int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(8, new Solution().LeastInterval("AAABBB".ToCharArray(), 2));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().LeastInterval("ACABDB".ToCharArray(), 1));
+[Fact] public void Example3() => Assert.Equal(10, new Solution().LeastInterval("AAABBB".ToCharArray(), 3));
+[Fact] public void NoCooldown() => Assert.Equal(6, new Solution().LeastInterval("AAABBB".ToCharArray(), 0));
+[Fact] public void ManyDistinct() => Assert.Equal(16, new Solution().LeastInterval("AAAAAABCDEFG".ToCharArray(), 2));
+
+@@ 355 | Design Twitter | Medium | lc | design-twitter | design-twitter-feed
+## Solution
+// GetNewsFeed returns up to the 10 most recent tweet ids from the user and the people they follow, newest first.
+public class Twitter
+{
+    public Twitter()
+    {
+    }
+
+    public void PostTweet(int userId, int tweetId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IList<int> GetNewsFeed(int userId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Follow(int followerId, int followeeId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Unfollow(int followerId, int followeeId)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var t = new Twitter();
+    t.PostTweet(1, 5);
+    Assert.Equal(new[] { 5 }, t.GetNewsFeed(1));
+    t.Follow(1, 2);
+    t.PostTweet(2, 6);
+    Assert.Equal(new[] { 6, 5 }, t.GetNewsFeed(1));
+    t.Unfollow(1, 2);
+    Assert.Equal(new[] { 5 }, t.GetNewsFeed(1));
+}
+[Fact]
+public void FeedLimitedToTenNewest()
+{
+    var t = new Twitter();
+    for (var i = 0; i < 15; i++) t.PostTweet(i % 3 + 1, 100 + i);
+    t.Follow(1, 2);
+    t.Follow(1, 3);
+    Assert.Equal(Enumerable.Range(105, 10).Reverse().ToArray(), t.GetNewsFeed(1));
+}
+[Fact]
+public void EdgeCases()
+{
+    var t = new Twitter();
+    Assert.Empty(t.GetNewsFeed(42));
+    t.PostTweet(1, 1);
+    t.Follow(1, 1);
+    t.Unfollow(1, 1); // must not hide your own tweets
+    t.Unfollow(1, 99); // unfollowing someone you don't follow is a no-op
+    Assert.Equal(new[] { 1 }, t.GetNewsFeed(1));
+    t.Follow(2, 1);
+    t.Follow(2, 1);
+    Assert.Equal(new[] { 1 }, t.GetNewsFeed(2));
+}
+
+@@ 1834 | Single Threaded CPU | Medium | lc | single-threaded-cpu | single-threaded-cpu
+## Solution
+// tasks[i] = [enqueueTime, processingTime]
+public class Solution
+{
+    public int[] GetOrder(int[][] tasks)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 0, 2, 3, 1 }, new Solution().GetOrder(new[] { new[] { 1, 2 }, new[] { 2, 4 }, new[] { 3, 2 }, new[] { 4, 1 } }));
+[Fact] public void Example2() => Assert.Equal(new[] { 4, 3, 2, 0, 1 }, new Solution().GetOrder(new[] { new[] { 7, 10 }, new[] { 7, 12 }, new[] { 7, 5 }, new[] { 7, 4 }, new[] { 7, 2 } }));
+[Fact] public void IdleGap() => Assert.Equal(new[] { 1, 0 }, new Solution().GetOrder(new[] { new[] { 5, 2 }, new[] { 1, 1 } }));
+[Fact] public void LargeTimesNoOverflow() => Assert.Equal(new[] { 0, 1, 2 }, new Solution().GetOrder(new[] { new[] { 1, 1_000_000_000 }, new[] { 2, 1_000_000_000 }, new[] { 3, 1_000_000_000 } }));
+
+@@ 767 | Reorganize String | Medium | lc | reorganize-string | reorganize-string
+## Solution
+// Return any arrangement with no two equal adjacent characters, or "" if impossible.
+public class Solution
+{
+    public string ReorganizeString(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void CheckValid(string s)
+{
+    var r = new Solution().ReorganizeString(s);
+    Assert.Equal(s.OrderBy(c => c), r.OrderBy(c => c));
+    for (var i = 1; i < r.Length; i++) Assert.NotEqual(r[i - 1], r[i]);
+}
+[Fact] public void Example1() => CheckValid("aab");
+[Fact] public void Example2() => Assert.Equal("", new Solution().ReorganizeString("aaab"));
+[Fact] public void Tight() => CheckValid("aaabb");
+[Fact] public void Many() => CheckValid("vvvlo" + "abcabc" + "zzzz");
+[Fact] public void Single() => Assert.Equal("q", new Solution().ReorganizeString("q"));
+
+@@ 1405 | Longest Happy String | Medium | lc | longest-happy-string | longest-happy-string
+## Solution
+// Return any longest string with no "aaa", "bbb" or "ccc", using at most a 'a's, b 'b's and c 'c's.
+public class Solution
+{
+    public string LongestDiverseString(int a, int b, int c)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int a, int b, int c, int expectedLength)
+{
+    var r = new Solution().LongestDiverseString(a, b, c);
+    Assert.Equal(expectedLength, r.Length);
+    Assert.True(r.Count(ch => ch == 'a') <= a && r.Count(ch => ch == 'b') <= b && r.Count(ch => ch == 'c') <= c);
+    Assert.DoesNotContain("aaa", r);
+    Assert.DoesNotContain("bbb", r);
+    Assert.DoesNotContain("ccc", r);
+    Assert.True(r.All(ch => ch is 'a' or 'b' or 'c'));
+}
+[Fact] public void Example1() => Check(1, 1, 7, 8);
+[Fact] public void Example2() => Check(7, 1, 0, 5);
+[Fact] public void Balanced() => Check(2, 2, 2, 6);
+[Fact] public void OnlyOneLetter() => Check(0, 0, 5, 2);
+
+@@ 1094 | Car Pooling | Medium | lc | car-pooling | car-pooling
+## Solution
+// trips[i] = [numPassengers, from, to]
+public class Solution
+{
+    public bool CarPooling(int[][] trips, int capacity)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.False(new Solution().CarPooling(new[] { new[] { 2, 1, 5 }, new[] { 3, 3, 7 } }, 4));
+[Fact] public void Example2() => Assert.True(new Solution().CarPooling(new[] { new[] { 2, 1, 5 }, new[] { 3, 3, 7 } }, 5));
+[Fact] public void DropOffBeforePickUp() => Assert.True(new Solution().CarPooling(new[] { new[] { 2, 1, 5 }, new[] { 3, 5, 7 } }, 3));
+[Fact] public void Unsorted() => Assert.True(new Solution().CarPooling(new[] { new[] { 3, 2, 7 }, new[] { 3, 7, 9 }, new[] { 8, 3, 9 } }, 11));
+[Fact] public void OverCapacityInMiddle() => Assert.False(new Solution().CarPooling(new[] { new[] { 1, 6, 9 }, new[] { 4, 1, 7 }, new[] { 2, 5, 8 } }, 6));
+
+@@ 295 | Find Median From Data Stream | Hard | lc | find-median-from-data-stream | find-median-in-a-data-stream
+## Solution
+public class MedianFinder
+{
+    public MedianFinder()
+    {
+    }
+
+    public void AddNum(int num)
+    {
+        throw new NotImplementedException();
+    }
+
+    public double FindMedian()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var m = new MedianFinder();
+    m.AddNum(1);
+    m.AddNum(2);
+    Assert.Equal(1.5, m.FindMedian(), 5);
+    m.AddNum(3);
+    Assert.Equal(2.0, m.FindMedian(), 5);
+}
+[Fact]
+public void DescendingAndNegatives()
+{
+    var m = new MedianFinder();
+    m.AddNum(-1);
+    Assert.Equal(-1.0, m.FindMedian(), 5);
+    m.AddNum(-2);
+    Assert.Equal(-1.5, m.FindMedian(), 5);
+    m.AddNum(-3);
+    Assert.Equal(-2.0, m.FindMedian(), 5);
+    m.AddNum(-4);
+    Assert.Equal(-2.5, m.FindMedian(), 5);
+    m.AddNum(-5);
+    Assert.Equal(-3.0, m.FindMedian(), 5);
+}
+[Fact]
+public void LargeValuesNoOverflow()
+{
+    var m = new MedianFinder();
+    m.AddNum(100_000);
+    m.AddNum(100_000);
+    Assert.Equal(100_000.0, m.FindMedian(), 5);
+}
+
+@@ 502 | IPO | Hard | lc | ipo | ipo
+## Solution
+public class Solution
+{
+    public int FindMaximizedCapital(int k, int w, int[] profits, int[] capital)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().FindMaximizedCapital(2, 0, new[] { 1, 2, 3 }, new[] { 0, 1, 1 }));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().FindMaximizedCapital(3, 0, new[] { 1, 2, 3 }, new[] { 0, 1, 2 }));
+[Fact] public void CannotAfford() => Assert.Equal(0, new Solution().FindMaximizedCapital(1, 0, new[] { 1 }, new[] { 1 }));
+[Fact] public void KLargerThanProjects() => Assert.Equal(7, new Solution().FindMaximizedCapital(10, 1, new[] { 1, 2, 3 }, new[] { 0, 1, 1 }));

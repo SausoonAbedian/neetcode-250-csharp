@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC052_FindMinimumInRotatedSortedArray</RootNamespace>
+  </PropertyGroup>
+</Project>

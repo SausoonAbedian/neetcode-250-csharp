@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC246_PlusOne</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC031_4Sum</RootNamespace>
+  </PropertyGroup>
+</Project>

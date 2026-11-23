@@ -1,0 +1,399 @@
+%% 06 | Stack
+
+@@ 682 | Baseball Game | Easy | lc | baseball-game | baseball-game
+## Solution
+public class Solution
+{
+    public int CalPoints(string[] operations)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(30, new Solution().CalPoints(new[] { "5", "2", "C", "D", "+" }));
+[Fact] public void Example2() => Assert.Equal(27, new Solution().CalPoints(new[] { "5", "-2", "4", "C", "D", "9", "+", "+" }));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().CalPoints(new[] { "1", "C" }));
+
+@@ 20 | Valid Parentheses | Easy | lc | valid-parentheses | validate-parentheses
+## Solution
+public class Solution
+{
+    public bool IsValid(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsValid("()"));
+[Fact] public void Example2() => Assert.True(new Solution().IsValid("()[]{}"));
+[Fact] public void Example3() => Assert.False(new Solution().IsValid("(]"));
+[Fact] public void Example4() => Assert.True(new Solution().IsValid("([])"));
+[Fact] public void Example5() => Assert.False(new Solution().IsValid("([)]"));
+[Fact] public void OnlyOpen() => Assert.False(new Solution().IsValid("(("));
+[Fact] public void OnlyClose() => Assert.False(new Solution().IsValid("]"));
+
+@@ 225 | Implement Stack Using Queues | Easy | lc | implement-stack-using-queues | implement-stack-using-queues
+## Solution
+// Use only standard queue operations (Queue<int>: Enqueue, Dequeue, Peek, Count).
+public class MyStack
+{
+    public MyStack()
+    {
+    }
+
+    public void Push(int x)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Pop()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Top()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Empty()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var s = new MyStack();
+    s.Push(1);
+    s.Push(2);
+    Assert.Equal(2, s.Top());
+    Assert.Equal(2, s.Pop());
+    Assert.False(s.Empty());
+}
+[Fact]
+public void Sequence()
+{
+    var s = new MyStack();
+    for (var i = 0; i < 5; i++) s.Push(i);
+    Assert.Equal(4, s.Pop());
+    Assert.Equal(3, s.Pop());
+    s.Push(9);
+    Assert.Equal(9, s.Top());
+    Assert.Equal(9, s.Pop());
+    Assert.Equal(2, s.Pop());
+    Assert.Equal(1, s.Pop());
+    Assert.Equal(0, s.Pop());
+    Assert.True(s.Empty());
+}
+
+@@ 232 | Implement Queue using Stacks | Easy | lc | implement-queue-using-stacks | implement-queue-using-stacks
+## Solution
+// Use only standard stack operations (Stack<int>: Push, Pop, Peek, Count). Follow up: amortized O(1).
+public class MyQueue
+{
+    public MyQueue()
+    {
+    }
+
+    public void Push(int x)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Pop()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Peek()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Empty()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var q = new MyQueue();
+    q.Push(1);
+    q.Push(2);
+    Assert.Equal(1, q.Peek());
+    Assert.Equal(1, q.Pop());
+    Assert.False(q.Empty());
+}
+[Fact]
+public void Interleaved()
+{
+    var q = new MyQueue();
+    q.Push(1);
+    q.Push(2);
+    Assert.Equal(1, q.Pop());
+    q.Push(3);
+    Assert.Equal(2, q.Peek());
+    Assert.Equal(2, q.Pop());
+    Assert.Equal(3, q.Pop());
+    Assert.True(q.Empty());
+}
+
+@@ 155 | Min Stack | Medium | lc | min-stack | minimum-stack
+## Solution
+// Every operation must be O(1).
+public class MinStack
+{
+    public MinStack()
+    {
+    }
+
+    public void Push(int val)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Pop()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Top()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int GetMin()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var s = new MinStack();
+    s.Push(-2);
+    s.Push(0);
+    s.Push(-3);
+    Assert.Equal(-3, s.GetMin());
+    s.Pop();
+    Assert.Equal(0, s.Top());
+    Assert.Equal(-2, s.GetMin());
+}
+[Fact]
+public void DuplicateMins()
+{
+    var s = new MinStack();
+    s.Push(1);
+    s.Push(1);
+    s.Push(2);
+    s.Pop();
+    s.Pop();
+    Assert.Equal(1, s.GetMin());
+    s.Push(int.MinValue);
+    Assert.Equal(int.MinValue, s.GetMin());
+}
+
+@@ 150 | Evaluate Reverse Polish Notation | Medium | lc | evaluate-reverse-polish-notation | evaluate-reverse-polish-notation
+## Solution
+// Division truncates toward zero.
+public class Solution
+{
+    public int EvalRPN(string[] tokens)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(9, new Solution().EvalRPN(new[] { "2", "1", "+", "3", "*" }));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().EvalRPN(new[] { "4", "13", "5", "/", "+" }));
+[Fact] public void Example3() => Assert.Equal(22, new Solution().EvalRPN(new[] { "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+" }));
+[Fact] public void NegativeDivisionTruncates() => Assert.Equal(-2, new Solution().EvalRPN(new[] { "-7", "3", "/" }));
+[Fact] public void SingleNumber() => Assert.Equal(-42, new Solution().EvalRPN(new[] { "-42" }));
+[Fact] public void Subtraction() => Assert.Equal(-1, new Solution().EvalRPN(new[] { "2", "3", "-" }));
+
+@@ 735 | Asteroid Collision | Medium | lc | asteroid-collision | asteroid-collision
+## Solution
+public class Solution
+{
+    public int[] AsteroidCollision(int[] asteroids)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 5, 10 }, new Solution().AsteroidCollision(new[] { 5, 10, -5 }));
+[Fact] public void Example2() => Assert.Empty(new Solution().AsteroidCollision(new[] { 8, -8 }));
+[Fact] public void Example3() => Assert.Equal(new[] { 10 }, new Solution().AsteroidCollision(new[] { 10, 2, -5 }));
+[Fact] public void LeftMoversNeverCollide() => Assert.Equal(new[] { -2, -1, 1, 2 }, new Solution().AsteroidCollision(new[] { -2, -1, 1, 2 }));
+[Fact] public void BigLeftMoverDestroysAll() => Assert.Equal(new[] { -10 }, new Solution().AsteroidCollision(new[] { 1, 2, 3, -10 }));
+
+@@ 739 | Daily Temperatures | Medium | lc | daily-temperatures | daily-temperatures
+## Solution
+public class Solution
+{
+    public int[] DailyTemperatures(int[] temperatures)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 1, 4, 2, 1, 1, 0, 0 }, new Solution().DailyTemperatures(new[] { 73, 74, 75, 71, 69, 72, 76, 73 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 1, 1, 0 }, new Solution().DailyTemperatures(new[] { 30, 40, 50, 60 }));
+[Fact] public void Example3() => Assert.Equal(new[] { 1, 1, 0 }, new Solution().DailyTemperatures(new[] { 30, 60, 90 }));
+[Fact] public void EqualIsNotWarmer() => Assert.Equal(new[] { 0, 0 }, new Solution().DailyTemperatures(new[] { 50, 50 }));
+[Fact]
+public void LargeIsLinear()
+{
+    var t = Enumerable.Repeat(50, 100_000).ToArray();
+    t[^1] = 51;
+    var r = new Solution().DailyTemperatures(t);
+    Assert.Equal(99_999, r[0]);
+}
+
+@@ 901 | Online Stock Span | Medium | lc | online-stock-span | online-stock-span
+## Solution
+public class StockSpanner
+{
+    public StockSpanner()
+    {
+    }
+
+    public int Next(int price)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var s = new StockSpanner();
+    var prices = new[] { 100, 80, 60, 70, 60, 75, 85 };
+    var expected = new[] { 1, 1, 1, 2, 1, 4, 6 };
+    Assert.Equal(expected, prices.Select(s.Next).ToArray());
+}
+[Fact]
+public void EqualPricesCount()
+{
+    var s = new StockSpanner();
+    Assert.Equal(new[] { 1, 2, 3 }, new[] { 5, 5, 5 }.Select(s.Next).ToArray());
+}
+
+@@ 853 | Car Fleet | Medium | lc | car-fleet | car-fleet
+## Solution
+public class Solution
+{
+    public int CarFleet(int target, int[] position, int[] speed)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().CarFleet(12, new[] { 10, 8, 0, 5, 3 }, new[] { 2, 4, 1, 1, 3 }));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().CarFleet(10, new[] { 3 }, new[] { 3 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().CarFleet(100, new[] { 0, 2, 4 }, new[] { 4, 2, 1 }));
+[Fact] public void NoCatchUp() => Assert.Equal(2, new Solution().CarFleet(10, new[] { 6, 8 }, new[] { 3, 2 }));
+[Fact] public void MeetExactlyAtTarget() => Assert.Equal(1, new Solution().CarFleet(10, new[] { 0, 5 }, new[] { 2, 1 }));
+
+@@ 71 | Simplify Path | Medium | lc | simplify-path | simplify-path
+## Solution
+public class Solution
+{
+    public string SimplifyPath(string path)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("/home", new Solution().SimplifyPath("/home/"));
+[Fact] public void Example2() => Assert.Equal("/home/foo", new Solution().SimplifyPath("/home//foo/"));
+[Fact] public void Example3() => Assert.Equal("/home/user/Pictures", new Solution().SimplifyPath("/home/user/Documents/../Pictures"));
+[Fact] public void Example4() => Assert.Equal("/", new Solution().SimplifyPath("/../"));
+[Fact] public void Example5() => Assert.Equal("/.../b/d", new Solution().SimplifyPath("/.../a/../b/c/../d/./"));
+[Fact] public void DotsInNames() => Assert.Equal("/a..b/.c", new Solution().SimplifyPath("/a..b/./.c/"));
+
+@@ 394 | Decode String | Medium | lc | decode-string | decode-string
+## Solution
+public class Solution
+{
+    public string DecodeString(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("aaabcbc", new Solution().DecodeString("3[a]2[bc]"));
+[Fact] public void Example2() => Assert.Equal("accaccacc", new Solution().DecodeString("3[a2[c]]"));
+[Fact] public void Example3() => Assert.Equal("abcabccdcdcdef", new Solution().DecodeString("2[abc]3[cd]ef"));
+[Fact] public void MultiDigit() => Assert.Equal(new string('x', 12), new Solution().DecodeString("12[x]"));
+[Fact] public void NoBrackets() => Assert.Equal("plain", new Solution().DecodeString("plain"));
+
+@@ 895 | Maximum Frequency Stack | Hard | lc | maximum-frequency-stack | maximum-frequency-stack
+## Solution
+// Pop removes the most frequent element; ties go to the one closest to the top.
+public class FreqStack
+{
+    public FreqStack()
+    {
+    }
+
+    public void Push(int val)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Pop()
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var s = new FreqStack();
+    foreach (var v in new[] { 5, 7, 5, 7, 4, 5 }) s.Push(v);
+    Assert.Equal(5, s.Pop());
+    Assert.Equal(7, s.Pop());
+    Assert.Equal(5, s.Pop());
+    Assert.Equal(4, s.Pop());
+}
+[Fact]
+public void PushAfterPop()
+{
+    var s = new FreqStack();
+    s.Push(1);
+    s.Push(2);
+    Assert.Equal(2, s.Pop());
+    s.Push(1);
+    Assert.Equal(1, s.Pop());
+    Assert.Equal(1, s.Pop());
+}
+
+@@ 84 | Largest Rectangle In Histogram | Hard | lc | largest-rectangle-in-histogram | largest-rectangle-in-histogram
+## Solution
+public class Solution
+{
+    public int LargestRectangleArea(int[] heights)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(10, new Solution().LargestRectangleArea(new[] { 2, 1, 5, 6, 2, 3 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().LargestRectangleArea(new[] { 2, 4 }));
+[Fact] public void Single() => Assert.Equal(7, new Solution().LargestRectangleArea(new[] { 7 }));
+[Fact] public void AllEqual() => Assert.Equal(12, new Solution().LargestRectangleArea(new[] { 3, 3, 3, 3 }));
+[Fact] public void Valley() => Assert.Equal(6, new Solution().LargestRectangleArea(new[] { 2, 1, 2, 1, 2, 1 }));
+[Fact]
+public void LargeIsLinear()
+{
+    // heights 1..40000: best is width 20001 at height 20000
+    var h = Enumerable.Range(1, 40_000).ToArray();
+    Assert.Equal(400_020_000, new Solution().LargestRectangleArea(h));
+}

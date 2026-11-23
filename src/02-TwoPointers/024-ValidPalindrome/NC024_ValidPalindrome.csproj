@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC024_ValidPalindrome</RootNamespace>
+  </PropertyGroup>
+</Project>

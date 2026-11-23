@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC148_CloneGraph</RootNamespace>
+  </PropertyGroup>
+</Project>

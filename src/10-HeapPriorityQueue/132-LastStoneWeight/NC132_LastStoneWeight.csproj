@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC132_LastStoneWeight</RootNamespace>
+  </PropertyGroup>
+</Project>

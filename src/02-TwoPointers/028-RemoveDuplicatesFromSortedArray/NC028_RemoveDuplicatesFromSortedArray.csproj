@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC028_RemoveDuplicatesFromSortedArray</RootNamespace>
+  </PropertyGroup>
+</Project>

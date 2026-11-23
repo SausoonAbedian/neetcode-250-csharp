@@ -1,0 +1,273 @@
+%% 13 | 1-D Dynamic Programming
+
+@@ 70 | Climbing Stairs | Easy | lc | climbing-stairs | climbing-stairs
+## Solution
+public class Solution
+{
+    public int ClimbStairs(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().ClimbStairs(2));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().ClimbStairs(3));
+[Fact] public void One() => Assert.Equal(1, new Solution().ClimbStairs(1));
+[Fact] public void FortyFiveIsFast() => Assert.Equal(1836311903, new Solution().ClimbStairs(45));
+
+@@ 746 | Min Cost Climbing Stairs | Easy | lc | min-cost-climbing-stairs | min-cost-climbing-stairs
+## Solution
+public class Solution
+{
+    public int MinCostClimbingStairs(int[] cost)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(15, new Solution().MinCostClimbingStairs(new[] { 10, 15, 20 }));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().MinCostClimbingStairs(new[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }));
+[Fact] public void Two() => Assert.Equal(0, new Solution().MinCostClimbingStairs(new[] { 0, 5 }));
+
+@@ 1137 | N-th Tribonacci Number | Easy | lc | n-th-tribonacci-number | n-th-tribonacci-number
+## Solution
+public class Solution
+{
+    public int Tribonacci(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().Tribonacci(4));
+[Fact] public void Example2() => Assert.Equal(1389537, new Solution().Tribonacci(25));
+[Fact] public void Zero() => Assert.Equal(0, new Solution().Tribonacci(0));
+[Fact] public void OneAndTwo() { Assert.Equal(1, new Solution().Tribonacci(1)); Assert.Equal(1, new Solution().Tribonacci(2)); }
+[Fact] public void ThirtySevenIsFast() => Assert.Equal(2082876103, new Solution().Tribonacci(37));
+
+@@ 198 | House Robber | Medium | lc | house-robber | house-robber
+## Solution
+public class Solution
+{
+    public int Rob(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().Rob(new[] { 1, 2, 3, 1 }));
+[Fact] public void Example2() => Assert.Equal(12, new Solution().Rob(new[] { 2, 7, 9, 3, 1 }));
+[Fact] public void Single() => Assert.Equal(5, new Solution().Rob(new[] { 5 }));
+[Fact] public void SkipTwo() => Assert.Equal(4, new Solution().Rob(new[] { 2, 1, 1, 2 }));
+
+@@ 213 | House Robber II | Medium | lc | house-robber-ii | house-robber-ii
+## Solution
+// Houses are in a circle: the first and last are adjacent.
+public class Solution
+{
+    public int Rob(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().Rob(new[] { 2, 3, 2 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().Rob(new[] { 1, 2, 3, 1 }));
+[Fact] public void Example3() => Assert.Equal(3, new Solution().Rob(new[] { 1, 2, 3 }));
+[Fact] public void Single() => Assert.Equal(7, new Solution().Rob(new[] { 7 }));
+[Fact] public void Two() => Assert.Equal(3, new Solution().Rob(new[] { 1, 3 }));
+
+@@ 5 | Longest Palindromic Substring | Medium | lc | longest-palindromic-substring | longest-palindromic-substring
+## Solution
+public class Solution
+{
+    public string LongestPalindrome(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Contains(new Solution().LongestPalindrome("babad"), new[] { "bab", "aba" });
+[Fact] public void Example2() => Assert.Equal("bb", new Solution().LongestPalindrome("cbbd"));
+[Fact] public void Single() => Assert.Equal("a", new Solution().LongestPalindrome("a"));
+[Fact] public void Whole() => Assert.Equal("racecar", new Solution().LongestPalindrome("racecar"));
+[Fact] public void AtEnd() => Assert.Equal("anana", new Solution().LongestPalindrome("xbanana"));
+
+@@ 647 | Palindromic Substrings | Medium | lc | palindromic-substrings | palindromic-substrings
+## Solution
+public class Solution
+{
+    public int CountSubstrings(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().CountSubstrings("abc"));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().CountSubstrings("aaa"));
+[Fact] public void Single() => Assert.Equal(1, new Solution().CountSubstrings("z"));
+[Fact] public void Mixed() => Assert.Equal(6, new Solution().CountSubstrings("abab"));
+
+@@ 91 | Decode Ways | Medium | lc | decode-ways | decode-ways
+## Solution
+public class Solution
+{
+    public int NumDecodings(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().NumDecodings("12"));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().NumDecodings("226"));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().NumDecodings("06"));
+[Fact] public void TenAndTwenty() => Assert.Equal(1, new Solution().NumDecodings("1020"));
+[Fact] public void InvalidZero() => Assert.Equal(0, new Solution().NumDecodings("100"));
+[Fact] public void TwentySeven() => Assert.Equal(1, new Solution().NumDecodings("27"));
+[Fact] public void LongIsFast() => Assert.Equal(1836311903, new Solution().NumDecodings(new string('1', 45)));
+
+@@ 322 | Coin Change | Medium | lc | coin-change | coin-change
+## Solution
+public class Solution
+{
+    public int CoinChange(int[] coins, int amount)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().CoinChange(new[] { 1, 2, 5 }, 11));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().CoinChange(new[] { 2 }, 3));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().CoinChange(new[] { 1 }, 0));
+[Fact] public void GreedyFails() => Assert.Equal(2, new Solution().CoinChange(new[] { 1, 3, 4 }, 6));
+[Fact] public void LargeAmount() => Assert.Equal(20, new Solution().CoinChange(new[] { 186, 419, 83, 408 }, 6249));
+
+@@ 152 | Maximum Product Subarray | Medium | lc | maximum-product-subarray | maximum-product-subarray
+## Solution
+public class Solution
+{
+    public int MaxProduct(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution().MaxProduct(new[] { 2, 3, -2, 4 }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().MaxProduct(new[] { -2, 0, -1 }));
+[Fact] public void TwoNegatives() => Assert.Equal(24, new Solution().MaxProduct(new[] { -2, 3, -4 }));
+[Fact] public void SingleNegative() => Assert.Equal(-3, new Solution().MaxProduct(new[] { -3 }));
+[Fact] public void ZeroSplit() => Assert.Equal(4, new Solution().MaxProduct(new[] { 2, -5, 0, 4, -1 }));
+
+@@ 139 | Word Break | Medium | lc | word-break | word-break
+## Solution
+public class Solution
+{
+    public bool WordBreak(string s, IList<string> wordDict)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().WordBreak("leetcode", new[] { "leet", "code" }));
+[Fact] public void Example2() => Assert.True(new Solution().WordBreak("applepenapple", new[] { "apple", "pen" }));
+[Fact] public void Example3() => Assert.False(new Solution().WordBreak("catsandog", new[] { "cats", "dog", "sand", "and", "cat" }));
+[Fact]
+public void ExponentialTrap() => Assert.False(new Solution().WordBreak(new string('a', 150) + "b",
+    new[] { "a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa" }));
+
+@@ 300 | Longest Increasing Subsequence | Medium | lc | longest-increasing-subsequence | longest-increasing-subsequence
+## Solution
+// Follow up: O(n log n).
+public class Solution
+{
+    public int LengthOfLIS(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().LengthOfLIS(new[] { 10, 9, 2, 5, 3, 7, 101, 18 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().LengthOfLIS(new[] { 0, 1, 0, 3, 2, 3 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().LengthOfLIS(new[] { 7, 7, 7, 7, 7, 7, 7 }));
+[Fact] public void Decreasing() => Assert.Equal(1, new Solution().LengthOfLIS(new[] { 5, 4, 3, 2, 1 }));
+[Fact] public void Negatives() => Assert.Equal(3, new Solution().LengthOfLIS(new[] { -2, -1, -3, 0 }));
+
+@@ 416 | Partition Equal Subset Sum | Medium | lc | partition-equal-subset-sum | partition-equal-subset-sum
+## Solution
+public class Solution
+{
+    public bool CanPartition(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CanPartition(new[] { 1, 5, 11, 5 }));
+[Fact] public void Example2() => Assert.False(new Solution().CanPartition(new[] { 1, 2, 3, 5 }));
+[Fact] public void OddSum() => Assert.False(new Solution().CanPartition(new[] { 1, 2 }));
+[Fact] public void Single() => Assert.False(new Solution().CanPartition(new[] { 2 }));
+[Fact] public void LargeIsFast() => Assert.True(new Solution().CanPartition(Enumerable.Repeat(100, 200).ToArray()));
+
+@@ 377 | Combination Sum IV | Medium | lc | combination-sum-iv | combination-sum-iv
+## Solution
+// Different orderings count as different combinations.
+public class Solution
+{
+    public int CombinationSum4(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(7, new Solution().CombinationSum4(new[] { 1, 2, 3 }, 4));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().CombinationSum4(new[] { 9 }, 3));
+[Fact] public void Fibonacci() => Assert.Equal(89, new Solution().CombinationSum4(new[] { 1, 2 }, 10));
+
+@@ 279 | Perfect Squares | Medium | lc | perfect-squares | perfect-squares
+## Solution
+public class Solution
+{
+    public int NumSquares(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().NumSquares(12));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().NumSquares(13));
+[Fact] public void Square() => Assert.Equal(1, new Solution().NumSquares(1));
+[Fact] public void NeedsFour() => Assert.Equal(4, new Solution().NumSquares(7));
+[Fact] public void LargeIsFast() => Assert.Equal(4, new Solution().NumSquares(9999));
+
+@@ 343 | Integer Break | Medium | lc | integer-break | integer-break
+## Solution
+public class Solution
+{
+    public int IntegerBreak(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().IntegerBreak(2));
+[Fact] public void Example2() => Assert.Equal(36, new Solution().IntegerBreak(10));
+[Fact] public void Three() => Assert.Equal(2, new Solution().IntegerBreak(3));
+[Fact] public void Eight() => Assert.Equal(18, new Solution().IntegerBreak(8));
+[Fact] public void FiftyEight() => Assert.Equal(1549681956, new Solution().IntegerBreak(58));
+
+@@ 1406 | Stone Game III | Hard | lc | stone-game-iii | stone-game-iii
+## Solution
+// Return "Alice", "Bob" or "Tie".
+public class Solution
+{
+    public string StoneGameIII(int[] stoneValue)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("Bob", new Solution().StoneGameIII(new[] { 1, 2, 3, 7 }));
+[Fact] public void Example2() => Assert.Equal("Alice", new Solution().StoneGameIII(new[] { 1, 2, 3, -9 }));
+[Fact] public void Example3() => Assert.Equal("Tie", new Solution().StoneGameIII(new[] { 1, 2, 3, 6 }));
+[Fact] public void AllNegative() => Assert.Equal("Tie", new Solution().StoneGameIII(new[] { -1, -2, -3 }));
+[Fact] public void Single() => Assert.Equal("Alice", new Solution().StoneGameIII(new[] { 5 }));

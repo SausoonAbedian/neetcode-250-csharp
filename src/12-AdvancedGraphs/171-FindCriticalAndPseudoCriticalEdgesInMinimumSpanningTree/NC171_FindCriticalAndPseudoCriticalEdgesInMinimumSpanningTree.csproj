@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC171_FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree</RootNamespace>
+  </PropertyGroup>
+</Project>

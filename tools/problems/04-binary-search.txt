@@ -1,0 +1,323 @@
+%% 04 | Binary Search
+
+@@ 704 | Binary Search | Easy | lc | binary-search | binary-search
+## Solution
+// O(log n) runtime.
+public class Solution
+{
+    public int Search(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().Search(new[] { -1, 0, 3, 5, 9, 12 }, 9));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().Search(new[] { -1, 0, 3, 5, 9, 12 }, 2));
+[Fact] public void Single() => Assert.Equal(0, new Solution().Search(new[] { 5 }, 5));
+[Fact] public void FirstAndLast()
+{
+    Assert.Equal(0, new Solution().Search(new[] { 1, 2, 3 }, 1));
+    Assert.Equal(2, new Solution().Search(new[] { 1, 2, 3 }, 3));
+}
+
+@@ 35 | Search Insert Position | Easy | lc | search-insert-position | search-insert-position
+## Solution
+public class Solution
+{
+    public int SearchInsert(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().SearchInsert(new[] { 1, 3, 5, 6 }, 5));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().SearchInsert(new[] { 1, 3, 5, 6 }, 2));
+[Fact] public void Example3() => Assert.Equal(4, new Solution().SearchInsert(new[] { 1, 3, 5, 6 }, 7));
+[Fact] public void Front() => Assert.Equal(0, new Solution().SearchInsert(new[] { 1, 3, 5, 6 }, 0));
+
+@@ 374 | Guess Number Higher Or Lower | Easy | lc | guess-number-higher-or-lower | guess-number-higher-or-lower
+## Solution
+/**
+ * The guess API is defined in the parent class GuessGame (provided below, do not edit).
+ * int guess(int num) returns -1 if num is higher than the pick,
+ *                            1 if num is lower than the pick,
+ *                            0 if num == pick.
+ */
+public class Solution : GuessGame
+{
+    public Solution(int pick) : base(pick) { }
+
+    public int GuessNumber(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+// ---- provided ----
+public class GuessGame
+{
+    private readonly int _pick;
+    public int Calls { get; private set; }
+    public GuessGame(int pick) => _pick = pick;
+
+    public int guess(int num)
+    {
+        Calls++;
+        return num > _pick ? -1 : num < _pick ? 1 : 0;
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution(6).GuessNumber(10));
+[Fact] public void Example2() => Assert.Equal(1, new Solution(1).GuessNumber(1));
+[Fact] public void Example3() => Assert.Equal(1, new Solution(1).GuessNumber(2));
+[Fact]
+public void LargeNoOverflowAndLogarithmic()
+{
+    var s = new Solution(int.MaxValue - 1);
+    Assert.Equal(int.MaxValue - 1, s.GuessNumber(int.MaxValue));
+    Assert.True(s.Calls <= 40, $"Used {s.Calls} guesses; binary search needs ~31.");
+}
+
+@@ 69 | Sqrt(x) | Easy | lc | sqrtx | sqrtx
+## Solution
+// Do not use Math.Sqrt / Math.Pow.
+public class Solution
+{
+    public int MySqrt(int x)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().MySqrt(4));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().MySqrt(8));
+[Fact] public void Zero() => Assert.Equal(0, new Solution().MySqrt(0));
+[Fact] public void One() => Assert.Equal(1, new Solution().MySqrt(1));
+[Fact] public void MaxInt() => Assert.Equal(46340, new Solution().MySqrt(int.MaxValue));
+
+@@ 74 | Search a 2D Matrix | Medium | lc | search-a-2d-matrix | search-2d-matrix
+## Solution
+// O(log(m * n)) runtime.
+public class Solution
+{
+    public bool SearchMatrix(int[][] matrix, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static readonly int[][] M = { new[] { 1, 3, 5, 7 }, new[] { 10, 11, 16, 20 }, new[] { 23, 30, 34, 60 } };
+[Fact] public void Example1() => Assert.True(new Solution().SearchMatrix(M, 3));
+[Fact] public void Example2() => Assert.False(new Solution().SearchMatrix(M, 13));
+[Fact] public void Corners()
+{
+    Assert.True(new Solution().SearchMatrix(M, 1));
+    Assert.True(new Solution().SearchMatrix(M, 60));
+    Assert.False(new Solution().SearchMatrix(M, 61));
+    Assert.False(new Solution().SearchMatrix(M, 0));
+}
+[Fact] public void SingleCell() => Assert.False(new Solution().SearchMatrix(new[] { new[] { 1 } }, 2));
+
+@@ 875 | Koko Eating Bananas | Medium | lc | koko-eating-bananas | eating-bananas
+## Solution
+public class Solution
+{
+    public int MinEatingSpeed(int[] piles, int h)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().MinEatingSpeed(new[] { 3, 6, 7, 11 }, 8));
+[Fact] public void Example2() => Assert.Equal(30, new Solution().MinEatingSpeed(new[] { 30, 11, 23, 4, 20 }, 5));
+[Fact] public void Example3() => Assert.Equal(23, new Solution().MinEatingSpeed(new[] { 30, 11, 23, 4, 20 }, 6));
+[Fact] public void HoursOverflowInt() => Assert.Equal(3, new Solution().MinEatingSpeed(new[] { 805306368, 805306368, 805306368 }, 1000000000));
+[Fact] public void PlentyOfTime() => Assert.Equal(1, new Solution().MinEatingSpeed(new[] { 5, 5 }, 100));
+
+@@ 1011 | Capacity to Ship Packages Within D Days | Medium | lc | capacity-to-ship-packages-within-d-days | capacity-to-ship-packages-within-d-days
+## Solution
+public class Solution
+{
+    public int ShipWithinDays(int[] weights, int days)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(15, new Solution().ShipWithinDays(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5));
+[Fact] public void Example2() => Assert.Equal(6, new Solution().ShipWithinDays(new[] { 3, 2, 2, 4, 1, 4 }, 3));
+[Fact] public void Example3() => Assert.Equal(3, new Solution().ShipWithinDays(new[] { 1, 2, 3, 1, 1 }, 4));
+[Fact] public void OneDay() => Assert.Equal(10, new Solution().ShipWithinDays(new[] { 1, 2, 3, 4 }, 1));
+
+@@ 153 | Find Minimum In Rotated Sorted Array | Medium | lc | find-minimum-in-rotated-sorted-array | find-minimum-in-rotated-sorted-array
+## Solution
+// O(log n) runtime. All values are unique.
+public class Solution
+{
+    public int FindMin(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().FindMin(new[] { 3, 4, 5, 1, 2 }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().FindMin(new[] { 4, 5, 6, 7, 0, 1, 2 }));
+[Fact] public void Example3() => Assert.Equal(11, new Solution().FindMin(new[] { 11, 13, 15, 17 }));
+[Fact] public void Single() => Assert.Equal(1, new Solution().FindMin(new[] { 1 }));
+[Fact] public void RotatedByOne() => Assert.Equal(1, new Solution().FindMin(new[] { 2, 1 }));
+
+@@ 33 | Search In Rotated Sorted Array | Medium | lc | search-in-rotated-sorted-array | find-target-in-rotated-sorted-array
+## Solution
+// O(log n) runtime. All values are unique.
+public class Solution
+{
+    public int Search(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().Search(new[] { 4, 5, 6, 7, 0, 1, 2 }, 0));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().Search(new[] { 4, 5, 6, 7, 0, 1, 2 }, 3));
+[Fact] public void Example3() => Assert.Equal(-1, new Solution().Search(new[] { 1 }, 0));
+[Fact] public void TwoElements() => Assert.Equal(1, new Solution().Search(new[] { 3, 1 }, 1));
+[Fact] public void LeftHalf() => Assert.Equal(1, new Solution().Search(new[] { 5, 1, 3 }, 1));
+[Fact] public void NotRotated() => Assert.Equal(2, new Solution().Search(new[] { 1, 3, 5 }, 5));
+
+@@ 81 | Search In Rotated Sorted Array II | Medium | lc | search-in-rotated-sorted-array-ii | search-in-rotated-sorted-array-ii
+## Solution
+// Values may contain duplicates.
+public class Solution
+{
+    public bool Search(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().Search(new[] { 2, 5, 6, 0, 0, 1, 2 }, 0));
+[Fact] public void Example2() => Assert.False(new Solution().Search(new[] { 2, 5, 6, 0, 0, 1, 2 }, 3));
+[Fact] public void AmbiguousDuplicates() => Assert.True(new Solution().Search(new[] { 1, 0, 1, 1, 1 }, 0));
+[Fact] public void AllSame() => Assert.False(new Solution().Search(new[] { 1, 1, 1, 1 }, 2));
+[Fact] public void DuplicatesOtherSide() => Assert.True(new Solution().Search(new[] { 1, 1, 1, 3, 1 }, 3));
+
+@@ 981 | Time Based Key Value Store | Medium | lc | time-based-key-value-store | time-based-key-value-store
+## Solution
+// Timestamps passed to Set are strictly increasing.
+public class TimeMap
+{
+    public TimeMap()
+    {
+    }
+
+    public void Set(string key, string value, int timestamp)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string Get(string key, int timestamp)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var t = new TimeMap();
+    t.Set("foo", "bar", 1);
+    Assert.Equal("bar", t.Get("foo", 1));
+    Assert.Equal("bar", t.Get("foo", 3));
+    t.Set("foo", "bar2", 4);
+    Assert.Equal("bar2", t.Get("foo", 4));
+    Assert.Equal("bar2", t.Get("foo", 5));
+}
+[Fact]
+public void MissingKeyAndEarlyTimestamp()
+{
+    var t = new TimeMap();
+    t.Set("a", "x", 5);
+    t.Set("a", "y", 10);
+    Assert.Equal("", t.Get("b", 10));
+    Assert.Equal("", t.Get("a", 4));
+    Assert.Equal("x", t.Get("a", 9));
+    Assert.Equal("y", t.Get("a", 1000));
+}
+
+@@ 410 | Split Array Largest Sum | Hard | lc | split-array-largest-sum | split-array-largest-sum
+## Solution
+public class Solution
+{
+    public int SplitArray(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(18, new Solution().SplitArray(new[] { 7, 2, 5, 10, 8 }, 2));
+[Fact] public void Example2() => Assert.Equal(9, new Solution().SplitArray(new[] { 1, 2, 3, 4, 5 }, 2));
+[Fact] public void KEqualsLength() => Assert.Equal(10, new Solution().SplitArray(new[] { 1, 10, 3 }, 3));
+[Fact] public void KOne() => Assert.Equal(14, new Solution().SplitArray(new[] { 1, 10, 3 }, 1));
+[Fact] public void WithZeros() => Assert.Equal(4, new Solution().SplitArray(new[] { 0, 4, 0, 0, 3, 1 }, 2));
+
+@@ 4 | Median of Two Sorted Arrays | Hard | lc | median-of-two-sorted-arrays | median-of-two-sorted-arrays
+## Solution
+// Overall runtime O(log(m + n)).
+public class Solution
+{
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2.0, new Solution().FindMedianSortedArrays(new[] { 1, 3 }, new[] { 2 }), 5);
+[Fact] public void Example2() => Assert.Equal(2.5, new Solution().FindMedianSortedArrays(new[] { 1, 2 }, new[] { 3, 4 }), 5);
+[Fact] public void OneEmpty() => Assert.Equal(2.5, new Solution().FindMedianSortedArrays(new int[0], new[] { 1, 2, 3, 4 }), 5);
+[Fact] public void SingleEach() => Assert.Equal(1.5, new Solution().FindMedianSortedArrays(new[] { 1 }, new[] { 2 }), 5);
+[Fact] public void Interleaved() => Assert.Equal(4.0, new Solution().FindMedianSortedArrays(new[] { 1, 3, 5, 7 }, new[] { 2, 4, 6 }), 5);
+[Fact] public void Negatives() => Assert.Equal(-2.5, new Solution().FindMedianSortedArrays(new[] { -5, -3 }, new[] { -2, -1 }), 5);
+
+@@ 1095 | Find in Mountain Array | Hard | lc | find-in-mountain-array | find-in-mountain-array
+## Solution
+/**
+ * This is MountainArray's API interface (provided below, do not edit).
+ * You should not implement it, or speculate about its implementation.
+ * At most 100 calls to get() are allowed.
+ */
+public class Solution
+{
+    public int FindInMountainArray(int target, MountainArray mountainArr)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+// ---- provided ----
+public class MountainArray
+{
+    private readonly int[] _a;
+    public int GetCalls { get; private set; }
+    public MountainArray(params int[] a) => _a = a;
+
+    public int Get(int index)
+    {
+        if (++GetCalls > 100) throw new InvalidOperationException("More than 100 calls to Get().");
+        return _a[index];
+    }
+
+    public int Length() => _a.Length;
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().FindInMountainArray(3, new MountainArray(1, 2, 3, 4, 5, 3, 1)));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().FindInMountainArray(3, new MountainArray(0, 1, 2, 4, 2, 1)));
+[Fact] public void OnlyOnRightSide() => Assert.Equal(4, new Solution().FindInMountainArray(2, new MountainArray(1, 5, 9, 4, 2)));
+[Fact] public void Peak() => Assert.Equal(2, new Solution().FindInMountainArray(9, new MountainArray(1, 5, 9, 4, 2)));
+[Fact]
+public void LargeArrayWithinCallLimit()
+{
+    var a = Enumerable.Range(0, 5000).Concat(Enumerable.Range(0, 4999).Reverse()).ToArray();
+    Assert.Equal(1234, new Solution().FindInMountainArray(1234, new MountainArray(a)));
+    var b = Enumerable.Range(0, 5000).Select(x => x * 2).Concat(Enumerable.Range(0, 5000).Reverse().Select(x => x * 2 + 1)).ToArray();
+    Assert.Equal(5000 + (5000 - 1 - 1234), new Solution().FindInMountainArray(2469, new MountainArray(b)));
+}

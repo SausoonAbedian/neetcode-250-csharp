@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC190_StoneGameIII</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- LeetCode-style code: nullable reference types off -->
+    <Nullable>disable</Nullable>
+    <NoWarn>$(NoWarn);CS8632;xUnit1026;CS0162;IDE0060</NoWarn>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <!-- Every problem project is also an xUnit test project -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' != 'DSA.Common'">
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectName)' != 'DSA.Common'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)src\Common\DSA.Common.csproj" />
+    <Using Include="Xunit" />
+    <Using Include="DSA.Common" />
+    <Using Include="System.Text" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,222 @@
+%% 12 | Advanced Graphs
+
+@@ 1631 | Path with Minimum Effort | Medium | lc | path-with-minimum-effort | path-with-minimum-effort
+## Solution
+public class Solution
+{
+    public int MinimumEffortPath(int[][] heights)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().MinimumEffortPath(Lc.Grid("[[1,2,2],[3,8,2],[5,3,5]]")));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().MinimumEffortPath(Lc.Grid("[[1,2,3],[3,8,4],[5,3,5]]")));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().MinimumEffortPath(Lc.Grid("[[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]")));
+[Fact] public void Single() => Assert.Equal(0, new Solution().MinimumEffortPath(Lc.Grid("[[5]]")));
+
+@@ 743 | Network Delay Time | Medium | lc | network-delay-time | network-delay-time
+## Solution
+// times[i] = [u, v, w]: directed edge u -> v taking w. Nodes are 1..n.
+public class Solution
+{
+    public int NetworkDelayTime(int[][] times, int n, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().NetworkDelayTime(Lc.Grid("[[2,1,1],[2,3,1],[3,4,1]]"), 4, 2));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().NetworkDelayTime(Lc.Grid("[[1,2,1]]"), 2, 1));
+[Fact] public void Example3() => Assert.Equal(-1, new Solution().NetworkDelayTime(Lc.Grid("[[1,2,1]]"), 2, 2));
+[Fact] public void LongerPathIsShorter() => Assert.Equal(3, new Solution().NetworkDelayTime(Lc.Grid("[[1,2,10],[1,3,1],[3,2,1],[2,4,1]]"), 4, 1));
+
+@@ 332 | Reconstruct Itinerary | Hard | lc | reconstruct-itinerary | reconstruct-flight-path
+## Solution
+// Start at "JFK", use every ticket once; return the lexicographically smallest valid itinerary.
+public class Solution
+{
+    public IList<string> FindItinerary(IList<IList<string>> tickets)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { "JFK", "MUC", "LHR", "SFO", "SJC" }, new Solution().FindItinerary(Lc.Strings2D("""[["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]""")));
+[Fact] public void Example2() => Assert.Equal(new[] { "JFK", "ATL", "JFK", "SFO", "ATL", "SFO" }, new Solution().FindItinerary(Lc.Strings2D("""[["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]""")));
+[Fact] public void SmallestFirstIsDeadEnd() => Assert.Equal(new[] { "JFK", "NRT", "JFK", "KUL" }, new Solution().FindItinerary(Lc.Strings2D("""[["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]""")));
+[Fact] public void DuplicateTickets() => Assert.Equal(new[] { "JFK", "A", "JFK", "A" }, new Solution().FindItinerary(Lc.Strings2D("""[["JFK","A"],["A","JFK"],["JFK","A"]]""")));
+
+@@ 1584 | Min Cost to Connect All Points | Medium | lc | min-cost-to-connect-all-points | min-cost-to-connect-points
+## Solution
+// Cost between two points is their Manhattan distance.
+public class Solution
+{
+    public int MinCostConnectPoints(int[][] points)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(20, new Solution().MinCostConnectPoints(Lc.Grid("[[0,0],[2,2],[3,10],[5,2],[7,0]]")));
+[Fact] public void Example2() => Assert.Equal(18, new Solution().MinCostConnectPoints(Lc.Grid("[[3,12],[-2,5],[-4,1]]")));
+[Fact] public void Single() => Assert.Equal(0, new Solution().MinCostConnectPoints(Lc.Grid("[[0,0]]")));
+[Fact] public void Line() => Assert.Equal(3, new Solution().MinCostConnectPoints(Lc.Grid("[[0,0],[1,0],[2,0],[3,0]]")));
+
+@@ 778 | Swim In Rising Water | Hard | lc | swim-in-rising-water | swim-in-rising-water
+## Solution
+public class Solution
+{
+    public int SwimInWater(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().SwimInWater(Lc.Grid("[[0,2],[1,3]]")));
+[Fact] public void Example2() => Assert.Equal(16, new Solution().SwimInWater(Lc.Grid("[[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]")));
+[Fact] public void Single() => Assert.Equal(0, new Solution().SwimInWater(Lc.Grid("[[0]]")));
+[Fact] public void StartIsHigh() => Assert.Equal(3, new Solution().SwimInWater(Lc.Grid("[[3,2],[0,1]]")));
+
+@@ 269 | Alien Dictionary | Hard | nc | alien-dictionary | foreign-dictionary
+## Solution
+// NeetCode version ("Foreign Dictionary"): words are sorted by an unknown alphabet.
+// Return any order of ALL unique letters that is consistent with the words, or "" if none exists.
+public class Solution
+{
+    public string ForeignDictionary(string[] words)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void CheckValid(params string[] words)
+{
+    var r = new Solution().ForeignDictionary(words);
+    var letters = words.SelectMany(w => w).Distinct().OrderBy(c => c).ToArray();
+    Assert.Equal(letters, r.OrderBy(c => c).ToArray());
+    var pos = r.Select((c, i) => (c, i)).ToDictionary(x => x.c, x => x.i);
+    for (var i = 0; i + 1 < words.Length; i++)
+    {
+        var a = words[i];
+        var b = words[i + 1];
+        for (var j = 0; j < Math.Min(a.Length, b.Length); j++)
+        {
+            if (a[j] == b[j]) continue;
+            Assert.True(pos[a[j]] < pos[b[j]], $"'{a[j]}' must come before '{b[j]}' in \"{r}\"");
+            break;
+        }
+    }
+}
+[Fact] public void Example1() => CheckValid("z", "o");
+[Fact] public void Example2() => CheckValid("hrn", "hrf", "er", "enn", "rfnn");
+[Fact] public void LeetCodeExample() => CheckValid("wrt", "wrf", "er", "ett", "rftt");
+[Fact] public void Cycle() => Assert.Equal("", new Solution().ForeignDictionary(new[] { "z", "x", "z" }));
+[Fact] public void PrefixAfterLongerWordIsInvalid() => Assert.Equal("", new Solution().ForeignDictionary(new[] { "abc", "ab" }));
+[Fact] public void SameWord() => CheckValid("abc", "abc");
+
+@@ 787 | Cheapest Flights Within K Stops | Medium | lc | cheapest-flights-within-k-stops | cheapest-flight-path
+## Solution
+// flights[i] = [from, to, price]. At most k stops (k + 1 flights).
+public class Solution
+{
+    public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(700, new Solution().FindCheapestPrice(4, Lc.Grid("[[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]]"), 0, 3, 1));
+[Fact] public void Example2() => Assert.Equal(200, new Solution().FindCheapestPrice(3, Lc.Grid("[[0,1,100],[1,2,100],[0,2,500]]"), 0, 2, 1));
+[Fact] public void Example3() => Assert.Equal(500, new Solution().FindCheapestPrice(3, Lc.Grid("[[0,1,100],[1,2,100],[0,2,500]]"), 0, 2, 0));
+[Fact] public void Unreachable() => Assert.Equal(-1, new Solution().FindCheapestPrice(3, Lc.Grid("[[0,1,100]]"), 0, 2, 5));
+[Fact]
+public void CheapestPathHasTooManyStops()
+{
+    const string f = "[[0,1,5],[1,2,5],[0,3,2],[3,1,2],[1,4,1],[4,2,1]]";
+    Assert.Equal(7, new Solution().FindCheapestPrice(5, Lc.Grid(f), 0, 2, 2)); // 0-1-4-2
+    Assert.Equal(6, new Solution().FindCheapestPrice(5, Lc.Grid(f), 0, 2, 3)); // 0-3-1-4-2
+}
+
+@@ 1489 | Find Critical and Pseudo Critical Edges in Minimum Spanning Tree | Hard | lc | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree
+## Solution
+// Return [criticalEdgeIndices, pseudoCriticalEdgeIndices]; each list may be in any order.
+public class Solution
+{
+    public IList<IList<int>> FindCriticalAndPseudoCriticalEdges(int n, int[][] edges)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int n, string edges, int[] critical, int[] pseudo)
+{
+    var r = new Solution().FindCriticalAndPseudoCriticalEdges(n, Lc.Grid(edges));
+    Assert.Equal(2, r.Count);
+    AssertEx.SameItems(critical, r[0]);
+    AssertEx.SameItems(pseudo, r[1]);
+}
+[Fact] public void Example1() => Check(5, "[[0,1,1],[1,2,1],[2,3,2],[0,3,2],[0,4,3],[3,4,3],[1,4,6]]", new[] { 0, 1 }, new[] { 2, 3, 4, 5 });
+[Fact] public void Example2() => Check(4, "[[0,1,1],[1,2,1],[2,3,1],[0,3,1]]", new int[0], new[] { 0, 1, 2, 3 });
+[Fact] public void Tree() => Check(3, "[[0,1,4],[1,2,7]]", new[] { 0, 1 }, new int[0]);
+
+@@ 2392 | Build a Matrix With Conditions | Hard | lc | build-a-matrix-with-conditions | build-a-matrix-with-conditions
+## Solution
+// Return any valid k x k matrix, or an empty array if impossible.
+public class Solution
+{
+    public int[][] BuildMatrix(int k, int[][] rowConditions, int[][] colConditions)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void CheckValid(int k, string rows, string cols)
+{
+    var m = new Solution().BuildMatrix(k, Lc.Grid(rows), Lc.Grid(cols));
+    Assert.Equal(k, m.Length);
+    var r = new int[k + 1];
+    var c = new int[k + 1];
+    var seen = 0;
+    for (var i = 0; i < k; i++)
+    {
+        Assert.Equal(k, m[i].Length);
+        for (var j = 0; j < k; j++)
+        {
+            if (m[i][j] == 0) continue;
+            seen++;
+            r[m[i][j]] = i;
+            c[m[i][j]] = j;
+        }
+    }
+    Assert.Equal(k, seen);
+    Assert.Equal(k, Enumerable.Range(0, k).SelectMany(i => m[i]).Where(v => v != 0).Distinct().Count());
+    foreach (var p in Lc.Grid(rows)) Assert.True(r[p[0]] < r[p[1]], $"{p[0]} must be in a row above {p[1]}");
+    foreach (var p in Lc.Grid(cols)) Assert.True(c[p[0]] < c[p[1]], $"{p[0]} must be in a column left of {p[1]}");
+}
+[Fact] public void Example1() => CheckValid(3, "[[1,2],[3,2]]", "[[2,1],[3,2]]");
+[Fact] public void Example2() => Assert.Empty(new Solution().BuildMatrix(3, Lc.Grid("[[1,2],[2,3],[3,1],[2,3]]"), Lc.Grid("[[2,1]]")));
+[Fact] public void NoConditions() => CheckValid(4, "[]", "[]");
+[Fact] public void ColumnCycle() => Assert.Empty(new Solution().BuildMatrix(2, Lc.Grid("[[1,2]]"), Lc.Grid("[[1,2],[2,1]]")));
+
+@@ 2709 | Greatest Common Divisor Traversal | Hard | lc | greatest-common-divisor-traversal | greatest-common-divisor-traversal
+## Solution
+public class Solution
+{
+    public bool CanTraverseAllPairs(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CanTraverseAllPairs(new[] { 2, 3, 6 }));
+[Fact] public void Example2() => Assert.False(new Solution().CanTraverseAllPairs(new[] { 3, 9, 5 }));
+[Fact] public void Example3() => Assert.True(new Solution().CanTraverseAllPairs(new[] { 4, 3, 12, 8 }));
+[Fact] public void SingleOne() => Assert.True(new Solution().CanTraverseAllPairs(new[] { 1 }));
+[Fact] public void TwoOnes() => Assert.False(new Solution().CanTraverseAllPairs(new[] { 1, 1 }));
+[Fact]
+public void LargeIsFast()
+{
+    var nums = Enumerable.Range(1, 50_000).Select(i => i * 2).ToArray();
+    Assert.True(new Solution().CanTraverseAllPairs(nums));
+}

@@ -1,0 +1,522 @@
+%% 01 | Arrays & Hashing
+
+@@ 1929 | Concatenation of Array | Easy | lc | concatenation-of-array | concatenation-of-array
+## Solution
+public class Solution
+{
+    public int[] GetConcatenation(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 1, 1, 2, 1 }, new Solution().GetConcatenation(new[] { 1, 2, 1 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 3, 2, 1, 1, 3, 2, 1 }, new Solution().GetConcatenation(new[] { 1, 3, 2, 1 }));
+[Fact] public void SingleElement() => Assert.Equal(new[] { 7, 7 }, new Solution().GetConcatenation(new[] { 7 }));
+
+@@ 217 | Contains Duplicate | Easy | lc | contains-duplicate | duplicate-integer
+## Solution
+public class Solution
+{
+    public bool ContainsDuplicate(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().ContainsDuplicate(new[] { 1, 2, 3, 1 }));
+[Fact] public void Example2() => Assert.False(new Solution().ContainsDuplicate(new[] { 1, 2, 3, 4 }));
+[Fact] public void Example3() => Assert.True(new Solution().ContainsDuplicate(new[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 }));
+[Fact] public void SingleElement() => Assert.False(new Solution().ContainsDuplicate(new[] { 5 }));
+[Fact] public void Negatives() => Assert.True(new Solution().ContainsDuplicate(new[] { -1, 0, -1 }));
+[Fact] public void LargeDistinct() => Assert.False(new Solution().ContainsDuplicate(Enumerable.Range(-50_000, 100_000).ToArray()));
+
+@@ 242 | Valid Anagram | Easy | lc | valid-anagram | is-anagram
+## Solution
+public class Solution
+{
+    public bool IsAnagram(string s, string t)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsAnagram("anagram", "nagaram"));
+[Fact] public void Example2() => Assert.False(new Solution().IsAnagram("rat", "car"));
+[Fact] public void DifferentLengths() => Assert.False(new Solution().IsAnagram("ab", "abb"));
+[Fact] public void SameLettersDifferentCounts() => Assert.False(new Solution().IsAnagram("aacc", "ccac"));
+[Fact] public void SingleChar() => Assert.True(new Solution().IsAnagram("a", "a"));
+
+@@ 1 | Two Sum | Easy | lc | two-sum | two-integer-sum
+## Solution
+public class Solution
+{
+    public int[] TwoSum(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameItems(new[] { 0, 1 }, new Solution().TwoSum(new[] { 2, 7, 11, 15 }, 9));
+[Fact] public void Example2() => AssertEx.SameItems(new[] { 1, 2 }, new Solution().TwoSum(new[] { 3, 2, 4 }, 6));
+[Fact] public void Example3() => AssertEx.SameItems(new[] { 0, 1 }, new Solution().TwoSum(new[] { 3, 3 }, 6));
+[Fact] public void Negatives() => AssertEx.SameItems(new[] { 2, 4 }, new Solution().TwoSum(new[] { -1, -2, -3, -4, -5 }, -8));
+[Fact] public void ZeroTarget() => AssertEx.SameItems(new[] { 0, 3 }, new Solution().TwoSum(new[] { 0, 4, 3, 0 }, 0));
+
+@@ 14 | Longest Common Prefix | Easy | lc | longest-common-prefix | longest-common-prefix
+## Solution
+public class Solution
+{
+    public string LongestCommonPrefix(string[] strs)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("fl", new Solution().LongestCommonPrefix(new[] { "flower", "flow", "flight" }));
+[Fact] public void Example2() => Assert.Equal("", new Solution().LongestCommonPrefix(new[] { "dog", "racecar", "car" }));
+[Fact] public void SingleString() => Assert.Equal("alone", new Solution().LongestCommonPrefix(new[] { "alone" }));
+[Fact] public void ContainsEmpty() => Assert.Equal("", new Solution().LongestCommonPrefix(new[] { "abc", "" }));
+[Fact] public void WholeWordIsPrefix() => Assert.Equal("ab", new Solution().LongestCommonPrefix(new[] { "abc", "ab", "abcd" }));
+
+@@ 49 | Group Anagrams | Medium | lc | group-anagrams | anagram-groups
+## Solution
+public class Solution
+{
+    public IList<IList<string>> GroupAnagrams(string[] strs)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1() => AssertEx.SameGroups(
+    new[] { new[] { "bat" }, new[] { "nat", "tan" }, new[] { "ate", "eat", "tea" } },
+    new Solution().GroupAnagrams(new[] { "eat", "tea", "tan", "ate", "nat", "bat" }));
+[Fact] public void Example2() => AssertEx.SameGroups(new[] { new[] { "" } }, new Solution().GroupAnagrams(new[] { "" }));
+[Fact] public void Example3() => AssertEx.SameGroups(new[] { new[] { "a" } }, new Solution().GroupAnagrams(new[] { "a" }));
+[Fact]
+public void SameLettersDifferentCounts() => AssertEx.SameGroups(
+    new[] { new[] { "aab" }, new[] { "abb" }, new[] { "ab", "ba" } },
+    new Solution().GroupAnagrams(new[] { "aab", "abb", "ab", "ba" }));
+
+@@ 27 | Remove Element | Easy | lc | remove-element | remove-element
+## Solution
+public class Solution
+{
+    public int RemoveElement(int[] nums, int val)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int[] nums, int val)
+{
+    var expected = nums.Where(x => x != val).OrderBy(x => x).ToArray();
+    var k = new Solution().RemoveElement(nums, val);
+    Assert.Equal(expected.Length, k);
+    Assert.Equal(expected, nums.Take(k).OrderBy(x => x).ToArray());
+}
+[Fact] public void Example1() => Check(new[] { 3, 2, 2, 3 }, 3);
+[Fact] public void Example2() => Check(new[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2);
+[Fact] public void Empty() => Check(new int[0], 1);
+[Fact] public void AllRemoved() => Check(new[] { 4, 4, 4 }, 4);
+[Fact] public void NoneRemoved() => Check(new[] { 1, 2, 3 }, 9);
+
+@@ 169 | Majority Element | Easy | lc | majority-element | majority-element
+## Solution
+public class Solution
+{
+    public int MajorityElement(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().MajorityElement(new[] { 3, 2, 3 }));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().MajorityElement(new[] { 2, 2, 1, 1, 1, 2, 2 }));
+[Fact] public void Single() => Assert.Equal(-7, new Solution().MajorityElement(new[] { -7 }));
+[Fact] public void MajorityAtEnd() => Assert.Equal(5, new Solution().MajorityElement(new[] { 1, 2, 5, 5, 5 }));
+
+@@ 705 | Design HashSet | Easy | lc | design-hashset | design-hashset
+## Solution
+// Do not use the built-in HashSet / Dictionary.
+public class MyHashSet
+{
+    public MyHashSet()
+    {
+    }
+
+    public void Add(int key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Remove(int key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Contains(int key)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var s = new MyHashSet();
+    s.Add(1);
+    s.Add(2);
+    Assert.True(s.Contains(1));
+    Assert.False(s.Contains(3));
+    s.Add(2);
+    Assert.True(s.Contains(2));
+    s.Remove(2);
+    Assert.False(s.Contains(2));
+}
+[Fact]
+public void ManyKeysAndBounds()
+{
+    var s = new MyHashSet();
+    for (var i = 0; i <= 1_000_000; i += 997) s.Add(i);
+    s.Add(1_000_000);
+    Assert.True(s.Contains(0));
+    Assert.True(s.Contains(1_000_000));
+    Assert.False(s.Contains(1));
+    s.Remove(0);
+    s.Remove(12345); // removing a missing key is a no-op
+    Assert.False(s.Contains(0));
+    Assert.True(s.Contains(997));
+}
+
+@@ 706 | Design HashMap | Easy | lc | design-hashmap | design-hashmap
+## Solution
+// Do not use the built-in Dictionary / Hashtable.
+public class MyHashMap
+{
+    public MyHashMap()
+    {
+    }
+
+    public void Put(int key, int value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Get(int key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Remove(int key)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var m = new MyHashMap();
+    m.Put(1, 1);
+    m.Put(2, 2);
+    Assert.Equal(1, m.Get(1));
+    Assert.Equal(-1, m.Get(3));
+    m.Put(2, 1);
+    Assert.Equal(1, m.Get(2));
+    m.Remove(2);
+    Assert.Equal(-1, m.Get(2));
+}
+[Fact]
+public void CollisionsAndOverwrite()
+{
+    var m = new MyHashMap();
+    for (var i = 0; i < 5000; i++) m.Put(i * 200, i);
+    for (var i = 0; i < 5000; i += 2) m.Remove(i * 200);
+    m.Put(200, 42);
+    Assert.Equal(42, m.Get(200));
+    Assert.Equal(-1, m.Get(0));
+    Assert.Equal(4999, m.Get(999_800));
+    Assert.Equal(-1, m.Get(1_000_000));
+}
+
+@@ 912 | Sort an Array | Medium | lc | sort-an-array | sort-an-array
+## Solution
+// Solve without built-in sort functions, in O(n log n) time.
+public class Solution
+{
+    public int[] SortArray(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 3, 5 }, new Solution().SortArray(new[] { 5, 2, 3, 1 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 0, 0, 1, 1, 2, 5 }, new Solution().SortArray(new[] { 5, 1, 1, 2, 0, 0 }));
+[Fact] public void Negatives() => Assert.Equal(new[] { -5, -1, 0, 3 }, new Solution().SortArray(new[] { 3, -1, 0, -5 }));
+[Fact]
+public void LargeSortedInput()
+{
+    // Already-sorted / all-equal inputs break naive quicksort (O(n^2)).
+    var sorted = Enumerable.Range(0, 50_000).ToArray();
+    Assert.Equal(sorted, new Solution().SortArray((int[])sorted.Clone()));
+    var same = Enumerable.Repeat(2, 50_000).ToArray();
+    Assert.Equal(same, new Solution().SortArray((int[])same.Clone()));
+}
+[Fact]
+public void Random()
+{
+    var rnd = new Random(1);
+    var nums = Enumerable.Range(0, 10_000).Select(_ => rnd.Next(-50_000, 50_001)).ToArray();
+    var expected = nums.OrderBy(x => x).ToArray();
+    Assert.Equal(expected, new Solution().SortArray(nums));
+}
+
+@@ 75 | Sort Colors | Medium | lc | sort-colors | sort-colors
+## Solution
+// Sort in place without the library sort. Follow up: one pass, O(1) space.
+public class Solution
+{
+    public void SortColors(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(params int[] nums) { new Solution().SortColors(nums); return nums; }
+[Fact] public void Example1() => Assert.Equal(new[] { 0, 0, 1, 1, 2, 2 }, Run(2, 0, 2, 1, 1, 0));
+[Fact] public void Example2() => Assert.Equal(new[] { 0, 1, 2 }, Run(2, 0, 1));
+[Fact] public void Single() => Assert.Equal(new[] { 1 }, Run(1));
+[Fact] public void AllTwosThenZeros() => Assert.Equal(new[] { 0, 0, 2, 2 }, Run(2, 2, 0, 0));
+
+@@ 347 | Top K Frequent Elements | Medium | lc | top-k-frequent-elements | top-k-elements-in-list
+## Solution
+public class Solution
+{
+    public int[] TopKFrequent(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameItems(new[] { 1, 2 }, new Solution().TopKFrequent(new[] { 1, 1, 1, 2, 2, 3 }, 2));
+[Fact] public void Example2() => AssertEx.SameItems(new[] { 1 }, new Solution().TopKFrequent(new[] { 1 }, 1));
+[Fact] public void Example3() => AssertEx.SameItems(new[] { 1, 2 }, new Solution().TopKFrequent(new[] { 1, 2, 1, 2, 1, 2, 3, 1, 3, 2 }, 2));
+[Fact] public void Negatives() => AssertEx.SameItems(new[] { -1, 4 }, new Solution().TopKFrequent(new[] { 4, -1, -1, 4, 4, -1, 7 }, 2));
+[Fact] public void KEqualsDistinct() => AssertEx.SameItems(new[] { 1, 2, 3 }, new Solution().TopKFrequent(new[] { 3, 2, 1 }, 3));
+
+@@ 271 | Encode and Decode Strings | Medium | nc | encode-and-decode-strings | string-encode-and-decode
+## Solution
+// NeetCode version: design Encode (list -> single string) and Decode (string -> original list).
+// Strings may contain any of the 256 ASCII characters, including '#', digits and delimiters.
+public class Solution
+{
+    public string Encode(IList<string> strs)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<string> Decode(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void RoundTrip(params string[] input)
+{
+    var sol = new Solution();
+    var encoded = sol.Encode(input.ToList());
+    Assert.IsType<string>(encoded);
+    Assert.Equal(input, new Solution().Decode(encoded));
+}
+[Fact] public void Example1() => RoundTrip("neet", "code", "love", "you");
+[Fact] public void Example2() => RoundTrip("we", "say", ":", "yes");
+[Fact] public void EmptyList() => RoundTrip();
+[Fact] public void EmptyStrings() => RoundTrip("", "", "a", "");
+[Fact] public void TrickyCharacters() => RoundTrip("4#abc", "#", "12#", "a,b;c", "\n\t", "\u0000x");
+[Fact] public void LongString() => RoundTrip(new string('z', 1234), "x");
+
+@@ 304 | Range Sum Query 2D Immutable | Medium | lc | range-sum-query-2d-immutable | range-sum-query-2d-immutable
+## Solution
+public class NumMatrix
+{
+    public NumMatrix(int[][] matrix)
+    {
+    }
+
+    public int SumRegion(int row1, int col1, int row2, int col2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var m = new NumMatrix(new[]
+    {
+        new[] { 3, 0, 1, 4, 2 },
+        new[] { 5, 6, 3, 2, 1 },
+        new[] { 1, 2, 0, 1, 5 },
+        new[] { 4, 1, 0, 1, 7 },
+        new[] { 1, 0, 3, 0, 5 },
+    });
+    Assert.Equal(8, m.SumRegion(2, 1, 4, 3));
+    Assert.Equal(11, m.SumRegion(1, 1, 2, 2));
+    Assert.Equal(12, m.SumRegion(1, 2, 2, 4));
+}
+[Fact]
+public void SingleCellAndWhole()
+{
+    var m = new NumMatrix(new[] { new[] { -1, 2 }, new[] { 3, -4 } });
+    Assert.Equal(-4, m.SumRegion(1, 1, 1, 1));
+    Assert.Equal(0, m.SumRegion(0, 0, 1, 1));
+    Assert.Equal(2, m.SumRegion(0, 0, 1, 0));
+}
+
+@@ 238 | Product of Array Except Self | Medium | lc | product-of-array-except-self | products-of-array-discluding-self
+## Solution
+// O(n) time without using division.
+public class Solution
+{
+    public int[] ProductExceptSelf(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 24, 12, 8, 6 }, new Solution().ProductExceptSelf(new[] { 1, 2, 3, 4 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 0, 0, 9, 0, 0 }, new Solution().ProductExceptSelf(new[] { -1, 1, 0, -3, 3 }));
+[Fact] public void TwoZeros() => Assert.Equal(new[] { 0, 0, 0 }, new Solution().ProductExceptSelf(new[] { 0, 4, 0 }));
+[Fact] public void TwoElements() => Assert.Equal(new[] { 3, 2 }, new Solution().ProductExceptSelf(new[] { 2, 3 }));
+
+@@ 36 | Valid Sudoku | Medium | lc | valid-sudoku | valid-sudoku
+## Solution
+public class Solution
+{
+    public bool IsValidSudoku(char[][] board)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static readonly string[] Valid =
+{
+    "53..7....", "6..195...", ".98....6.", "8...6...3", "4..8.3..1", "7...2...6", ".6....28.", "...419..5", "....8..79",
+};
+[Fact] public void Example1() => Assert.True(new Solution().IsValidSudoku(AssertEx.Board(Valid)));
+[Fact]
+public void Example2_SameBoxDuplicate()
+{
+    var rows = (string[])Valid.Clone();
+    rows[0] = "83..7....";
+    Assert.False(new Solution().IsValidSudoku(AssertEx.Board(rows)));
+}
+[Fact]
+public void RowDuplicate()
+{
+    var rows = (string[])Valid.Clone();
+    rows[0] = "53..7...5";
+    Assert.False(new Solution().IsValidSudoku(AssertEx.Board(rows)));
+}
+[Fact]
+public void ColumnDuplicateInDifferentBoxes()
+{
+    var rows = Enumerable.Repeat(".........", 9).ToArray();
+    rows[0] = "1........";
+    rows[8] = "1........";
+    Assert.False(new Solution().IsValidSudoku(AssertEx.Board(rows)));
+}
+[Fact] public void Empty() => Assert.True(new Solution().IsValidSudoku(AssertEx.Board(Enumerable.Repeat(".........", 9).ToArray())));
+
+@@ 128 | Longest Consecutive Sequence | Medium | lc | longest-consecutive-sequence | longest-consecutive-sequence
+## Solution
+// Must run in O(n) time.
+public class Solution
+{
+    public int LongestConsecutive(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().LongestConsecutive(new[] { 100, 4, 200, 1, 3, 2 }));
+[Fact] public void Example2() => Assert.Equal(9, new Solution().LongestConsecutive(new[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 }));
+[Fact] public void Example3() => Assert.Equal(3, new Solution().LongestConsecutive(new[] { 1, 0, 1, 2 }));
+[Fact] public void Empty() => Assert.Equal(0, new Solution().LongestConsecutive(new int[0]));
+[Fact] public void Negatives() => Assert.Equal(4, new Solution().LongestConsecutive(new[] { -1, -3, -2, 0, 9 }));
+[Fact]
+public void LargeInputIsFast()
+{
+    var nums = Enumerable.Range(0, 100_000).Reverse().ToArray();
+    Assert.Equal(100_000, new Solution().LongestConsecutive(nums));
+}
+
+@@ 122 | Best Time to Buy And Sell Stock II | Medium | lc | best-time-to-buy-and-sell-stock-ii | best-time-to-buy-and-sell-stock-ii
+## Solution
+public class Solution
+{
+    public int MaxProfit(int[] prices)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(7, new Solution().MaxProfit(new[] { 7, 1, 5, 3, 6, 4 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().MaxProfit(new[] { 1, 2, 3, 4, 5 }));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().MaxProfit(new[] { 7, 6, 4, 3, 1 }));
+[Fact] public void Single() => Assert.Equal(0, new Solution().MaxProfit(new[] { 5 }));
+
+@@ 229 | Majority Element II | Medium | lc | majority-element-ii | majority-element-ii
+## Solution
+// Follow up: linear time and O(1) space.
+public class Solution
+{
+    public IList<int> MajorityElement(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameItems(new[] { 3 }, new Solution().MajorityElement(new[] { 3, 2, 3 }));
+[Fact] public void Example2() => AssertEx.SameItems(new[] { 1 }, new Solution().MajorityElement(new[] { 1 }));
+[Fact] public void Example3() => AssertEx.SameItems(new[] { 1, 2 }, new Solution().MajorityElement(new[] { 1, 2 }));
+[Fact] public void None() => AssertEx.SameItems(new int[0], new Solution().MajorityElement(new[] { 1, 2, 3, 4, 5, 6 }));
+[Fact] public void ExactlyOneThirdIsNotEnough() => AssertEx.SameItems(new int[0], new Solution().MajorityElement(new[] { 1, 1, 2, 2, 2, 3, 3, 4, 5 }));
+[Fact] public void JustOverOneThird() => AssertEx.SameItems(new[] { 2 }, new Solution().MajorityElement(new[] { 1, 1, 2, 2, 2, 2, 3, 4, 5 }));
+
+@@ 560 | Subarray Sum Equals K | Medium | lc | subarray-sum-equals-k | subarray-sum-equals-k
+## Solution
+public class Solution
+{
+    public int SubarraySum(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().SubarraySum(new[] { 1, 1, 1 }, 2));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().SubarraySum(new[] { 1, 2, 3 }, 3));
+[Fact] public void Negatives() => Assert.Equal(4, new Solution().SubarraySum(new[] { 1, -1, 1, -1 }, 0));
+[Fact] public void ZeroK() => Assert.Equal(6, new Solution().SubarraySum(new[] { 0, 0, 0 }, 0));
+[Fact] public void NoMatch() => Assert.Equal(0, new Solution().SubarraySum(new[] { 1, 2 }, 4));
+
+@@ 41 | First Missing Positive | Hard | lc | first-missing-positive | first-missing-positive
+## Solution
+// O(n) time and O(1) auxiliary space.
+public class Solution
+{
+    public int FirstMissingPositive(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().FirstMissingPositive(new[] { 1, 2, 0 }));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().FirstMissingPositive(new[] { 3, 4, -1, 1 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().FirstMissingPositive(new[] { 7, 8, 9, 11, 12 }));
+[Fact] public void AllPresent() => Assert.Equal(4, new Solution().FirstMissingPositive(new[] { 3, 1, 2 }));
+[Fact] public void Duplicates() => Assert.Equal(2, new Solution().FirstMissingPositive(new[] { 1, 1, 1 }));
+[Fact] public void Extremes() => Assert.Equal(1, new Solution().FirstMissingPositive(new[] { int.MaxValue, int.MinValue }));

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC126_MatchsticksToSquare</RootNamespace>
+  </PropertyGroup>
+</Project>

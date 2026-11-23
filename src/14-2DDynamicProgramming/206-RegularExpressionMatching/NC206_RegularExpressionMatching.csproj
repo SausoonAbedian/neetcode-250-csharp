@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC206_RegularExpressionMatching</RootNamespace>
+  </PropertyGroup>
+</Project>

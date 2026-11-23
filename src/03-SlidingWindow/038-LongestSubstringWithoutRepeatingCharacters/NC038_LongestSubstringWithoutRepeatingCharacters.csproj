@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC038_LongestSubstringWithoutRepeatingCharacters</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC203_DistinctSubsequences</RootNamespace>
+  </PropertyGroup>
+</Project>

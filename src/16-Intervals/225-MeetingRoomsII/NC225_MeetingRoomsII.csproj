@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC225_MeetingRoomsII</RootNamespace>
+  </PropertyGroup>
+</Project>

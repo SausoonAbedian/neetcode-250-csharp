@@ -1,0 +1,129 @@
+%% 08 | Tries
+
+@@ 208 | Implement Trie Prefix Tree | Medium | lc | implement-trie-prefix-tree | implement-prefix-tree
+## Solution
+public class Trie
+{
+    public Trie()
+    {
+    }
+
+    public void Insert(string word)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Search(string word)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool StartsWith(string prefix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var t = new Trie();
+    t.Insert("apple");
+    Assert.True(t.Search("apple"));
+    Assert.False(t.Search("app"));
+    Assert.True(t.StartsWith("app"));
+    t.Insert("app");
+    Assert.True(t.Search("app"));
+}
+[Fact]
+public void LongerThanStored()
+{
+    var t = new Trie();
+    t.Insert("ab");
+    Assert.False(t.Search("abc"));
+    Assert.False(t.StartsWith("abc"));
+    Assert.True(t.StartsWith("ab"));
+    Assert.False(t.Search("b"));
+}
+
+@@ 211 | Design Add And Search Words Data Structure | Medium | lc | design-add-and-search-words-data-structure | design-word-search-data-structure
+## Solution
+// '.' in a search matches any single letter.
+public class WordDictionary
+{
+    public WordDictionary()
+    {
+    }
+
+    public void AddWord(string word)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Search(string word)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var d = new WordDictionary();
+    d.AddWord("bad");
+    d.AddWord("dad");
+    d.AddWord("mad");
+    Assert.False(d.Search("pad"));
+    Assert.True(d.Search("bad"));
+    Assert.True(d.Search(".ad"));
+    Assert.True(d.Search("b.."));
+}
+[Fact]
+public void DotsAndLengths()
+{
+    var d = new WordDictionary();
+    d.AddWord("a");
+    d.AddWord("ab");
+    Assert.True(d.Search("."));
+    Assert.True(d.Search(".."));
+    Assert.False(d.Search("..."));
+    Assert.False(d.Search(".a"));
+    Assert.True(d.Search("a."));
+}
+
+@@ 2707 | Extra Characters in a String | Medium | lc | extra-characters-in-a-string | extra-characters-in-a-string
+## Solution
+public class Solution
+{
+    public int MinExtraChar(string s, string[] dictionary)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().MinExtraChar("leetscode", new[] { "leet", "code", "leetcode" }));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().MinExtraChar("sayhelloworld", new[] { "hello", "world" }));
+[Fact] public void NoMatches() => Assert.Equal(3, new Solution().MinExtraChar("abc", new[] { "x" }));
+[Fact] public void FullCover() => Assert.Equal(0, new Solution().MinExtraChar("aaa", new[] { "a", "aa" }));
+
+@@ 212 | Word Search II | Hard | lc | word-search-ii | search-for-word-ii
+## Solution
+// Return the words (any order) that can be built from sequentially adjacent cells; a cell is used once per word.
+public class Solution
+{
+    public IList<string> FindWords(char[][] board, string[] words)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var board = AssertEx.Board("oaan", "etae", "ihkr", "iflv");
+    AssertEx.SameItems(new[] { "eat", "oath" }, new Solution().FindWords(board, new[] { "oath", "pea", "eat", "rain" }));
+}
+[Fact] public void Example2() => AssertEx.SameItems(new string[0], new Solution().FindWords(AssertEx.Board("ab", "cd"), new[] { "abcb" }));
+[Fact] public void NoDuplicatesInResult() => AssertEx.SameItems(new[] { "aa" }, new Solution().FindWords(AssertEx.Board("aa", "aa"), new[] { "aa", "aa" }.Distinct().ToArray()));
+[Fact] public void CannotReuseCell() => AssertEx.SameItems(new[] { "a" }, new Solution().FindWords(AssertEx.Board("a"), new[] { "a", "aa" }));
+[Fact] public void PrefixWords() => AssertEx.SameItems(new[] { "ab", "abc" }, new Solution().FindWords(AssertEx.Board("abc"), new[] { "ab", "abc", "abd" }));

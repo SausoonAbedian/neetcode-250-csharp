@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC134_KthLargestElementInAnArray</RootNamespace>
+  </PropertyGroup>
+</Project>

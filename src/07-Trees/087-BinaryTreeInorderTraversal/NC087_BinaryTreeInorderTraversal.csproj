@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC087_BinaryTreeInorderTraversal</RootNamespace>
+  </PropertyGroup>
+</Project>

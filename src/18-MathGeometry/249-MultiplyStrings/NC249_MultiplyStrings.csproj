@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC249_MultiplyStrings</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,244 @@
+%% 18 | Math & Geometry
+
+@@ 168 | Excel Sheet Column Title | Easy | lc | excel-sheet-column-title | excel-sheet-column-title
+## Solution
+public class Solution
+{
+    public string ConvertToTitle(int columnNumber)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("A", new Solution().ConvertToTitle(1));
+[Fact] public void Example2() => Assert.Equal("AB", new Solution().ConvertToTitle(28));
+[Fact] public void Example3() => Assert.Equal("ZY", new Solution().ConvertToTitle(701));
+[Fact] public void Z() => Assert.Equal("Z", new Solution().ConvertToTitle(26));
+[Fact] public void AZ() => Assert.Equal("AZ", new Solution().ConvertToTitle(52));
+[Fact] public void MaxInt() => Assert.Equal("FXSHRXW", new Solution().ConvertToTitle(int.MaxValue));
+
+@@ 1071 | Greatest Common Divisor of Strings | Easy | lc | greatest-common-divisor-of-strings | greatest-common-divisor-of-strings
+## Solution
+public class Solution
+{
+    public string GcdOfStrings(string str1, string str2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("ABC", new Solution().GcdOfStrings("ABCABC", "ABC"));
+[Fact] public void Example2() => Assert.Equal("AB", new Solution().GcdOfStrings("ABABAB", "ABAB"));
+[Fact] public void Example3() => Assert.Equal("", new Solution().GcdOfStrings("LEET", "CODE"));
+[Fact] public void Same() => Assert.Equal("XY", new Solution().GcdOfStrings("XY", "XY"));
+[Fact] public void SameLettersNoDivisor() => Assert.Equal("", new Solution().GcdOfStrings("ABAB", "ABA"));
+
+@@ 2807 | Insert Greatest Common Divisors in Linked List | Medium | lc | insert-greatest-common-divisors-in-linked-list | insert-greatest-common-divisors-in-linked-list
+## Solution
+public class Solution
+{
+    public ListNode InsertGreatestCommonDivisors(ListNode head)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(params int[] v) => ListNode.ToArray(new Solution().InsertGreatestCommonDivisors(ListNode.From(v)));
+[Fact] public void Example1() => Assert.Equal(new[] { 18, 6, 6, 2, 10, 1, 3 }, Run(18, 6, 10, 3));
+[Fact] public void Example2() => Assert.Equal(new[] { 7 }, Run(7));
+[Fact] public void Coprime() => Assert.Equal(new[] { 9, 1, 4 }, Run(9, 4));
+
+@@ 867 | Transpose Matrix | Easy | lc | transpose-matrix | transpose-matrix
+## Solution
+public class Solution
+{
+    public int[][] Transpose(int[][] matrix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.Equal2D(Lc.Grid("[[1,4,7],[2,5,8],[3,6,9]]"), new Solution().Transpose(Lc.Grid("[[1,2,3],[4,5,6],[7,8,9]]")));
+[Fact] public void Example2() => AssertEx.Equal2D(Lc.Grid("[[1,4],[2,5],[3,6]]"), new Solution().Transpose(Lc.Grid("[[1,2,3],[4,5,6]]")));
+[Fact] public void Column() => AssertEx.Equal2D(Lc.Grid("[[1,2,3]]"), new Solution().Transpose(Lc.Grid("[[1],[2],[3]]")));
+
+@@ 48 | Rotate Image | Medium | lc | rotate-image | rotate-matrix
+## Solution
+// Rotate 90 degrees clockwise, in place.
+public class Solution
+{
+    public void Rotate(int[][] matrix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[][] Run(string json) { var m = Lc.Grid(json); new Solution().Rotate(m); return m; }
+[Fact] public void Example1() => AssertEx.Equal2D(Lc.Grid("[[7,4,1],[8,5,2],[9,6,3]]"), Run("[[1,2,3],[4,5,6],[7,8,9]]"));
+[Fact] public void Example2() => AssertEx.Equal2D(Lc.Grid("[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]"), Run("[[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]"));
+[Fact] public void Single() => AssertEx.Equal2D(Lc.Grid("[[1]]"), Run("[[1]]"));
+[Fact] public void TwoByTwo() => AssertEx.Equal2D(Lc.Grid("[[3,1],[4,2]]"), Run("[[1,2],[3,4]]"));
+
+@@ 54 | Spiral Matrix | Medium | lc | spiral-matrix | spiral-matrix
+## Solution
+public class Solution
+{
+    public IList<int> SpiralOrder(int[][] matrix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 3, 6, 9, 8, 7, 4, 5 }, new Solution().SpiralOrder(Lc.Grid("[[1,2,3],[4,5,6],[7,8,9]]")));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 }, new Solution().SpiralOrder(Lc.Grid("[[1,2,3,4],[5,6,7,8],[9,10,11,12]]")));
+[Fact] public void SingleRow() => Assert.Equal(new[] { 1, 2, 3 }, new Solution().SpiralOrder(Lc.Grid("[[1,2,3]]")));
+[Fact] public void SingleColumn() => Assert.Equal(new[] { 1, 2, 3 }, new Solution().SpiralOrder(Lc.Grid("[[1],[2],[3]]")));
+[Fact] public void Tall() => Assert.Equal(new[] { 1, 2, 4, 6, 5, 3 }, new Solution().SpiralOrder(Lc.Grid("[[1,2],[3,4],[5,6]]")));
+
+@@ 73 | Set Matrix Zeroes | Medium | lc | set-matrix-zeroes | set-zeroes-in-matrix
+## Solution
+// In place. Follow up: O(1) extra space.
+public class Solution
+{
+    public void SetZeroes(int[][] matrix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[][] Run(string json) { var m = Lc.Grid(json); new Solution().SetZeroes(m); return m; }
+[Fact] public void Example1() => AssertEx.Equal2D(Lc.Grid("[[1,0,1],[0,0,0],[1,0,1]]"), Run("[[1,1,1],[1,0,1],[1,1,1]]"));
+[Fact] public void Example2() => AssertEx.Equal2D(Lc.Grid("[[0,0,0,0],[0,4,5,0],[0,3,1,0]]"), Run("[[0,1,2,0],[3,4,5,2],[1,3,1,5]]"));
+[Fact] public void FirstRowAndColumnZero() => AssertEx.Equal2D(Lc.Grid("[[0,0],[0,4]]"), Run("[[0,2],[3,4]]"));
+[Fact] public void NoZeros() => AssertEx.Equal2D(Lc.Grid("[[1,2],[3,4]]"), Run("[[1,2],[3,4]]"));
+
+@@ 202 | Happy Number | Easy | lc | happy-number | non-cyclical-number
+## Solution
+public class Solution
+{
+    public bool IsHappy(int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsHappy(19));
+[Fact] public void Example2() => Assert.False(new Solution().IsHappy(2));
+[Fact] public void One() => Assert.True(new Solution().IsHappy(1));
+[Fact] public void Seven() => Assert.True(new Solution().IsHappy(7));
+[Fact] public void Four() => Assert.False(new Solution().IsHappy(4));
+
+@@ 66 | Plus One | Easy | lc | plus-one | plus-one
+## Solution
+public class Solution
+{
+    public int[] PlusOne(int[] digits)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 4 }, new Solution().PlusOne(new[] { 1, 2, 3 }));
+[Fact] public void Example2() => Assert.Equal(new[] { 4, 3, 2, 2 }, new Solution().PlusOne(new[] { 4, 3, 2, 1 }));
+[Fact] public void Example3() => Assert.Equal(new[] { 1, 0 }, new Solution().PlusOne(new[] { 9 }));
+[Fact] public void AllNines() => Assert.Equal(new[] { 1, 0, 0, 0 }, new Solution().PlusOne(new[] { 9, 9, 9 }));
+[Fact] public void LongerThanLong() => Assert.Equal(Enumerable.Repeat(1, 30).Append(2).ToArray(),new Solution().PlusOne(Enumerable.Repeat(1, 31).ToArray()));
+
+@@ 13 | Roman to Integer | Easy | lc | roman-to-integer | roman-to-integer
+## Solution
+public class Solution
+{
+    public int RomanToInt(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().RomanToInt("III"));
+[Fact] public void Example2() => Assert.Equal(58, new Solution().RomanToInt("LVIII"));
+[Fact] public void Example3() => Assert.Equal(1994, new Solution().RomanToInt("MCMXCIV"));
+[Fact] public void Max() => Assert.Equal(3999, new Solution().RomanToInt("MMMCMXCIX"));
+[Fact] public void Four() => Assert.Equal(4, new Solution().RomanToInt("IV"));
+
+@@ 50 | Pow(x, n) | Medium | lc | powx-n | pow-x-n
+## Solution
+// Do not use Math.Pow. Aim for O(log n).
+public class Solution
+{
+    public double MyPow(double x, int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1024.0, new Solution().MyPow(2.0, 10), 5);
+[Fact] public void Example2() => Assert.Equal(9.261, new Solution().MyPow(2.1, 3), 5);
+[Fact] public void Example3() => Assert.Equal(0.25, new Solution().MyPow(2.0, -2), 5);
+[Fact] public void ZeroExponent() => Assert.Equal(1.0, new Solution().MyPow(5.5, 0), 5);
+[Fact] public void MinIntExponent() => Assert.Equal(1.0, new Solution().MyPow(1.0, int.MinValue), 5);
+[Fact] public void MinIntExponentNegativeOne() => Assert.Equal(1.0, new Solution().MyPow(-1.0, int.MinValue), 5);
+[Fact] public void HugeExponentIsFast() => Assert.Equal(0.0, new Solution().MyPow(0.5, int.MaxValue), 5);
+
+@@ 43 | Multiply Strings | Medium | lc | multiply-strings | multiply-strings
+## Solution
+// Do not use BigInteger or convert the inputs to integers directly.
+public class Solution
+{
+    public string Multiply(string num1, string num2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("6", new Solution().Multiply("2", "3"));
+[Fact] public void Example2() => Assert.Equal("56088", new Solution().Multiply("123", "456"));
+[Fact] public void Zero() => Assert.Equal("0", new Solution().Multiply("9133", "0"));
+[Fact] public void Carry() => Assert.Equal("998001", new Solution().Multiply("999", "999"));
+[Fact] public void Big() => Assert.Equal("121932631112635269", new Solution().Multiply("123456789", "987654321"));
+
+@@ 2013 | Detect Squares | Medium | lc | detect-squares | count-squares
+## Solution
+// Count axis-aligned squares with positive area formed by the query point and three stored points.
+// Duplicate stored points count separately.
+public class DetectSquares
+{
+    public DetectSquares()
+    {
+    }
+
+    public void Add(int[] point)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int Count(int[] point)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1()
+{
+    var d = new DetectSquares();
+    d.Add(new[] { 3, 10 });
+    d.Add(new[] { 11, 2 });
+    d.Add(new[] { 3, 2 });
+    Assert.Equal(1, d.Count(new[] { 11, 10 }));
+    Assert.Equal(0, d.Count(new[] { 14, 8 }));
+    d.Add(new[] { 11, 2 });
+    Assert.Equal(2, d.Count(new[] { 11, 10 }));
+}
+[Fact]
+public void BothDirectionsAndNoZeroArea()
+{
+    var d = new DetectSquares();
+    d.Add(new[] { 0, 0 });
+    d.Add(new[] { 0, 1 });
+    d.Add(new[] { 1, 0 });
+    d.Add(new[] { 2, 0 });
+    d.Add(new[] { 2, 1 });
+    Assert.Equal(2, d.Count(new[] { 1, 1 })); // square to the left and to the right
+    d.Add(new[] { 5, 5 });
+    Assert.Equal(0, d.Count(new[] { 5, 5 })); // same point, zero area
+}

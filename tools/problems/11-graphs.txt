@@ -1,0 +1,459 @@
+%% 11 | Graphs
+
+@@ 463 | Island Perimeter | Easy | lc | island-perimeter | island-perimeter
+## Solution
+public class Solution
+{
+    public int IslandPerimeter(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(16, new Solution().IslandPerimeter(Lc.Grid("[[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]")));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().IslandPerimeter(Lc.Grid("[[1]]")));
+[Fact] public void Example3() => Assert.Equal(4, new Solution().IslandPerimeter(Lc.Grid("[[1,0]]")));
+[Fact] public void Block() => Assert.Equal(8, new Solution().IslandPerimeter(Lc.Grid("[[1,1],[1,1]]")));
+
+@@ 953 | Verifying An Alien Dictionary | Easy | lc | verifying-an-alien-dictionary | verifying-an-alien-dictionary
+## Solution
+public class Solution
+{
+    public bool IsAlienSorted(string[] words, string order)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsAlienSorted(new[] { "hello", "leetcode" }, "hlabcdefgijkmnopqrstuvwxyz"));
+[Fact] public void Example2() => Assert.False(new Solution().IsAlienSorted(new[] { "word", "world", "row" }, "worldabcefghijkmnpqstuvxyz"));
+[Fact] public void Example3() => Assert.False(new Solution().IsAlienSorted(new[] { "apple", "app" }, "abcdefghijklmnopqrstuvwxyz"));
+[Fact] public void PrefixFirstIsFine() => Assert.True(new Solution().IsAlienSorted(new[] { "app", "apple", "apple" }, "abcdefghijklmnopqrstuvwxyz"));
+[Fact] public void Single() => Assert.True(new Solution().IsAlienSorted(new[] { "z" }, "zyxwvutsrqponmlkjihgfedcba"));
+
+@@ 997 | Find the Town Judge | Easy | lc | find-the-town-judge | find-the-town-judge
+## Solution
+// trust[i] = [a, b] means person a trusts person b. People are labeled 1..n.
+public class Solution
+{
+    public int FindJudge(int n, int[][] trust)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().FindJudge(2, Lc.Grid("[[1,2]]")));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().FindJudge(3, Lc.Grid("[[1,3],[2,3]]")));
+[Fact] public void Example3() => Assert.Equal(-1, new Solution().FindJudge(3, Lc.Grid("[[1,3],[2,3],[3,1]]")));
+[Fact] public void AloneIsJudge() => Assert.Equal(1, new Solution().FindJudge(1, Lc.Grid("[]")));
+[Fact] public void NotTrustedByAll() => Assert.Equal(-1, new Solution().FindJudge(3, Lc.Grid("[[1,2]]")));
+
+@@ 200 | Number of Islands | Medium | lc | number-of-islands | count-number-of-islands
+## Solution
+public class Solution
+{
+    public int NumIslands(char[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().NumIslands(AssertEx.Board("11110", "11010", "11000", "00000")));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().NumIslands(AssertEx.Board("11000", "11000", "00100", "00011")));
+[Fact] public void DiagonalsDoNotConnect() => Assert.Equal(2, new Solution().NumIslands(AssertEx.Board("10", "01")));
+[Fact] public void Water() => Assert.Equal(0, new Solution().NumIslands(AssertEx.Board("000")));
+[Fact] public void Snake() => Assert.Equal(1, new Solution().NumIslands(AssertEx.Board("111", "001", "111", "100", "111")));
+
+@@ 695 | Max Area of Island | Medium | lc | max-area-of-island | max-area-of-island
+## Solution
+public class Solution
+{
+    public int MaxAreaOfIsland(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1() => Assert.Equal(6, new Solution().MaxAreaOfIsland(Lc.Grid(
+    "[[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]")));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().MaxAreaOfIsland(Lc.Grid("[[0,0,0,0,0,0,0,0]]")));
+[Fact] public void Full() => Assert.Equal(4, new Solution().MaxAreaOfIsland(Lc.Grid("[[1,1],[1,1]]")));
+
+@@ 133 | Clone Graph | Medium | lc | clone-graph | clone-graph
+## Solution
+// Definition for a Node (provided, do not edit).
+public class Node
+{
+    public int val;
+    public IList<Node> neighbors;
+
+    public Node()
+    {
+        val = 0;
+        neighbors = new List<Node>();
+    }
+
+    public Node(int _val)
+    {
+        val = _val;
+        neighbors = new List<Node>();
+    }
+
+    public Node(int _val, List<Node> _neighbors)
+    {
+        val = _val;
+        neighbors = _neighbors;
+    }
+}
+
+public class Solution
+{
+    public Node CloneGraph(Node node)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+// adjList[i] = neighbors of node (i + 1)
+private static Node Build(int[][] adj)
+{
+    if (adj.Length == 0) return null;
+    var nodes = Enumerable.Range(1, adj.Length).Select(i => new Node(i)).ToArray();
+    for (var i = 0; i < adj.Length; i++)
+        foreach (var n in adj[i]) nodes[i].neighbors.Add(nodes[n - 1]);
+    return nodes[0];
+}
+private static void Check(string json)
+{
+    var adj = Lc.Grid(json);
+    var original = Build(adj);
+    var originals = new HashSet<Node>();
+    void Collect(Node n) { if (n == null || !originals.Add(n)) return; foreach (var x in n.neighbors) Collect(x); }
+    Collect(original);
+    var clone = new Solution().CloneGraph(original);
+    if (adj.Length == 0) { Assert.Null(clone); return; }
+    var seen = new Dictionary<int, Node>();
+    var stack = new Stack<Node>();
+    stack.Push(clone);
+    while (stack.Count > 0)
+    {
+        var n = stack.Pop();
+        if (seen.ContainsKey(n.val)) { Assert.Same(seen[n.val], n); continue; }
+        Assert.DoesNotContain(n, originals);
+        seen[n.val] = n;
+        Assert.Equal(adj[n.val - 1], n.neighbors.Select(x => x.val).ToArray());
+        foreach (var x in n.neighbors) stack.Push(x);
+    }
+    Assert.Equal(adj.Length, seen.Count);
+}
+[Fact] public void Example1() => Check("[[2,4],[1,3],[2,4],[1,3]]");
+[Fact] public void Example2() => Check("[[]]");
+[Fact] public void Example3() => Check("[]");
+[Fact] public void Line() => Check("[[2],[1,3],[2]]");
+
+@@ 286 | Walls And Gates | Medium | nc | walls-and-gates | islands-and-treasure
+## Solution
+// NeetCode version ("Islands and Treasure"):
+//   -1 = water (blocked), 0 = treasure chest, 2147483647 (int.MaxValue) = land.
+// Fill each land cell, in place, with the distance to its nearest treasure chest.
+// Land cells that cannot reach any treasure keep int.MaxValue.
+public class Solution
+{
+    public void IslandsAndTreasure(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private const int INF = int.MaxValue;
+private static int[][] Run(int[][] g) { new Solution().IslandsAndTreasure(g); return g; }
+[Fact]
+public void Example1()
+{
+    var g = new[]
+    {
+        new[] { INF, -1, 0, INF },
+        new[] { INF, INF, INF, -1 },
+        new[] { INF, -1, INF, -1 },
+        new[] { 0, -1, INF, INF },
+    };
+    AssertEx.Equal2D(Lc.Grid("[[3,-1,0,1],[2,2,1,-1],[1,-1,2,-1],[0,-1,3,4]]"), Run(g));
+}
+[Fact]
+public void Example2()
+{
+    var g = new[] { new[] { 0, -1 }, new[] { INF, INF } };
+    AssertEx.Equal2D(Lc.Grid("[[0,-1],[1,2]]"), Run(g));
+}
+[Fact]
+public void Unreachable()
+{
+    var g = new[] { new[] { 0, -1, INF } };
+    AssertEx.Equal2D(new[] { new[] { 0, -1, INF } }, Run(g));
+}
+
+@@ 994 | Rotting Oranges | Medium | lc | rotting-oranges | rotting-fruit
+## Solution
+public class Solution
+{
+    public int OrangesRotting(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().OrangesRotting(Lc.Grid("[[2,1,1],[1,1,0],[0,1,1]]")));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().OrangesRotting(Lc.Grid("[[2,1,1],[0,1,1],[1,0,1]]")));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().OrangesRotting(Lc.Grid("[[0,2]]")));
+[Fact] public void NoOranges() => Assert.Equal(0, new Solution().OrangesRotting(Lc.Grid("[[0]]")));
+[Fact] public void MultipleSources() => Assert.Equal(2, new Solution().OrangesRotting(Lc.Grid("[[2,1,1,1,2]]")));
+[Fact] public void FreshButNoRotten() => Assert.Equal(-1, new Solution().OrangesRotting(Lc.Grid("[[1]]")));
+
+@@ 417 | Pacific Atlantic Water Flow | Medium | lc | pacific-atlantic-water-flow | pacific-atlantic-water-flow
+## Solution
+// Return the [row, col] cells (any order) from which water can reach both oceans.
+public class Solution
+{
+    public IList<IList<int>> PacificAtlantic(int[][] heights)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1() => AssertEx.SameGroups(
+    Lc.Grid("[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]"),
+    new Solution().PacificAtlantic(Lc.Grid("[[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]")), innerOrderMatters: true);
+[Fact] public void Example2() => AssertEx.SameGroups(Lc.Grid("[[0,0]]"), new Solution().PacificAtlantic(Lc.Grid("[[1]]")), innerOrderMatters: true);
+[Fact] public void Flat() => AssertEx.SameGroups(Lc.Grid("[[0,0],[0,1],[1,0],[1,1]]"), new Solution().PacificAtlantic(Lc.Grid("[[3,3],[3,3]]")), innerOrderMatters: true);
+
+@@ 130 | Surrounded Regions | Medium | lc | surrounded-regions | surrounded-regions
+## Solution
+// Capture (flip to 'X') every 'O' region that does not touch the border. Modify board in place.
+public class Solution
+{
+    public void Solve(char[][] board)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static string[] Run(params string[] rows) { var b = AssertEx.Board(rows); new Solution().Solve(b); return AssertEx.Rows(b); }
+[Fact] public void Example1() => Assert.Equal(new[] { "XXXX", "XXXX", "XXXX", "XOXX" }, Run("XXXX", "XOOX", "XXOX", "XOXX"));
+[Fact] public void Example2() => Assert.Equal(new[] { "X" }, Run("X"));
+[Fact] public void ConnectedToBorder() => Assert.Equal(new[] { "XOX", "XOX", "XXX" }, Run("XOX", "XOX", "XXX"));
+[Fact] public void AllO() => Assert.Equal(new[] { "OOO", "OOO", "OOO" }, Run("OOO", "OOO", "OOO"));
+
+@@ 752 | Open The Lock | Medium | lc | open-the-lock | open-the-lock
+## Solution
+public class Solution
+{
+    public int OpenLock(string[] deadends, string target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution().OpenLock(new[] { "0201", "0101", "0102", "1212", "2002" }, "0202"));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().OpenLock(new[] { "8888" }, "0009"));
+[Fact] public void Example3() => Assert.Equal(-1, new Solution().OpenLock(new[] { "8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888" }, "8888"));
+[Fact] public void StartIsDead() => Assert.Equal(-1, new Solution().OpenLock(new[] { "0000" }, "8888"));
+[Fact] public void AlreadyThere() => Assert.Equal(0, new Solution().OpenLock(new string[0], "0000"));
+
+@@ 207 | Course Schedule | Medium | lc | course-schedule | course-schedule
+## Solution
+// prerequisites[i] = [a, b] means you must take b before a.
+public class Solution
+{
+    public bool CanFinish(int numCourses, int[][] prerequisites)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CanFinish(2, Lc.Grid("[[1,0]]")));
+[Fact] public void Example2() => Assert.False(new Solution().CanFinish(2, Lc.Grid("[[1,0],[0,1]]")));
+[Fact] public void NoPrereqs() => Assert.True(new Solution().CanFinish(3, Lc.Grid("[]")));
+[Fact] public void LongerCycle() => Assert.False(new Solution().CanFinish(4, Lc.Grid("[[1,0],[2,1],[3,2],[1,3]]")));
+[Fact] public void Diamond() => Assert.True(new Solution().CanFinish(4, Lc.Grid("[[1,0],[2,0],[3,1],[3,2]]")));
+[Fact] public void SelfLoop() => Assert.False(new Solution().CanFinish(1, Lc.Grid("[[0,0]]")));
+
+@@ 210 | Course Schedule II | Medium | lc | course-schedule-ii | course-schedule-ii
+## Solution
+// Return any valid order, or an empty array if impossible.
+public class Solution
+{
+    public int[] FindOrder(int numCourses, int[][] prerequisites)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void CheckValid(int n, string json)
+{
+    var pre = Lc.Grid(json);
+    var order = new Solution().FindOrder(n, pre);
+    Assert.Equal(Enumerable.Range(0, n), order.OrderBy(x => x));
+    var pos = new int[n];
+    for (var i = 0; i < n; i++) pos[order[i]] = i;
+    foreach (var p in pre) Assert.True(pos[p[1]] < pos[p[0]], $"{p[1]} must come before {p[0]}");
+}
+[Fact] public void Example1() => CheckValid(2, "[[1,0]]");
+[Fact] public void Example2() => CheckValid(4, "[[1,0],[2,0],[3,1],[3,2]]");
+[Fact] public void Example3() => CheckValid(1, "[]");
+[Fact] public void Cycle() => Assert.Empty(new Solution().FindOrder(3, Lc.Grid("[[0,1],[1,2],[2,0]]")));
+
+@@ 261 | Graph Valid Tree | Medium | nc | graph-valid-tree | valid-tree
+## Solution
+// NeetCode version: nodes 0..n-1, undirected edges. Is it a valid tree (connected and acyclic)?
+public class Solution
+{
+    public bool ValidTree(int n, int[][] edges)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().ValidTree(5, Lc.Grid("[[0,1],[0,2],[0,3],[1,4]]")));
+[Fact] public void Example2() => Assert.False(new Solution().ValidTree(5, Lc.Grid("[[0,1],[1,2],[2,3],[1,3],[1,4]]")));
+[Fact] public void Disconnected() => Assert.False(new Solution().ValidTree(4, Lc.Grid("[[0,1],[2,3]]")));
+[Fact] public void SingleNode() => Assert.True(new Solution().ValidTree(1, Lc.Grid("[]")));
+[Fact] public void RightEdgeCountButCycle() => Assert.False(new Solution().ValidTree(4, Lc.Grid("[[0,1],[1,2],[2,0]]")));
+
+@@ 1462 | Course Schedule IV | Medium | lc | course-schedule-iv | course-schedule-iv
+## Solution
+// prerequisites[i] = [a, b] means a must be taken before b. queries[j] = [u, v]: is u a prerequisite of v?
+public class Solution
+{
+    public IList<bool> CheckIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { false, true }, new Solution().CheckIfPrerequisite(2, Lc.Grid("[[1,0]]"), Lc.Grid("[[0,1],[1,0]]")));
+[Fact] public void Example2() => Assert.Equal(new[] { false, false }, new Solution().CheckIfPrerequisite(2, Lc.Grid("[]"), Lc.Grid("[[1,0],[0,1]]")));
+[Fact] public void Example3() => Assert.Equal(new[] { true, true }, new Solution().CheckIfPrerequisite(3, Lc.Grid("[[1,2],[1,0],[2,0]]"), Lc.Grid("[[1,0],[1,2]]")));
+[Fact] public void Transitive() => Assert.Equal(new[] { true, false, true }, new Solution().CheckIfPrerequisite(4, Lc.Grid("[[0,1],[1,2],[2,3]]"), Lc.Grid("[[0,3],[3,0],[1,3]]")));
+
+@@ 323 | Number of Connected Components In An Undirected Graph | Medium | nc | number-of-connected-components-in-an-undirected-graph | count-connected-components
+## Solution
+// NeetCode version: nodes 0..n-1, undirected edges. Return the number of connected components.
+public class Solution
+{
+    public int CountComponents(int n, int[][] edges)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().CountComponents(5, Lc.Grid("[[0,1],[1,2],[3,4]]")));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().CountComponents(5, Lc.Grid("[[0,1],[1,2],[2,3],[3,4]]")));
+[Fact] public void NoEdges() => Assert.Equal(4, new Solution().CountComponents(4, Lc.Grid("[]")));
+[Fact] public void WithCycle() => Assert.Equal(2, new Solution().CountComponents(4, Lc.Grid("[[0,1],[1,2],[2,0]]")));
+
+@@ 684 | Redundant Connection | Medium | lc | redundant-connection | redundant-connection
+## Solution
+// Nodes are 1..n. If several answers exist, return the edge that occurs last in the input.
+public class Solution
+{
+    public int[] FindRedundantConnection(int[][] edges)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 2, 3 }, new Solution().FindRedundantConnection(Lc.Grid("[[1,2],[1,3],[2,3]]")));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 4 }, new Solution().FindRedundantConnection(Lc.Grid("[[1,2],[2,3],[3,4],[1,4],[1,5]]")));
+[Fact] public void CycleNotAtStart() => Assert.Equal(new[] { 4, 2 }, new Solution().FindRedundantConnection(Lc.Grid("[[1,2],[2,3],[3,4],[4,2],[1,5]]")));
+
+@@ 721 | Accounts Merge | Medium | lc | accounts-merge | accounts-merge
+## Solution
+// Each merged account: name first, then the emails in sorted (ordinal) order. Accounts in any order.
+public class Solution
+{
+    public IList<IList<string>> AccountsMerge(IList<IList<string>> accounts)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1() => AssertEx.SameGroups(
+    Lc.Strings2D("""[["John","john00@mail.com","john_newyork@mail.com","johnsmith@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]]"""),
+    new Solution().AccountsMerge(Lc.Strings2D("""[["John","johnsmith@mail.com","john_newyork@mail.com"],["John","johnsmith@mail.com","john00@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]]""")),
+    innerOrderMatters: true);
+[Fact]
+public void Example2() => AssertEx.SameGroups(
+    Lc.Strings2D("""[["Ethan","Ethan0@m.co","Ethan4@m.co","Ethan5@m.co"],["Gabe","Gabe0@m.co","Gabe1@m.co","Gabe3@m.co"],["Hanzo","Hanzo0@m.co","Hanzo1@m.co","Hanzo3@m.co"],["Kevin","Kevin0@m.co","Kevin3@m.co","Kevin5@m.co"],["Fern","Fern0@m.co","Fern1@m.co","Fern5@m.co"]]"""),
+    new Solution().AccountsMerge(Lc.Strings2D("""[["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe1@m.co"],["Kevin","Kevin3@m.co","Kevin5@m.co","Kevin0@m.co"],["Ethan","Ethan5@m.co","Ethan4@m.co","Ethan0@m.co"],["Hanzo","Hanzo3@m.co","Hanzo1@m.co","Hanzo0@m.co"],["Fern","Fern5@m.co","Fern1@m.co","Fern0@m.co"]]""")),
+    innerOrderMatters: true);
+[Fact]
+public void ChainMerge() => AssertEx.SameGroups(
+    Lc.Strings2D("""[["A","a@x","b@x","c@x"]]"""),
+    new Solution().AccountsMerge(Lc.Strings2D("""[["A","a@x"],["A","c@x"],["A","b@x","c@x"],["A","a@x","b@x"]]""")),
+    innerOrderMatters: true);
+
+@@ 399 | Evaluate Division | Medium | lc | evaluate-division | evaluate-division
+## Solution
+// Return -1.0 for queries that cannot be determined (including unknown variables).
+public class Solution
+{
+    public double[] CalcEquation(IList<IList<string>> equations, double[] values, IList<IList<string>> queries)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(string eq, double[] values, string q, double[] expected)
+{
+    var r = new Solution().CalcEquation(Lc.Strings2D(eq), values, Lc.Strings2D(q));
+    Assert.Equal(expected.Length, r.Length);
+    for (var i = 0; i < r.Length; i++) Assert.Equal(expected[i], r[i], 5);
+}
+[Fact]
+public void Example1() => Check("""[["a","b"],["b","c"]]""", new[] { 2.0, 3.0 },
+    """[["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]""", new[] { 6.0, 0.5, -1.0, 1.0, -1.0 });
+[Fact]
+public void Example2() => Check("""[["a","b"],["b","c"],["bc","cd"]]""", new[] { 1.5, 2.5, 5.0 },
+    """[["a","c"],["c","b"],["bc","cd"],["cd","bc"]]""", new[] { 3.75, 0.4, 5.0, 0.2 });
+[Fact]
+public void Example3() => Check("""[["a","b"]]""", new[] { 0.5 },
+    """[["a","b"],["b","a"],["a","c"],["x","y"]]""", new[] { 0.5, 2.0, -1.0, -1.0 });
+[Fact]
+public void DisconnectedComponents() => Check("""[["a","b"],["c","d"]]""", new[] { 2.0, 3.0 },
+    """[["a","d"],["d","c"]]""", new[] { -1.0, 1.0 / 3.0 });
+
+@@ 310 | Minimum Height Trees | Medium | lc | minimum-height-trees | minimum-height-trees
+## Solution
+// Return all MHT root labels (any order).
+public class Solution
+{
+    public IList<int> FindMinHeightTrees(int n, int[][] edges)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameItems(new[] { 1 }, new Solution().FindMinHeightTrees(4, Lc.Grid("[[1,0],[1,2],[1,3]]")));
+[Fact] public void Example2() => AssertEx.SameItems(new[] { 3, 4 }, new Solution().FindMinHeightTrees(6, Lc.Grid("[[3,0],[3,1],[3,2],[3,4],[5,4]]")));
+[Fact] public void SingleNode() => AssertEx.SameItems(new[] { 0 }, new Solution().FindMinHeightTrees(1, Lc.Grid("[]")));
+[Fact] public void TwoNodes() => AssertEx.SameItems(new[] { 0, 1 }, new Solution().FindMinHeightTrees(2, Lc.Grid("[[0,1]]")));
+[Fact] public void Path() => AssertEx.SameItems(new[] { 2 }, new Solution().FindMinHeightTrees(5, Lc.Grid("[[0,1],[1,2],[2,3],[3,4]]")));
+
+@@ 127 | Word Ladder | Hard | lc | word-ladder | word-ladder
+## Solution
+// Return the number of WORDS in the shortest transformation sequence, or 0 if none.
+public class Solution
+{
+    public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().LadderLength("hit", "cog", new[] { "hot", "dot", "dog", "lot", "log", "cog" }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().LadderLength("hit", "cog", new[] { "hot", "dot", "dog", "lot", "log" }));
+[Fact] public void OneStep() => Assert.Equal(2, new Solution().LadderLength("a", "c", new[] { "a", "b", "c" }));
+[Fact] public void EndNotReachable() => Assert.Equal(0, new Solution().LadderLength("abc", "xyz", new[] { "xyz" }));

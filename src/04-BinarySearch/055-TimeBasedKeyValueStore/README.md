@@ -1,0 +1,16 @@
+# 055. Time Based Key Value Store
+
+| | |
+|---|---|
+| Topic | Binary Search |
+| Difficulty | Medium |
+| LeetCode # | 981 |
+| Solve on | LeetCode |
+| Problem | <https://leetcode.com/problems/time-based-key-value-store/> |
+| NeetCode | <https://neetcode.io/problems/time-based-key-value-store/question> |
+
+Read the statement at the link above, write your answer in `Solution.cs` and run:
+
+```powershell
+.\check.ps1 55
+```

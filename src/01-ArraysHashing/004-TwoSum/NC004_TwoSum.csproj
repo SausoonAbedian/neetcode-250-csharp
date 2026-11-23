@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC004_TwoSum</RootNamespace>
+  </PropertyGroup>
+</Project>

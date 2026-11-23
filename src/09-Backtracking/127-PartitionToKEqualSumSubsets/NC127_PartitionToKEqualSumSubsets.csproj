@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC127_PartitionToKEqualSumSubsets</RootNamespace>
+  </PropertyGroup>
+</Project>

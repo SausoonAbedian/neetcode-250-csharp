@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC023_ReverseString</RootNamespace>
+  </PropertyGroup>
+</Project>

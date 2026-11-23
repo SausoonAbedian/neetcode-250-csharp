@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC013_TopKFrequentElements</RootNamespace>
+  </PropertyGroup>
+</Project>

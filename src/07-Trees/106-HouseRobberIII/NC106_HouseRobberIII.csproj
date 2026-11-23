@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC106_HouseRobberIII</RootNamespace>
+  </PropertyGroup>
+</Project>

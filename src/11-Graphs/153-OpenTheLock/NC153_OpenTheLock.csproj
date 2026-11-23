@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC153_OpenTheLock</RootNamespace>
+  </PropertyGroup>
+</Project>

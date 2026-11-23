@@ -1,0 +1,152 @@
+%% 03 | Sliding Window
+
+@@ 219 | Contains Duplicate II | Easy | lc | contains-duplicate-ii | contains-duplicate-ii
+## Solution
+public class Solution
+{
+    public bool ContainsNearbyDuplicate(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().ContainsNearbyDuplicate(new[] { 1, 2, 3, 1 }, 3));
+[Fact] public void Example2() => Assert.True(new Solution().ContainsNearbyDuplicate(new[] { 1, 0, 1, 1 }, 1));
+[Fact] public void Example3() => Assert.False(new Solution().ContainsNearbyDuplicate(new[] { 1, 2, 3, 1, 2, 3 }, 2));
+[Fact] public void KZero() => Assert.False(new Solution().ContainsNearbyDuplicate(new[] { 1, 1 }, 0));
+
+@@ 121 | Best Time to Buy And Sell Stock | Easy | lc | best-time-to-buy-and-sell-stock | buy-and-sell-crypto
+## Solution
+public class Solution
+{
+    public int MaxProfit(int[] prices)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().MaxProfit(new[] { 7, 1, 5, 3, 6, 4 }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().MaxProfit(new[] { 7, 6, 4, 3, 1 }));
+[Fact] public void Single() => Assert.Equal(0, new Solution().MaxProfit(new[] { 1 }));
+[Fact] public void LaterLowerMin() => Assert.Equal(7, new Solution().MaxProfit(new[] { 3, 8, 1, 2, 4, 8 }));
+
+@@ 3 | Longest Substring Without Repeating Characters | Medium | lc | longest-substring-without-repeating-characters | longest-substring-without-duplicates
+## Solution
+public class Solution
+{
+    public int LengthOfLongestSubstring(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().LengthOfLongestSubstring("abcabcbb"));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().LengthOfLongestSubstring("bbbbb"));
+[Fact] public void Example3() => Assert.Equal(3, new Solution().LengthOfLongestSubstring("pwwkew"));
+[Fact] public void Empty() => Assert.Equal(0, new Solution().LengthOfLongestSubstring(""));
+[Fact] public void SpaceAndSymbols() => Assert.Equal(3, new Solution().LengthOfLongestSubstring("a ba"));
+[Fact] public void LeftMustNotMoveBack() => Assert.Equal(2, new Solution().LengthOfLongestSubstring("abba"));
+[Fact] public void Dvdf() => Assert.Equal(3, new Solution().LengthOfLongestSubstring("dvdf"));
+
+@@ 424 | Longest Repeating Character Replacement | Medium | lc | longest-repeating-character-replacement | longest-repeating-substring-with-replacement
+## Solution
+public class Solution
+{
+    public int CharacterReplacement(string s, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().CharacterReplacement("ABAB", 2));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().CharacterReplacement("AABABBA", 1));
+[Fact] public void KZero() => Assert.Equal(3, new Solution().CharacterReplacement("ABBBA", 0));
+[Fact] public void KCoversAll() => Assert.Equal(3, new Solution().CharacterReplacement("ABC", 5));
+
+@@ 567 | Permutation In String | Medium | lc | permutation-in-string | permutation-string
+## Solution
+public class Solution
+{
+    public bool CheckInclusion(string s1, string s2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CheckInclusion("ab", "eidbaooo"));
+[Fact] public void Example2() => Assert.False(new Solution().CheckInclusion("ab", "eidboaoo"));
+[Fact] public void S1Longer() => Assert.False(new Solution().CheckInclusion("abc", "ab"));
+[Fact] public void AtEnd() => Assert.True(new Solution().CheckInclusion("adc", "dcda"));
+[Fact] public void RepeatedLetters() => Assert.False(new Solution().CheckInclusion("aab", "abbab"));
+
+@@ 209 | Minimum Size Subarray Sum | Medium | lc | minimum-size-subarray-sum | minimum-size-subarray-sum
+## Solution
+public class Solution
+{
+    public int MinSubArrayLen(int target, int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().MinSubArrayLen(7, new[] { 2, 3, 1, 2, 4, 3 }));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().MinSubArrayLen(4, new[] { 1, 4, 4 }));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().MinSubArrayLen(11, new[] { 1, 1, 1, 1, 1, 1, 1, 1 }));
+[Fact] public void WholeArray() => Assert.Equal(3, new Solution().MinSubArrayLen(6, new[] { 1, 2, 3 }));
+
+@@ 658 | Find K Closest Elements | Medium | lc | find-k-closest-elements | find-k-closest-elements
+## Solution
+// Result must be sorted ascending. Ties prefer the smaller element.
+public class Solution
+{
+    public IList<int> FindClosestElements(int[] arr, int k, int x)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 3, 4 }, new Solution().FindClosestElements(new[] { 1, 2, 3, 4, 5 }, 4, 3));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 1, 2, 3 }, new Solution().FindClosestElements(new[] { 1, 1, 2, 3, 4, 5 }, 4, -1));
+[Fact] public void XAboveAll() => Assert.Equal(new[] { 4, 5 }, new Solution().FindClosestElements(new[] { 1, 2, 3, 4, 5 }, 2, 10));
+[Fact] public void TiePrefersSmaller() => Assert.Equal(new[] { 1 }, new Solution().FindClosestElements(new[] { 1, 3 }, 1, 2));
+[Fact] public void Duplicates() => Assert.Equal(new[] { 0, 1, 1, 1 }, new Solution().FindClosestElements(new[] { 0, 1, 1, 1, 2, 3, 6, 7, 8, 9 }, 4, 1));
+
+@@ 76 | Minimum Window Substring | Hard | lc | minimum-window-substring | minimum-window-with-characters
+## Solution
+public class Solution
+{
+    public string MinWindow(string s, string t)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("BANC", new Solution().MinWindow("ADOBECODEBANC", "ABC"));
+[Fact] public void Example2() => Assert.Equal("a", new Solution().MinWindow("a", "a"));
+[Fact] public void Example3() => Assert.Equal("", new Solution().MinWindow("a", "aa"));
+[Fact] public void CaseSensitive() => Assert.Equal("", new Solution().MinWindow("abc", "A"));
+[Fact] public void DuplicatesInT() => Assert.Equal("aab", new Solution().MinWindow("xaabb", "aab"));
+
+@@ 239 | Sliding Window Maximum | Hard | lc | sliding-window-maximum | sliding-window-maximum
+## Solution
+public class Solution
+{
+    public int[] MaxSlidingWindow(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 3, 3, 5, 5, 6, 7 }, new Solution().MaxSlidingWindow(new[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
+[Fact] public void Example2() => Assert.Equal(new[] { 1 }, new Solution().MaxSlidingWindow(new[] { 1 }, 1));
+[Fact] public void KEqualsLength() => Assert.Equal(new[] { 9 }, new Solution().MaxSlidingWindow(new[] { 4, 9, 2 }, 3));
+[Fact] public void Decreasing() => Assert.Equal(new[] { 5, 4, 3 }, new Solution().MaxSlidingWindow(new[] { 5, 4, 3, 2, 1 }, 3));
+[Fact]
+public void LargeIsLinear()
+{
+    var nums = Enumerable.Range(0, 100_000).Reverse().ToArray();
+    var res = new Solution().MaxSlidingWindow(nums, 50_000);
+    Assert.Equal(50_001, res.Length);
+    Assert.Equal(99_999, res[0]);
+    Assert.Equal(49_999, res[^1]); // last window starts at index 50_000
+}

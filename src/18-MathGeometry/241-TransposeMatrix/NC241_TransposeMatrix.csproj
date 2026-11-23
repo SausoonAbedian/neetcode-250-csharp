@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC241_TransposeMatrix</RootNamespace>
+  </PropertyGroup>
+</Project>

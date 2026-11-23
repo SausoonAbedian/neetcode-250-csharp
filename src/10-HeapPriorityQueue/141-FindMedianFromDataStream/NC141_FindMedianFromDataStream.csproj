@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC141_FindMedianFromDataStream</RootNamespace>
+  </PropertyGroup>
+</Project>

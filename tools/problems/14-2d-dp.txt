@@ -1,0 +1,260 @@
+%% 14 | 2-D Dynamic Programming
+
+@@ 62 | Unique Paths | Medium | lc | unique-paths | count-paths
+## Solution
+public class Solution
+{
+    public int UniquePaths(int m, int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(28, new Solution().UniquePaths(3, 7));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().UniquePaths(3, 2));
+[Fact] public void OneByOne() => Assert.Equal(1, new Solution().UniquePaths(1, 1));
+[Fact] public void LargeIsFast() => Assert.Equal(1166803110, new Solution().UniquePaths(17, 18));
+
+@@ 63 | Unique Paths II | Medium | lc | unique-paths-ii | unique-paths-ii
+## Solution
+public class Solution
+{
+    public int UniquePathsWithObstacles(int[][] obstacleGrid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().UniquePathsWithObstacles(Lc.Grid("[[0,0,0],[0,1,0],[0,0,0]]")));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().UniquePathsWithObstacles(Lc.Grid("[[0,1],[0,0]]")));
+[Fact] public void StartBlocked() => Assert.Equal(0, new Solution().UniquePathsWithObstacles(Lc.Grid("[[1]]")));
+[Fact] public void EndBlocked() => Assert.Equal(0, new Solution().UniquePathsWithObstacles(Lc.Grid("[[0,0],[0,1]]")));
+[Fact] public void FirstRowBlockedLater() => Assert.Equal(1, new Solution().UniquePathsWithObstacles(Lc.Grid("[[0,1,0],[0,0,0]]")));
+
+@@ 64 | Minimum Path Sum | Medium | lc | minimum-path-sum | minimum-path-sum
+## Solution
+public class Solution
+{
+    public int MinPathSum(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(7, new Solution().MinPathSum(Lc.Grid("[[1,3,1],[1,5,1],[4,2,1]]")));
+[Fact] public void Example2() => Assert.Equal(12, new Solution().MinPathSum(Lc.Grid("[[1,2,3],[4,5,6]]")));
+[Fact] public void Single() => Assert.Equal(5, new Solution().MinPathSum(Lc.Grid("[[5]]")));
+[Fact] public void Column() => Assert.Equal(6, new Solution().MinPathSum(Lc.Grid("[[1],[2],[3]]")));
+
+@@ 1143 | Longest Common Subsequence | Medium | lc | longest-common-subsequence | longest-common-subsequence
+## Solution
+public class Solution
+{
+    public int LongestCommonSubsequence(string text1, string text2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().LongestCommonSubsequence("abcde", "ace"));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().LongestCommonSubsequence("abc", "abc"));
+[Fact] public void Example3() => Assert.Equal(0, new Solution().LongestCommonSubsequence("abc", "def"));
+[Fact] public void Interleaved() => Assert.Equal(5, new Solution().LongestCommonSubsequence("abcba", "abcbcba"));
+[Fact] public void LargeIsFast() => Assert.Equal(1000, new Solution().LongestCommonSubsequence(new string('a', 1000), new string('a', 1000)));
+
+@@ 1049 | Last Stone Weight II | Medium | lc | last-stone-weight-ii | last-stone-weight-ii
+## Solution
+public class Solution
+{
+    public int LastStoneWeightII(int[] stones)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().LastStoneWeightII(new[] { 2, 7, 4, 1, 8, 1 }));
+[Fact] public void Example2() => Assert.Equal(5, new Solution().LastStoneWeightII(new[] { 31, 26, 33, 21, 40 }));
+[Fact] public void Single() => Assert.Equal(3, new Solution().LastStoneWeightII(new[] { 3 }));
+[Fact] public void PerfectSplit() => Assert.Equal(0, new Solution().LastStoneWeightII(new[] { 1, 2, 3 }));
+
+@@ 309 | Best Time to Buy And Sell Stock With Cooldown | Medium | lc | best-time-to-buy-and-sell-stock-with-cooldown | buy-and-sell-crypto-with-cooldown
+## Solution
+// After selling you cannot buy on the next day.
+public class Solution
+{
+    public int MaxProfit(int[] prices)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().MaxProfit(new[] { 1, 2, 3, 0, 2 }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().MaxProfit(new[] { 1 }));
+[Fact] public void Increasing() => Assert.Equal(4, new Solution().MaxProfit(new[] { 1, 2, 3, 4, 5 }));
+[Fact] public void CooldownMatters() => Assert.Equal(4, new Solution().MaxProfit(new[] { 1, 4, 2, 5 }));
+
+@@ 518 | Coin Change II | Medium | lc | coin-change-ii | coin-change-ii
+## Solution
+// Number of combinations (order does not matter).
+public class Solution
+{
+    public int Change(int amount, int[] coins)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().Change(5, new[] { 1, 2, 5 }));
+[Fact] public void Example2() => Assert.Equal(0, new Solution().Change(3, new[] { 2 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().Change(10, new[] { 10 }));
+[Fact] public void ZeroAmount() => Assert.Equal(1, new Solution().Change(0, new[] { 7 }));
+[Fact] public void OrderDoesNotMatter() => Assert.Equal(3, new Solution().Change(4, new[] { 1, 2 }));
+
+@@ 494 | Target Sum | Medium | lc | target-sum | target-sum
+## Solution
+public class Solution
+{
+    public int FindTargetSumWays(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().FindTargetSumWays(new[] { 1, 1, 1, 1, 1 }, 3));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().FindTargetSumWays(new[] { 1 }, 1));
+[Fact] public void Zeros() => Assert.Equal(4, new Solution().FindTargetSumWays(new[] { 0, 0, 1 }, 1));
+[Fact] public void Unreachable() => Assert.Equal(0, new Solution().FindTargetSumWays(new[] { 1, 2 }, 10));
+[Fact] public void NegativeTarget() => Assert.Equal(1, new Solution().FindTargetSumWays(new[] { 2, 3 }, -5));
+
+@@ 97 | Interleaving String | Medium | lc | interleaving-string | interleaving-string
+## Solution
+public class Solution
+{
+    public bool IsInterleave(string s1, string s2, string s3)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsInterleave("aabcc", "dbbca", "aadbbcbcac"));
+[Fact] public void Example2() => Assert.False(new Solution().IsInterleave("aabcc", "dbbca", "aadbbbaccc"));
+[Fact] public void Example3() => Assert.True(new Solution().IsInterleave("", "", ""));
+[Fact] public void LengthMismatch() => Assert.False(new Solution().IsInterleave("a", "b", "abc"));
+[Fact] public void OneEmpty() => Assert.True(new Solution().IsInterleave("", "abc", "abc"));
+
+@@ 877 | Stone Game | Medium | lc | stone-game | stone-game
+## Solution
+// Return true if Alice (who moves first) wins when both play optimally.
+public class Solution
+{
+    public bool StoneGame(int[] piles)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().StoneGame(new[] { 5, 3, 4, 5 }));
+[Fact] public void Example2() => Assert.True(new Solution().StoneGame(new[] { 3, 7, 2, 3 }));
+[Fact] public void Two() => Assert.True(new Solution().StoneGame(new[] { 1, 2 }));
+
+@@ 1140 | Stone Game II | Medium | lc | stone-game-ii | stone-game-ii
+## Solution
+// Return the maximum number of stones Alice can get.
+public class Solution
+{
+    public int StoneGameII(int[] piles)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(10, new Solution().StoneGameII(new[] { 2, 7, 9, 4, 4 }));
+[Fact] public void Example2() => Assert.Equal(104, new Solution().StoneGameII(new[] { 1, 2, 3, 4, 5, 100 }));
+[Fact] public void Single() => Assert.Equal(7, new Solution().StoneGameII(new[] { 7 }));
+[Fact] public void TwoPilesTakeBoth() => Assert.Equal(3, new Solution().StoneGameII(new[] { 1, 2 }));
+
+@@ 329 | Longest Increasing Path In a Matrix | Hard | lc | longest-increasing-path-in-a-matrix | longest-increasing-path-in-matrix
+## Solution
+public class Solution
+{
+    public int LongestIncreasingPath(int[][] matrix)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().LongestIncreasingPath(Lc.Grid("[[9,9,4],[6,6,8],[2,1,1]]")));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().LongestIncreasingPath(Lc.Grid("[[3,4,5],[3,2,6],[2,2,1]]")));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().LongestIncreasingPath(Lc.Grid("[[1]]")));
+[Fact] public void Spiral() => Assert.Equal(9, new Solution().LongestIncreasingPath(Lc.Grid("[[1,2,3],[8,9,4],[7,6,5]]")));
+[Fact]
+public void LargeIsFast()
+{
+    // 50x50 snake: one increasing path through every cell
+    var m = Enumerable.Range(0, 50).Select(i => Enumerable.Range(0, 50).Select(j => i * 50 + (i % 2 == 0 ? j : 49 - j)).ToArray()).ToArray();
+    Assert.Equal(2500, new Solution().LongestIncreasingPath(m));
+}
+
+@@ 115 | Distinct Subsequences | Hard | lc | distinct-subsequences | count-subsequences
+## Solution
+public class Solution
+{
+    public int NumDistinct(string s, string t)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().NumDistinct("rabbbit", "rabbit"));
+[Fact] public void Example2() => Assert.Equal(5, new Solution().NumDistinct("babgbag", "bag"));
+[Fact] public void TLonger() => Assert.Equal(0, new Solution().NumDistinct("ab", "abc"));
+[Fact] public void EmptyT() => Assert.Equal(1, new Solution().NumDistinct("abc", ""));
+
+@@ 72 | Edit Distance | Medium | lc | edit-distance | edit-distance
+## Solution
+public class Solution
+{
+    public int MinDistance(string word1, string word2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().MinDistance("horse", "ros"));
+[Fact] public void Example2() => Assert.Equal(5, new Solution().MinDistance("intention", "execution"));
+[Fact] public void Empty() => Assert.Equal(3, new Solution().MinDistance("", "abc"));
+[Fact] public void Same() => Assert.Equal(0, new Solution().MinDistance("same", "same"));
+
+@@ 312 | Burst Balloons | Hard | lc | burst-balloons | burst-balloons
+## Solution
+public class Solution
+{
+    public int MaxCoins(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(167, new Solution().MaxCoins(new[] { 3, 1, 5, 8 }));
+[Fact] public void Example2() => Assert.Equal(10, new Solution().MaxCoins(new[] { 1, 5 }));
+[Fact] public void Single() => Assert.Equal(7, new Solution().MaxCoins(new[] { 7 }));
+[Fact] public void WithZero() => Assert.Equal(9, new Solution().MaxCoins(new[] { 0, 2, 3 }));
+
+@@ 10 | Regular Expression Matching | Hard | lc | regular-expression-matching | regular-expression-matching
+## Solution
+// '.' matches any single character, '*' matches zero or more of the preceding element. Match the WHOLE string.
+public class Solution
+{
+    public bool IsMatch(string s, string p)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.False(new Solution().IsMatch("aa", "a"));
+[Fact] public void Example2() => Assert.True(new Solution().IsMatch("aa", "a*"));
+[Fact] public void Example3() => Assert.True(new Solution().IsMatch("ab", ".*"));
+[Fact] public void StarZero() => Assert.True(new Solution().IsMatch("aab", "c*a*b"));
+[Fact] public void Mississippi() => Assert.False(new Solution().IsMatch("mississippi", "mis*is*p*."));
+[Fact] public void EmptyString() => Assert.True(new Solution().IsMatch("", "a*b*"));
+[Fact] public void ExponentialTrap() => Assert.False(new Solution().IsMatch("aaaaaaaaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*c"));

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC066_FindTheDuplicateNumber</RootNamespace>
+  </PropertyGroup>
+</Project>

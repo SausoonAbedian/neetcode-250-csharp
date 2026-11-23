@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC183_MaximumProductSubarray</RootNamespace>
+  </PropertyGroup>
+</Project>

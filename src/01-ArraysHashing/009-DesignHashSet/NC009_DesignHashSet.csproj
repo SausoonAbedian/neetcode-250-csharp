@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC009_DesignHashSet</RootNamespace>
+  </PropertyGroup>
+</Project>

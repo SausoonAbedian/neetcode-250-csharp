@@ -1,0 +1,217 @@
+%% 02 | Two Pointers
+
+@@ 344 | Reverse String | Easy | lc | reverse-string | reverse-string
+## Solution
+// Modify the input array in place with O(1) extra memory.
+public class Solution
+{
+    public void ReverseString(char[] s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static string Run(string s) { var a = s.ToCharArray(); new Solution().ReverseString(a); return new string(a); }
+[Fact] public void Example1() => Assert.Equal("olleh", Run("hello"));
+[Fact] public void Example2() => Assert.Equal("hannaH", Run("Hannah"));
+[Fact] public void Single() => Assert.Equal("x", Run("x"));
+[Fact] public void Even() => Assert.Equal("dcba", Run("abcd"));
+
+@@ 125 | Valid Palindrome | Easy | lc | valid-palindrome | is-palindrome
+## Solution
+public class Solution
+{
+    public bool IsPalindrome(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsPalindrome("A man, a plan, a canal: Panama"));
+[Fact] public void Example2() => Assert.False(new Solution().IsPalindrome("race a car"));
+[Fact] public void Example3() => Assert.True(new Solution().IsPalindrome(" "));
+[Fact] public void DigitsCount() => Assert.False(new Solution().IsPalindrome("0P"));
+[Fact] public void OnlyPunctuation() => Assert.True(new Solution().IsPalindrome(".,"));
+[Fact] public void MixedDigits() => Assert.True(new Solution().IsPalindrome("A1b, 1a"));
+
+@@ 680 | Valid Palindrome II | Easy | lc | valid-palindrome-ii | valid-palindrome-ii
+## Solution
+public class Solution
+{
+    public bool ValidPalindrome(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().ValidPalindrome("aba"));
+[Fact] public void Example2() => Assert.True(new Solution().ValidPalindrome("abca"));
+[Fact] public void Example3() => Assert.False(new Solution().ValidPalindrome("abc"));
+[Fact] public void SkipRightSide() => Assert.True(new Solution().ValidPalindrome("cbbcc"));
+[Fact] public void SkipLeftSide() => Assert.True(new Solution().ValidPalindrome("ccbbc"));
+[Fact] public void TwoDeletionsNeeded() => Assert.False(new Solution().ValidPalindrome("abcxyba"));
+
+@@ 1768 | Merge Strings Alternately | Easy | lc | merge-strings-alternately | merge-strings-alternately
+## Solution
+public class Solution
+{
+    public string MergeAlternately(string word1, string word2)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("apbqcr", new Solution().MergeAlternately("abc", "pqr"));
+[Fact] public void Example2() => Assert.Equal("apbqrs", new Solution().MergeAlternately("ab", "pqrs"));
+[Fact] public void Example3() => Assert.Equal("apbqcd", new Solution().MergeAlternately("abcd", "pq"));
+[Fact] public void SingleChars() => Assert.Equal("ab", new Solution().MergeAlternately("a", "b"));
+
+@@ 88 | Merge Sorted Array | Easy | lc | merge-sorted-array | merge-sorted-array
+## Solution
+// Merge nums2 into nums1 in place. nums1 has length m + n.
+public class Solution
+{
+    public void Merge(int[] nums1, int m, int[] nums2, int n)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] nums1, int m, int[] nums2, int n) { new Solution().Merge(nums1, m, nums2, n); return nums1; }
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 2, 3, 5, 6 }, Run(new[] { 1, 2, 3, 0, 0, 0 }, 3, new[] { 2, 5, 6 }, 3));
+[Fact] public void Example2() => Assert.Equal(new[] { 1 }, Run(new[] { 1 }, 1, new int[0], 0));
+[Fact] public void Example3() => Assert.Equal(new[] { 1 }, Run(new[] { 0 }, 0, new[] { 1 }, 1));
+[Fact] public void AllOfNums2Smaller() => Assert.Equal(new[] { -3, -2, 4, 5 }, Run(new[] { 4, 5, 0, 0 }, 2, new[] { -3, -2 }, 2));
+
+@@ 26 | Remove Duplicates From Sorted Array | Easy | lc | remove-duplicates-from-sorted-array | remove-duplicates-from-sorted-array
+## Solution
+public class Solution
+{
+    public int RemoveDuplicates(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int[] nums, int[] expected)
+{
+    var k = new Solution().RemoveDuplicates(nums);
+    Assert.Equal(expected.Length, k);
+    Assert.Equal(expected, nums.Take(k).ToArray());
+}
+[Fact] public void Example1() => Check(new[] { 1, 1, 2 }, new[] { 1, 2 });
+[Fact] public void Example2() => Check(new[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, new[] { 0, 1, 2, 3, 4 });
+[Fact] public void Single() => Check(new[] { 9 }, new[] { 9 });
+[Fact] public void AllSame() => Check(new[] { -1, -1, -1 }, new[] { -1 });
+
+@@ 167 | Two Sum II Input Array Is Sorted | Medium | lc | two-sum-ii-input-array-is-sorted | two-integer-sum-ii
+## Solution
+// Return 1-indexed positions. Use only O(1) extra space.
+public class Solution
+{
+    public int[] TwoSum(int[] numbers, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2 }, new Solution().TwoSum(new[] { 2, 7, 11, 15 }, 9));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 3 }, new Solution().TwoSum(new[] { 2, 3, 4 }, 6));
+[Fact] public void Example3() => Assert.Equal(new[] { 1, 2 }, new Solution().TwoSum(new[] { -1, 0 }, -1));
+[Fact] public void Ends() => Assert.Equal(new[] { 1, 5 }, new Solution().TwoSum(new[] { 1, 2, 3, 4, 10 }, 11));
+
+@@ 15 | 3Sum | Medium | lc | 3sum | three-integer-sum
+## Solution
+public class Solution
+{
+    public IList<IList<int>> ThreeSum(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.SameGroups(new[] { new[] { -1, -1, 2 }, new[] { -1, 0, 1 } }, new Solution().ThreeSum(new[] { -1, 0, 1, 2, -1, -4 }));
+[Fact] public void Example2() => AssertEx.SameGroups(new int[0][], new Solution().ThreeSum(new[] { 0, 1, 1 }));
+[Fact] public void Example3() => AssertEx.SameGroups(new[] { new[] { 0, 0, 0 } }, new Solution().ThreeSum(new[] { 0, 0, 0 }));
+[Fact] public void NoDuplicateTriplets() => AssertEx.SameGroups(new[] { new[] { -2, 0, 2 }, new[] { -2, 1, 1 } }, new Solution().ThreeSum(new[] { -2, 0, 0, 2, 2, 1, 1 }));
+
+@@ 18 | 4Sum | Medium | lc | 4sum | 4sum
+## Solution
+public class Solution
+{
+    public IList<IList<int>> FourSum(int[] nums, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact]
+public void Example1() => AssertEx.SameGroups(
+    new[] { new[] { -2, -1, 1, 2 }, new[] { -2, 0, 0, 2 }, new[] { -1, 0, 0, 1 } },
+    new Solution().FourSum(new[] { 1, 0, -1, 0, -2, 2 }, 0));
+[Fact] public void Example2() => AssertEx.SameGroups(new[] { new[] { 2, 2, 2, 2 } }, new Solution().FourSum(new[] { 2, 2, 2, 2, 2 }, 8));
+[Fact] public void IntOverflow() => AssertEx.SameGroups(new int[0][], new Solution().FourSum(new[] { 1000000000, 1000000000, 1000000000, 1000000000 }, -294967296));
+[Fact] public void TooFew() => AssertEx.SameGroups(new int[0][], new Solution().FourSum(new[] { 1, 2, 3 }, 6));
+
+@@ 189 | Rotate Array | Medium | lc | rotate-array | rotate-array
+## Solution
+// Rotate to the right by k steps, in place. Follow up: O(1) extra space.
+public class Solution
+{
+    public void Rotate(int[] nums, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int[] Run(int[] nums, int k) { new Solution().Rotate(nums, k); return nums; }
+[Fact] public void Example1() => Assert.Equal(new[] { 5, 6, 7, 1, 2, 3, 4 }, Run(new[] { 1, 2, 3, 4, 5, 6, 7 }, 3));
+[Fact] public void Example2() => Assert.Equal(new[] { 3, 99, -1, -100 }, Run(new[] { -1, -100, 3, 99 }, 2));
+[Fact] public void KLargerThanLength() => Assert.Equal(new[] { 2, 1 }, Run(new[] { 1, 2 }, 3));
+[Fact] public void KZero() => Assert.Equal(new[] { 1, 2, 3 }, Run(new[] { 1, 2, 3 }, 0));
+
+@@ 11 | Container With Most Water | Medium | lc | container-with-most-water | max-water-container
+## Solution
+public class Solution
+{
+    public int MaxArea(int[] height)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(49, new Solution().MaxArea(new[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().MaxArea(new[] { 1, 1 }));
+[Fact] public void Zeros() => Assert.Equal(0, new Solution().MaxArea(new[] { 0, 0, 0 }));
+[Fact] public void InnerPair() => Assert.Equal(24, new Solution().MaxArea(new[] { 1, 8, 1, 1, 8, 1 }));
+
+@@ 881 | Boats to Save People | Medium | lc | boats-to-save-people | boats-to-save-people
+## Solution
+public class Solution
+{
+    public int NumRescueBoats(int[] people, int limit)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().NumRescueBoats(new[] { 1, 2 }, 3));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().NumRescueBoats(new[] { 3, 2, 2, 1 }, 3));
+[Fact] public void Example3() => Assert.Equal(4, new Solution().NumRescueBoats(new[] { 3, 5, 3, 4 }, 5));
+[Fact] public void AllAtLimit() => Assert.Equal(3, new Solution().NumRescueBoats(new[] { 4, 4, 4 }, 4));
+
+@@ 42 | Trapping Rain Water | Hard | lc | trapping-rain-water | trapping-rain-water
+## Solution
+public class Solution
+{
+    public int Trap(int[] height)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution().Trap(new[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }));
+[Fact] public void Example2() => Assert.Equal(9, new Solution().Trap(new[] { 4, 2, 0, 3, 2, 5 }));
+[Fact] public void Increasing() => Assert.Equal(0, new Solution().Trap(new[] { 1, 2, 3, 4 }));
+[Fact] public void Single() => Assert.Equal(0, new Solution().Trap(new[] { 5 }));
+[Fact] public void Valley() => Assert.Equal(6, new Solution().Trap(new[] { 3, 0, 0, 3 }));

@@ -1,0 +1,477 @@
+%% 07 | Trees
+
+@@ 94 | Binary Tree Inorder Traversal | Easy | lc | binary-tree-inorder-traversal | binary-tree-inorder-traversal
+## Solution
+/**
+ * TreeNode is defined in DSA.Common:  public int val; public TreeNode left; public TreeNode right;
+ * Follow up: iterative solution.
+ */
+public class Solution
+{
+    public IList<int> InorderTraversal(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 3, 2 }, new Solution().InorderTraversal(TreeNode.From(1, null, 2, 3)));
+[Fact] public void Example2() => Assert.Equal(new[] { 4, 2, 6, 5, 7, 1, 3, 9, 8 }, new Solution().InorderTraversal(TreeNode.From(1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9)));
+[Fact] public void Empty() => Assert.Empty(new Solution().InorderTraversal(null));
+[Fact] public void Single() => Assert.Equal(new[] { 1 }, new Solution().InorderTraversal(TreeNode.From(1)));
+
+@@ 144 | Binary Tree Preorder Traversal | Easy | lc | binary-tree-preorder-traversal | binary-tree-preorder-traversal
+## Solution
+// Follow up: iterative solution.
+public class Solution
+{
+    public IList<int> PreorderTraversal(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 2, 3 }, new Solution().PreorderTraversal(TreeNode.From(1, null, 2, 3)));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 2, 4, 5, 6, 7, 3, 8, 9 }, new Solution().PreorderTraversal(TreeNode.From(1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9)));
+[Fact] public void Empty() => Assert.Empty(new Solution().PreorderTraversal(null));
+
+@@ 145 | Binary Tree Postorder Traversal | Easy | lc | binary-tree-postorder-traversal | binary-tree-postorder-traversal
+## Solution
+// Follow up: iterative solution.
+public class Solution
+{
+    public IList<int> PostorderTraversal(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 3, 2, 1 }, new Solution().PostorderTraversal(TreeNode.From(1, null, 2, 3)));
+[Fact] public void Example2() => Assert.Equal(new[] { 4, 6, 7, 5, 2, 9, 8, 3, 1 }, new Solution().PostorderTraversal(TreeNode.From(1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9)));
+[Fact] public void Empty() => Assert.Empty(new Solution().PostorderTraversal(null));
+
+@@ 226 | Invert Binary Tree | Easy | lc | invert-binary-tree | invert-a-binary-tree
+## Solution
+public class Solution
+{
+    public TreeNode InvertTree(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new int?[] { 4, 7, 2, 9, 6, 3, 1 }, TreeNode.ToArray(new Solution().InvertTree(TreeNode.From(4, 2, 7, 1, 3, 6, 9))));
+[Fact] public void Example2() => Assert.Equal(new int?[] { 2, 3, 1 }, TreeNode.ToArray(new Solution().InvertTree(TreeNode.From(2, 1, 3))));
+[Fact] public void Empty() => Assert.Null(new Solution().InvertTree(null));
+[Fact] public void Lopsided() => Assert.Equal(new int?[] { 1, null, 2, null, 3 }, TreeNode.ToArray(new Solution().InvertTree(TreeNode.From(1, 2, null, 3))));
+
+@@ 104 | Maximum Depth of Binary Tree | Easy | lc | maximum-depth-of-binary-tree | depth-of-binary-tree
+## Solution
+public class Solution
+{
+    public int MaxDepth(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().MaxDepth(TreeNode.From(3, 9, 20, null, null, 15, 7)));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().MaxDepth(TreeNode.From(1, null, 2)));
+[Fact] public void Empty() => Assert.Equal(0, new Solution().MaxDepth(null));
+[Fact]
+public void DeepChain()
+{
+    var root = new TreeNode(0);
+    var cur = root;
+    for (var i = 1; i < 3000; i++) { cur.right = new TreeNode(i); cur = cur.right; }
+    Assert.Equal(3000, new Solution().MaxDepth(root));
+}
+
+@@ 543 | Diameter of Binary Tree | Easy | lc | diameter-of-binary-tree | binary-tree-diameter
+## Solution
+// The diameter is the number of EDGES on the longest path between any two nodes.
+public class Solution
+{
+    public int DiameterOfBinaryTree(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().DiameterOfBinaryTree(TreeNode.From(1, 2, 3, 4, 5)));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().DiameterOfBinaryTree(TreeNode.From(1, 2)));
+[Fact] public void Single() => Assert.Equal(0, new Solution().DiameterOfBinaryTree(TreeNode.From(1)));
+[Fact] public void NotThroughRoot() => Assert.Equal(4, new Solution().DiameterOfBinaryTree(TreeNode.From(1, 2, null, 3, 4, 5, null, null, 6)));
+
+@@ 110 | Balanced Binary Tree | Easy | lc | balanced-binary-tree | balanced-binary-tree
+## Solution
+public class Solution
+{
+    public bool IsBalanced(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsBalanced(TreeNode.From(3, 9, 20, null, null, 15, 7)));
+[Fact] public void Example2() => Assert.False(new Solution().IsBalanced(TreeNode.From(1, 2, 2, 3, 3, null, null, 4, 4)));
+[Fact] public void Empty() => Assert.True(new Solution().IsBalanced(null));
+[Fact] public void UnbalancedBelowRoot() => Assert.False(new Solution().IsBalanced(TreeNode.From(1, 2, 2, 3, null, null, 3, 4, null, null, 4)));
+
+@@ 100 | Same Tree | Easy | lc | same-tree | same-binary-tree
+## Solution
+public class Solution
+{
+    public bool IsSameTree(TreeNode p, TreeNode q)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsSameTree(TreeNode.From(1, 2, 3), TreeNode.From(1, 2, 3)));
+[Fact] public void Example2() => Assert.False(new Solution().IsSameTree(TreeNode.From(1, 2), TreeNode.From(1, null, 2)));
+[Fact] public void Example3() => Assert.False(new Solution().IsSameTree(TreeNode.From(1, 2, 1), TreeNode.From(1, 1, 2)));
+[Fact] public void BothEmpty() => Assert.True(new Solution().IsSameTree(null, null));
+[Fact] public void OneEmpty() => Assert.False(new Solution().IsSameTree(TreeNode.From(0), null));
+
+@@ 572 | Subtree of Another Tree | Easy | lc | subtree-of-another-tree | subtree-of-a-binary-tree
+## Solution
+public class Solution
+{
+    public bool IsSubtree(TreeNode root, TreeNode subRoot)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsSubtree(TreeNode.From(3, 4, 5, 1, 2), TreeNode.From(4, 1, 2)));
+[Fact] public void Example2() => Assert.False(new Solution().IsSubtree(TreeNode.From(3, 4, 5, 1, 2, null, null, null, null, 0), TreeNode.From(4, 1, 2)));
+[Fact] public void WholeTree() => Assert.True(new Solution().IsSubtree(TreeNode.From(1, 2, 3), TreeNode.From(1, 2, 3)));
+[Fact] public void ValueSplitTrap() => Assert.False(new Solution().IsSubtree(TreeNode.From(12), TreeNode.From(2)));
+[Fact] public void LeafMatch() => Assert.True(new Solution().IsSubtree(TreeNode.From(1, 1), TreeNode.From(1)));
+
+@@ 235 | Lowest Common Ancestor of a Binary Search Tree | Medium | lc | lowest-common-ancestor-of-a-binary-search-tree | lowest-common-ancestor-in-binary-search-tree
+## Solution
+public class Solution
+{
+    public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int Run(int pv, int qv)
+{
+    var root = TreeNode.From(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
+    return new Solution().LowestCommonAncestor(root, TreeNode.Find(root, pv), TreeNode.Find(root, qv)).val;
+}
+[Fact] public void Example1() => Assert.Equal(6, Run(2, 8));
+[Fact] public void Example2() => Assert.Equal(2, Run(2, 4));
+[Fact] public void Example3()
+{
+    var root = TreeNode.From(2, 1);
+    Assert.Equal(2, new Solution().LowestCommonAncestor(root, root, root.left).val);
+}
+[Fact] public void DeepPair() => Assert.Equal(4, Run(3, 5));
+[Fact] public void SameNode() => Assert.Equal(7, Run(7, 7));
+
+@@ 701 | Insert into a Binary Search Tree | Medium | lc | insert-into-a-binary-search-tree | insert-into-a-binary-search-tree
+## Solution
+// Any valid BST after insertion is accepted.
+public class Solution
+{
+    public TreeNode InsertIntoBST(TreeNode root, int val)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int?[] tree, int val)
+{
+    var root = tree.Length == 0 ? null : TreeNode.From(tree);
+    var expected = TreeNode.InOrder(root).Append(val).OrderBy(x => x).ToList();
+    var result = new Solution().InsertIntoBST(root, val);
+    Assert.True(TreeNode.IsValidBst(result), "Result is not a valid BST: " + result);
+    Assert.Equal(expected, TreeNode.InOrder(result));
+}
+[Fact] public void Example1() => Check(new int?[] { 4, 2, 7, 1, 3 }, 5);
+[Fact] public void Example2() => Check(new int?[] { 40, 20, 60, 10, 30, 50, 70 }, 25);
+[Fact] public void Example3() => Check(new int?[] { 4, 2, 7, 1, 3, null, null, null, null, null, null }, 5);
+[Fact] public void EmptyTree() => Check(new int?[0], 5);
+[Fact] public void NewMin() => Check(new int?[] { 4, 2, 7 }, -1);
+
+@@ 450 | Delete Node in a BST | Medium | lc | delete-node-in-a-bst | delete-node-in-a-bst
+## Solution
+// Any valid BST after deletion is accepted.
+public class Solution
+{
+    public TreeNode DeleteNode(TreeNode root, int key)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void Check(int?[] tree, int key)
+{
+    var root = tree.Length == 0 ? null : TreeNode.From(tree);
+    var expected = TreeNode.InOrder(root).Where(x => x != key).ToList();
+    var result = new Solution().DeleteNode(root, key);
+    Assert.True(TreeNode.IsValidBst(result), "Result is not a valid BST: " + result);
+    Assert.Equal(expected, TreeNode.InOrder(result));
+}
+[Fact] public void Example1() => Check(new int?[] { 5, 3, 6, 2, 4, null, 7 }, 3);
+[Fact] public void Example2() => Check(new int?[] { 5, 3, 6, 2, 4, null, 7 }, 0);
+[Fact] public void Example3() => Check(new int?[0], 0);
+[Fact] public void DeleteRoot() => Check(new int?[] { 5, 3, 6, 2, 4, null, 7 }, 5);
+[Fact] public void DeleteOnlyNode() => Assert.Null(new Solution().DeleteNode(TreeNode.From(1), 1));
+[Fact] public void DeleteLeaf() => Check(new int?[] { 5, 3, 6, 2, 4, null, 7 }, 7);
+
+@@ 102 | Binary Tree Level Order Traversal | Medium | lc | binary-tree-level-order-traversal | level-order-traversal-of-binary-tree
+## Solution
+public class Solution
+{
+    public IList<IList<int>> LevelOrder(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => AssertEx.Equal2D(new[] { new[] { 3 }, new[] { 9, 20 }, new[] { 15, 7 } }, new Solution().LevelOrder(TreeNode.From(3, 9, 20, null, null, 15, 7)));
+[Fact] public void Example2() => AssertEx.Equal2D(new[] { new[] { 1 } }, new Solution().LevelOrder(TreeNode.From(1)));
+[Fact] public void Example3() => AssertEx.Equal2D(new int[0][], new Solution().LevelOrder(null));
+[Fact] public void Uneven() => AssertEx.Equal2D(new[] { new[] { 1 }, new[] { 2, 3 }, new[] { 4, 5 } }, new Solution().LevelOrder(TreeNode.From(1, 2, 3, 4, null, null, 5)));
+
+@@ 199 | Binary Tree Right Side View | Medium | lc | binary-tree-right-side-view | binary-tree-right-side-view
+## Solution
+public class Solution
+{
+    public IList<int> RightSideView(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 1, 3, 4 }, new Solution().RightSideView(TreeNode.From(1, 2, 3, null, 5, null, 4)));
+[Fact] public void Example2() => Assert.Equal(new[] { 1, 3, 4, 5 }, new Solution().RightSideView(TreeNode.From(1, 2, 3, 4, null, null, null, 5)));
+[Fact] public void Example3() => Assert.Equal(new[] { 1, 3 }, new Solution().RightSideView(TreeNode.From(1, null, 3)));
+[Fact] public void Empty() => Assert.Empty(new Solution().RightSideView(null));
+[Fact] public void LeftDeeper() => Assert.Equal(new[] { 1, 3, 4 }, new Solution().RightSideView(TreeNode.From(1, 2, 3, 4)));
+
+@@ 427 | Construct Quad Tree | Medium | lc | construct-quad-tree | construct-quad-tree
+## Solution
+// Definition for a QuadTree node (provided, do not edit).
+public class Node
+{
+    public bool val;
+    public bool isLeaf;
+    public Node topLeft;
+    public Node topRight;
+    public Node bottomLeft;
+    public Node bottomRight;
+
+    public Node() { }
+
+    public Node(bool _val, bool _isLeaf)
+    {
+        val = _val;
+        isLeaf = _isLeaf;
+    }
+
+    public Node(bool _val, bool _isLeaf, Node _topLeft, Node _topRight, Node _bottomLeft, Node _bottomRight)
+    {
+        val = _val;
+        isLeaf = _isLeaf;
+        topLeft = _topLeft;
+        topRight = _topRight;
+        bottomLeft = _bottomLeft;
+        bottomRight = _bottomRight;
+    }
+}
+
+public class Solution
+{
+    public Node Construct(int[][] grid)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+// Verifies the quad tree represents the grid and is minimal (a leaf exactly when the region is uniform).
+private static void Verify(int[][] grid, Node node, int r, int c, int size)
+{
+    Assert.NotNull(node);
+    var first = grid[r][c];
+    var uniform = true;
+    for (var i = r; i < r + size; i++)
+        for (var j = c; j < c + size; j++)
+            if (grid[i][j] != first) uniform = false;
+    Assert.Equal(uniform, node.isLeaf);
+    if (uniform)
+    {
+        Assert.Equal(first == 1, node.val);
+        Assert.True(node.topLeft == null && node.topRight == null && node.bottomLeft == null && node.bottomRight == null);
+        return;
+    }
+    var h = size / 2;
+    Verify(grid, node.topLeft, r, c, h);
+    Verify(grid, node.topRight, r, c + h, h);
+    Verify(grid, node.bottomLeft, r + h, c, h);
+    Verify(grid, node.bottomRight, r + h, c + h, h);
+}
+private static void Check(params int[][] grid) => Verify(grid, new Solution().Construct(grid), 0, 0, grid.Length);
+[Fact] public void Example1() => Check(new[] { 0, 1 }, new[] { 1, 0 });
+[Fact]
+public void Example2() => Check(
+    new[] { 1, 1, 1, 1, 0, 0, 0, 0 }, new[] { 1, 1, 1, 1, 0, 0, 0, 0 }, new[] { 1, 1, 1, 1, 1, 1, 1, 1 }, new[] { 1, 1, 1, 1, 1, 1, 1, 1 },
+    new[] { 1, 1, 1, 1, 0, 0, 0, 0 }, new[] { 1, 1, 1, 1, 0, 0, 0, 0 }, new[] { 1, 1, 1, 1, 0, 0, 0, 0 }, new[] { 1, 1, 1, 1, 0, 0, 0, 0 });
+[Fact] public void Single() => Check(new[] { 1 });
+[Fact] public void AllZero() => Check(new[] { 0, 0 }, new[] { 0, 0 });
+
+@@ 1448 | Count Good Nodes In Binary Tree | Medium | lc | count-good-nodes-in-binary-tree | count-good-nodes-in-binary-tree
+## Solution
+public class Solution
+{
+    public int GoodNodes(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(4, new Solution().GoodNodes(TreeNode.From(3, 1, 4, 3, null, 1, 5)));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().GoodNodes(TreeNode.From(3, 3, null, 4, 2)));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().GoodNodes(TreeNode.From(1)));
+[Fact] public void Negatives() => Assert.Equal(3, new Solution().GoodNodes(TreeNode.From(-1, -2, 0, null, null, -5, 1)));
+
+@@ 98 | Validate Binary Search Tree | Medium | lc | validate-binary-search-tree | valid-binary-search-tree
+## Solution
+public class Solution
+{
+    public bool IsValidBST(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsValidBST(TreeNode.From(2, 1, 3)));
+[Fact] public void Example2() => Assert.False(new Solution().IsValidBST(TreeNode.From(5, 1, 4, null, null, 3, 6)));
+[Fact] public void GrandchildViolation() => Assert.False(new Solution().IsValidBST(TreeNode.From(5, 4, 6, null, null, 3, 7)));
+[Fact] public void DuplicatesInvalid() => Assert.False(new Solution().IsValidBST(TreeNode.From(2, 2, 2)));
+[Fact] public void IntExtremes() => Assert.True(new Solution().IsValidBST(TreeNode.From(int.MinValue, null, int.MaxValue)));
+[Fact] public void SingleMax() => Assert.True(new Solution().IsValidBST(TreeNode.From(int.MaxValue)));
+
+@@ 230 | Kth Smallest Element In a Bst | Medium | lc | kth-smallest-element-in-a-bst | kth-smallest-integer-in-bst
+## Solution
+// k is 1-indexed.
+public class Solution
+{
+    public int KthSmallest(TreeNode root, int k)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(1, new Solution().KthSmallest(TreeNode.From(3, 1, 4, null, 2), 1));
+[Fact] public void Example2() => Assert.Equal(3, new Solution().KthSmallest(TreeNode.From(5, 3, 6, 2, 4, null, null, 1), 3));
+[Fact] public void Largest() => Assert.Equal(6, new Solution().KthSmallest(TreeNode.From(5, 3, 6, 2, 4, null, null, 1), 6));
+
+@@ 105 | Construct Binary Tree From Preorder And Inorder Traversal | Medium | lc | construct-binary-tree-from-preorder-and-inorder-traversal | binary-tree-from-preorder-and-inorder-traversal
+## Solution
+// Values are unique.
+public class Solution
+{
+    public TreeNode BuildTree(int[] preorder, int[] inorder)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new int?[] { 3, 9, 20, null, null, 15, 7 }, TreeNode.ToArray(new Solution().BuildTree(new[] { 3, 9, 20, 15, 7 }, new[] { 9, 3, 15, 20, 7 })));
+[Fact] public void Example2() => Assert.Equal(new int?[] { -1 }, TreeNode.ToArray(new Solution().BuildTree(new[] { -1 }, new[] { -1 })));
+[Fact] public void LeftChain() => Assert.Equal(new int?[] { 1, 2, null, 3 }, TreeNode.ToArray(new Solution().BuildTree(new[] { 1, 2, 3 }, new[] { 3, 2, 1 })));
+[Fact] public void RightChain() => Assert.Equal(new int?[] { 1, null, 2, null, 3 }, TreeNode.ToArray(new Solution().BuildTree(new[] { 1, 2, 3 }, new[] { 1, 2, 3 })));
+
+@@ 337 | House Robber III | Medium | lc | house-robber-iii | house-robber-iii
+## Solution
+public class Solution
+{
+    public int Rob(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(7, new Solution().Rob(TreeNode.From(3, 2, 3, null, 3, null, 1)));
+[Fact] public void Example2() => Assert.Equal(9, new Solution().Rob(TreeNode.From(3, 4, 5, 1, 3, null, 1)));
+[Fact] public void SkipTwoLevels() => Assert.Equal(7, new Solution().Rob(TreeNode.From(4, 1, null, 2, null, 3)));
+[Fact] public void Single() => Assert.Equal(5, new Solution().Rob(TreeNode.From(5)));
+
+@@ 1325 | Delete Leaves With a Given Value | Medium | lc | delete-leaves-with-a-given-value | delete-leaves-with-a-given-value
+## Solution
+public class Solution
+{
+    public TreeNode RemoveLeafNodes(TreeNode root, int target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static int?[] Run(int target, params int?[] tree) => TreeNode.ToArray(new Solution().RemoveLeafNodes(TreeNode.From(tree), target));
+[Fact] public void Example1() => Assert.Equal(new int?[] { 1, null, 3, null, 4 }, Run(2, 1, 2, 3, 2, null, 2, 4));
+[Fact] public void Example2() => Assert.Equal(new int?[] { 1, 3, null, null, 2 }, Run(3, 1, 3, 3, 3, 2));
+[Fact] public void Example3() => Assert.Equal(new int?[] { 1 }, Run(2, 1, 2, null, 2, null, 2));
+[Fact] public void RemovesRoot() => Assert.Empty(Run(1, 1, 1, 1));
+
+@@ 124 | Binary Tree Maximum Path Sum | Hard | lc | binary-tree-maximum-path-sum | binary-tree-maximum-path-sum
+## Solution
+public class Solution
+{
+    public int MaxPathSum(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution().MaxPathSum(TreeNode.From(1, 2, 3)));
+[Fact] public void Example2() => Assert.Equal(42, new Solution().MaxPathSum(TreeNode.From(-10, 9, 20, null, null, 15, 7)));
+[Fact] public void AllNegative() => Assert.Equal(-1, new Solution().MaxPathSum(TreeNode.From(-3, -1, -2)));
+[Fact] public void Single() => Assert.Equal(-5, new Solution().MaxPathSum(TreeNode.From(-5)));
+[Fact] public void DropNegativeBranch() => Assert.Equal(3, new Solution().MaxPathSum(TreeNode.From(2, -1, 1)));
+
+@@ 297 | Serialize And Deserialize Binary Tree | Hard | lc | serialize-and-deserialize-binary-tree | serialize-and-deserialize-binary-tree
+## Solution
+// Any format works as long as deserialize(serialize(tree)) rebuilds the same tree.
+public class Codec
+{
+    // Encodes a tree to a single string.
+    public string serialize(TreeNode root)
+    {
+        throw new NotImplementedException();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(string data)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+private static void RoundTrip(params int?[] tree)
+{
+    var root = tree.Length == 0 ? null : TreeNode.From(tree);
+    var data = new Codec().serialize(root);
+    Assert.NotNull(data);
+    var back = new Codec().deserialize(data);
+    Assert.Equal(TreeNode.ToArray(root), TreeNode.ToArray(back));
+}
+[Fact] public void Example1() => RoundTrip(1, 2, 3, null, null, 4, 5);
+[Fact] public void Example2() => RoundTrip();
+[Fact] public void Negatives() => RoundTrip(-1, -20, 300, null, -4000);
+[Fact] public void LeftChain() => RoundTrip(1, 2, null, 3, null, 4);
+[Fact]
+public void LargeDeep()
+{
+    var root = new TreeNode(0);
+    var cur = root;
+    for (var i = 1; i < 1000; i++) { cur.left = new TreeNode(i); cur = cur.left; }
+    var back = new Codec().deserialize(new Codec().serialize(root));
+    Assert.Equal(TreeNode.ToArray(root), TreeNode.ToArray(back));
+}

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NC136_DesignTwitter</RootNamespace>
+  </PropertyGroup>
+</Project>

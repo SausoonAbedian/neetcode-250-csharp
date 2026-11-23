@@ -1,0 +1,224 @@
+%% 15 | Greedy
+
+@@ 860 | Lemonade Change | Easy | lc | lemonade-change | lemonade-change
+## Solution
+public class Solution
+{
+    public bool LemonadeChange(int[] bills)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().LemonadeChange(new[] { 5, 5, 5, 10, 20 }));
+[Fact] public void Example2() => Assert.False(new Solution().LemonadeChange(new[] { 5, 5, 10, 10, 20 }));
+[Fact] public void FirstCustomerTen() => Assert.False(new Solution().LemonadeChange(new[] { 10 }));
+[Fact] public void PreferTenForTwenty() => Assert.True(new Solution().LemonadeChange(new[] { 5, 5, 10, 20, 5, 10 }));
+
+@@ 53 | Maximum Subarray | Medium | lc | maximum-subarray | maximum-subarray
+## Solution
+public class Solution
+{
+    public int MaxSubArray(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(6, new Solution().MaxSubArray(new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+[Fact] public void Example2() => Assert.Equal(1, new Solution().MaxSubArray(new[] { 1 }));
+[Fact] public void Example3() => Assert.Equal(23, new Solution().MaxSubArray(new[] { 5, 4, -1, 7, 8 }));
+[Fact] public void AllNegative() => Assert.Equal(-1, new Solution().MaxSubArray(new[] { -3, -1, -2 }));
+
+@@ 918 | Maximum Sum Circular Subarray | Medium | lc | maximum-sum-circular-subarray | maximum-sum-circular-subarray
+## Solution
+public class Solution
+{
+    public int MaxSubarraySumCircular(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().MaxSubarraySumCircular(new[] { 1, -2, 3, -2 }));
+[Fact] public void Example2() => Assert.Equal(10, new Solution().MaxSubarraySumCircular(new[] { 5, -3, 5 }));
+[Fact] public void Example3() => Assert.Equal(-2, new Solution().MaxSubarraySumCircular(new[] { -3, -2, -3 }));
+[Fact] public void WrapAround() => Assert.Equal(12, new Solution().MaxSubarraySumCircular(new[] { 8, -1, -10, 4 }));
+
+@@ 978 | Longest Turbulent Subarray | Medium | lc | longest-turbulent-subarray | longest-turbulent-subarray
+## Solution
+public class Solution
+{
+    public int MaxTurbulenceSize(int[] arr)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().MaxTurbulenceSize(new[] { 9, 4, 2, 10, 7, 8, 8, 1, 9 }));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().MaxTurbulenceSize(new[] { 4, 8, 12, 16 }));
+[Fact] public void Example3() => Assert.Equal(1, new Solution().MaxTurbulenceSize(new[] { 100 }));
+[Fact] public void AllEqual() => Assert.Equal(1, new Solution().MaxTurbulenceSize(new[] { 3, 3, 3 }));
+[Fact] public void Zigzag() => Assert.Equal(6, new Solution().MaxTurbulenceSize(new[] { 1, 3, 2, 4, 3, 5 }));
+
+@@ 55 | Jump Game | Medium | lc | jump-game | jump-game
+## Solution
+public class Solution
+{
+    public bool CanJump(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CanJump(new[] { 2, 3, 1, 1, 4 }));
+[Fact] public void Example2() => Assert.False(new Solution().CanJump(new[] { 3, 2, 1, 0, 4 }));
+[Fact] public void Single() => Assert.True(new Solution().CanJump(new[] { 0 }));
+[Fact] public void StuckAtStart() => Assert.False(new Solution().CanJump(new[] { 0, 1 }));
+
+@@ 45 | Jump Game II | Medium | lc | jump-game-ii | jump-game-ii
+## Solution
+// The last index is always reachable.
+public class Solution
+{
+    public int Jump(int[] nums)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(2, new Solution().Jump(new[] { 2, 3, 1, 1, 4 }));
+[Fact] public void Example2() => Assert.Equal(2, new Solution().Jump(new[] { 2, 3, 0, 1, 4 }));
+[Fact] public void Single() => Assert.Equal(0, new Solution().Jump(new[] { 0 }));
+[Fact] public void OneStepEach() => Assert.Equal(3, new Solution().Jump(new[] { 1, 1, 1, 1 }));
+
+@@ 1871 | Jump Game VII | Medium | lc | jump-game-vii | jump-game-vii
+## Solution
+public class Solution
+{
+    public bool CanReach(string s, int minJump, int maxJump)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CanReach("011010", 2, 3));
+[Fact] public void Example2() => Assert.False(new Solution().CanReach("01101110", 2, 3));
+[Fact] public void LastIsOne() => Assert.False(new Solution().CanReach("001", 1, 2));
+[Fact]
+public void LargeIsLinear()
+{
+    var s = new string('0', 100_000);
+    Assert.True(new Solution().CanReach(s, 1, 99_999));
+}
+
+@@ 134 | Gas Station | Medium | lc | gas-station | gas-station
+## Solution
+public class Solution
+{
+    public int CanCompleteCircuit(int[] gas, int[] cost)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(3, new Solution().CanCompleteCircuit(new[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5, 1, 2 }));
+[Fact] public void Example2() => Assert.Equal(-1, new Solution().CanCompleteCircuit(new[] { 2, 3, 4 }, new[] { 3, 4, 3 }));
+[Fact] public void Single() => Assert.Equal(0, new Solution().CanCompleteCircuit(new[] { 5 }, new[] { 4 }));
+[Fact] public void StartAtZero() => Assert.Equal(0, new Solution().CanCompleteCircuit(new[] { 3, 1, 1 }, new[] { 1, 2, 2 }));
+
+@@ 846 | Hand of Straights | Medium | lc | hand-of-straights | hand-of-straights
+## Solution
+public class Solution
+{
+    public bool IsNStraightHand(int[] hand, int groupSize)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().IsNStraightHand(new[] { 1, 2, 3, 6, 2, 3, 4, 7, 8 }, 3));
+[Fact] public void Example2() => Assert.False(new Solution().IsNStraightHand(new[] { 1, 2, 3, 4, 5 }, 4));
+[Fact] public void GroupOfOne() => Assert.True(new Solution().IsNStraightHand(new[] { 9, 1, 5 }, 1));
+[Fact] public void Gap() => Assert.False(new Solution().IsNStraightHand(new[] { 1, 2, 4, 6 }, 2));
+[Fact] public void NotDivisible() => Assert.False(new Solution().IsNStraightHand(new[] { 1, 2, 3 }, 2));
+
+@@ 649 | Dota2 Senate | Medium | lc | dota2-senate | dota2-senate
+## Solution
+// Return "Radiant" or "Dire".
+public class Solution
+{
+    public string PredictPartyVictory(string senate)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal("Radiant", new Solution().PredictPartyVictory("RD"));
+[Fact] public void Example2() => Assert.Equal("Dire", new Solution().PredictPartyVictory("RDD"));
+[Fact] public void DireFirst() => Assert.Equal("Dire", new Solution().PredictPartyVictory("DDRRR"));
+[Fact] public void Single() => Assert.Equal("Radiant", new Solution().PredictPartyVictory("R"));
+
+@@ 1899 | Merge Triplets to Form Target Triplet | Medium | lc | merge-triplets-to-form-target-triplet | merge-triplets-to-form-target
+## Solution
+public class Solution
+{
+    public bool MergeTriplets(int[][] triplets, int[] target)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().MergeTriplets(Lc.Grid("[[2,5,3],[1,8,4],[1,7,5]]"), new[] { 2, 7, 5 }));
+[Fact] public void Example2() => Assert.False(new Solution().MergeTriplets(Lc.Grid("[[3,4,5],[4,5,6]]"), new[] { 3, 2, 5 }));
+[Fact] public void Example3() => Assert.True(new Solution().MergeTriplets(Lc.Grid("[[2,5,3],[2,3,4],[1,2,5],[5,2,3]]"), new[] { 5, 5, 5 }));
+[Fact] public void ExactMatch() => Assert.True(new Solution().MergeTriplets(Lc.Grid("[[1,2,3]]"), new[] { 1, 2, 3 }));
+
+@@ 763 | Partition Labels | Medium | lc | partition-labels | partition-labels
+## Solution
+public class Solution
+{
+    public IList<int> PartitionLabels(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(new[] { 9, 7, 8 }, new Solution().PartitionLabels("ababcbacadefegdehijhklij"));
+[Fact] public void Example2() => Assert.Equal(new[] { 10 }, new Solution().PartitionLabels("eccbbbbdec"));
+[Fact] public void AllDistinct() => Assert.Equal(new[] { 1, 1, 1 }, new Solution().PartitionLabels("abc"));
+
+@@ 678 | Valid Parenthesis String | Medium | lc | valid-parenthesis-string | valid-parenthesis-string
+## Solution
+// '*' can be '(', ')' or empty.
+public class Solution
+{
+    public bool CheckValidString(string s)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.True(new Solution().CheckValidString("()"));
+[Fact] public void Example2() => Assert.True(new Solution().CheckValidString("(*)"));
+[Fact] public void Example3() => Assert.True(new Solution().CheckValidString("(*))"));
+[Fact] public void StarBeforeOpen() => Assert.False(new Solution().CheckValidString("*("));
+[Fact] public void TooManyOpen() => Assert.False(new Solution().CheckValidString("((*"));
+[Fact] public void StarsBalanceBoth() => Assert.True(new Solution().CheckValidString("(*()*"));
+[Fact] public void UnmatchedClose() => Assert.False(new Solution().CheckValidString("())*"));
+
+@@ 135 | Candy | Hard | lc | candy | candy
+## Solution
+public class Solution
+{
+    public int Candy(int[] ratings)
+    {
+        throw new NotImplementedException();
+    }
+}
+## Tests
+[Fact] public void Example1() => Assert.Equal(5, new Solution().Candy(new[] { 1, 0, 2 }));
+[Fact] public void Example2() => Assert.Equal(4, new Solution().Candy(new[] { 1, 2, 2 }));
+[Fact] public void Decreasing() => Assert.Equal(15, new Solution().Candy(new[] { 5, 4, 3, 2, 1 }));
+[Fact] public void Peak() => Assert.Equal(9, new Solution().Candy(new[] { 1, 2, 3, 2, 1 }));
+[Fact] public void Single() => Assert.Equal(1, new Solution().Candy(new[] { 7 }));
