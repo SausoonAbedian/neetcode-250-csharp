@@ -9,6 +9,17 @@ public class Solution
     // of consecutive 1's in the array.
     public int FindMaxConsecutiveOnes(int[] nums)
     {
-        throw new NotImplementedException();
+        var max = 0;
+        var count = 0;
+        
+        foreach (var num in nums)
+        {
+            if (num == 1)
+                max = Math.Max(max, ++count);
+            else
+                count = 0;
+        }
+
+        return max;
     }
 }
