@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0322_CoinChange</RootNamespace>
+  </PropertyGroup>
+</Project>

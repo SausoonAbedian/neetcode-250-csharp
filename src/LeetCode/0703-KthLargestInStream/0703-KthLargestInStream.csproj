@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0703_KthLargestInStream</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC2392_BuildMatrixConditions</RootNamespace>
+  </PropertyGroup>
+</Project>

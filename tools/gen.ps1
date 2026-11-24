@@ -1,17 +1,24 @@
-# Generates one xUnit project per problem from tools/problems/*.txt, plus DSA.slnx and README.md.
+# Generates one xUnit project per LeetCode problem from tools/problems/*.txt, plus DSA.slnx and README.md.
+# Projects go to src/LeetCode/<0000>-<Name>/ (number first, so they sort).
+# NeetCode-only exercises are hand-written in src/NeetCode/<Name>/ and only listed in DSA.slnx.
 # Safe to re-run: an existing Solution.cs (your work) is never overwritten.
-# Tests, csproj and README files are regenerated each time.
+# Tests, csproj, README and helper files are regenerated each time.
 #
 # Data format (per topic file):
 #   %% <topicNo> | <Topic Name>
-#   @@ <leetcodeNo> | <Title> | <Easy|Medium|Hard> | <lc|nc> | <leetcode-slug> | <neetcode-slug>
+#   @@ <leetcodeNo> | <Title> | <Easy|Medium|Hard> | <lc|nc> | <leetcode-slug> | <neetcode-slug> [| <ShortName>]
 #   ## Solution
 #   ...C# stub...
 #   ## Tests
 #   ...xUnit test members...
+#
+# ShortName is optional; it names the project when the full title is too long.
+# Helper classes (ListNode, TreeNode, AssertEx, Lc) are copied from tools/templates into each
+# project that uses them - there is no shared project.
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
+$templates = Join-Path $PSScriptRoot 'templates'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
 function ConvertTo-Pascal([string]$s) {
@@ -25,6 +32,10 @@ function Write-Utf8([string]$path, [string]$text) {
     [IO.File]::WriteAllText($path, ($text -replace "`r?`n", "`r`n"), $utf8)
 }
 
+function Get-Template([string]$name, [string]$ns) {
+    [IO.File]::ReadAllText((Join-Path $templates "$name.cs.txt")).Replace('__NS__', $ns)
+}
+
 # ---------- parse ----------
 $problems = New-Object System.Collections.Generic.List[object]
 $files = Get-ChildItem (Join-Path $PSScriptRoot 'problems') -Filter *.txt | Sort-Object Name
@@ -36,10 +47,11 @@ foreach ($f in $files) {
             $topicNo = $p[0]; $topic = $p[1]; continue
         }
         if ($line.StartsWith('@@ ')) {
-            $p = $line.Substring(3).Split('|') | ForEach-Object { $_.Trim() }
+            $p = @($line.Substring(3).Split('|') | ForEach-Object { $_.Trim() })
             $cur = [pscustomobject]@{
-                TopicNo = $topicNo; Topic = $topic; Lc = $p[0]; Title = $p[1]; Difficulty = $p[2]
+                TopicNo = $topicNo; Topic = $topic; Lc = [int]$p[0]; Title = $p[1]; Difficulty = $p[2]
                 Source = $p[3]; LcSlug = $p[4]; NcSlug = $p[5]
+                Short = $(if ($p.Count -gt 6 -and $p[6]) { $p[6] } else { $null })
                 Solution = New-Object System.Text.StringBuilder
                 Tests = New-Object System.Text.StringBuilder
             }
@@ -52,95 +64,108 @@ foreach ($f in $files) {
     }
 }
 
+$dupes = $problems | Group-Object Lc | Where-Object Count -gt 1
+if ($dupes) { throw "Duplicate LeetCode numbers: $(($dupes | ForEach-Object Name) -join ', ')" }
+
 # ---------- generate ----------
-$i = 0
 $byTopic = [ordered]@{}
 foreach ($p in $problems) {
-    $i++
-    $num = '{0:000}' -f $i
-    $pascal = ConvertTo-Pascal $p.Title
-    $topicDir = '{0}-{1}' -f $p.TopicNo, (ConvertTo-Pascal $p.Topic)
-    $projName = "NC${num}_$pascal"
-    $relDir = "src/$topicDir/$num-$pascal"
+    $num = '{0:0000}' -f $p.Lc
+    $name = if ($p.Short) { $p.Short } else { ConvertTo-Pascal $p.Title }
+    $projName = "$num-$name"
+    $ns = "LC${num}_$name"
+    $relDir = "src/LeetCode/$projName"
     $dir = Join-Path $root $relDir
     $lcUrl = "https://leetcode.com/problems/$($p.LcSlug)/"
-    $ncUrl = "https://neetcode.io/problems/$($p.NcSlug)/question"
+    $ncUrl = if ($p.NcSlug) { "https://neetcode.io/problems/$($p.NcSlug)/question" } else { $null }
     $solveUrl = if ($p.Source -eq 'nc') { $ncUrl } else { $lcUrl }
     $where = if ($p.Source -eq 'nc') { 'NeetCode (LeetCode Premium on LeetCode)' } else { 'LeetCode' }
 
-    $p | Add-Member Num $num; $p | Add-Member Pascal $pascal; $p | Add-Member RelDir $relDir
-    $p | Add-Member ProjName $projName; $p | Add-Member SolveUrl $solveUrl; $p | Add-Member TopicDir $topicDir
-    if (-not $byTopic.Contains($topicDir)) { $byTopic[$topicDir] = New-Object System.Collections.Generic.List[object] }
-    $byTopic[$topicDir].Add($p)
+    $p | Add-Member Num $num; $p | Add-Member ProjName $projName; $p | Add-Member RelDir $relDir
+    $p | Add-Member SolveUrl $solveUrl
+    $topicKey = "$($p.TopicNo)|$($p.Topic)"
+    if (-not $byTopic.Contains($topicKey)) { $byTopic[$topicKey] = New-Object System.Collections.Generic.List[object] }
+    $byTopic[$topicKey].Add($p)
 
     Write-Utf8 (Join-Path $dir "$projName.csproj") @"
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>$projName</RootNamespace>
+    <RootNamespace>$ns</RootNamespace>
   </PropertyGroup>
 </Project>
 "@
 
+    $ncRow = if ($ncUrl) { "`n| NeetCode | <$ncUrl> |" } else { '' }
     Write-Utf8 (Join-Path $dir 'README.md') @"
-# $num. $($p.Title)
+# $($p.Lc). $($p.Title)
 
 | | |
 |---|---|
 | Topic | $($p.Topic) |
 | Difficulty | $($p.Difficulty) |
-| LeetCode # | $($p.Lc) |
 | Solve on | $where |
-| Problem | <$solveUrl> |
-| NeetCode | <$ncUrl> |
+| Problem | <$solveUrl> |$ncRow
 
 Read the statement at the link above, write your answer in ``Solution.cs`` and run:
 
 ``````powershell
-.\check.ps1 $i
+.\check.ps1 $($p.Lc)
 ``````
 "@
 
     $solPath = Join-Path $dir 'Solution.cs'
     if (-not (Test-Path $solPath)) {
         Write-Utf8 $solPath (@"
-// $num. $($p.Title) ($($p.Difficulty)) - LeetCode #$($p.Lc)
+// $($p.Lc). $($p.Title) ($($p.Difficulty))
 // $solveUrl
-// Run the tests: .\check.ps1 $i
-namespace $projName;
+// Run the tests: .\check.ps1 $($p.Lc)
+namespace $ns;
 "@ + "`n`n" + $p.Solution.ToString().TrimEnd() + "`n")
     }
 
     $testBody = ($p.Tests.ToString().TrimEnd() -split "`r?`n" | ForEach-Object { if ($_ -ne '') { '    ' + $_ } else { '' } }) -join "`n"
     Write-Utf8 (Join-Path $dir 'SolutionTests.cs') @"
 // Generated by tools/gen.ps1 - do not edit (changes are overwritten on regeneration).
-namespace $projName;
+namespace $ns;
 
 public class SolutionTests
 {
 $testBody
 }
 "@
+
+    # Helper classes, only where this problem uses them.
+    $all = $p.Solution.ToString() + "`n" + $p.Tests.ToString()
+    foreach ($node in 'ListNode', 'TreeNode') {
+        if ($all -match "\b$node\b") {
+            # The node definition is the user's file (like Solution.cs): created once, never overwritten.
+            $defPath = Join-Path $dir "$node.cs"
+            if (-not (Test-Path $defPath)) { Write-Utf8 $defPath (Get-Template $node $ns) }
+            Write-Utf8 (Join-Path $dir "$node.Helpers.cs") (Get-Template "$node.Helpers" $ns)
+        }
+    }
+    if ($all -match '\bAssertEx\.') { Write-Utf8 (Join-Path $dir 'AssertEx.cs') (Get-Template 'AssertEx' $ns) }
+    if ($all -match '\bLc\.') { Write-Utf8 (Join-Path $dir 'Lc.cs') (Get-Template 'Lc' $ns) }
 }
 
 # ---------- solution file ----------
+function Get-RelPath([string]$full) {
+    # Substring, not [IO.Path]::GetRelativePath: that method is missing in Windows PowerShell 5.1
+    $full.Substring($root.TrimEnd('\', '/').Length + 1).Replace('\', '/')
+}
 $sb = New-Object System.Text.StringBuilder
 [void]$sb.AppendLine('<Solution>')
-[void]$sb.AppendLine('  <Folder Name="/00-Common/">')
-[void]$sb.AppendLine('    <Project Path="src/Common/DSA.Common.csproj" />')
-# Hand-written NeetCode course exercises (not generated) live in src/00-Common/<Name>/
-foreach ($c in Get-ChildItem (Join-Path $root 'src/00-Common') -Recurse -Filter '*.csproj' -ErrorAction SilentlyContinue | Sort-Object FullName) {
-    # Substring, not [IO.Path]::GetRelativePath: that method is missing in Windows PowerShell 5.1
-    $rel = $c.FullName.Substring($root.TrimEnd('\', '/').Length + 1).Replace('\', '/')
-    [void]$sb.AppendLine("    <Project Path=""$rel"" />")
+[void]$sb.AppendLine('  <Folder Name="/LeetCode/">')
+foreach ($p in ($problems | Sort-Object Lc)) {
+    [void]$sb.AppendLine("    <Project Path=""$($p.RelDir)/$($p.ProjName).csproj"" />")
 }
 [void]$sb.AppendLine('  </Folder>')
-foreach ($t in $byTopic.Keys) {
-    [void]$sb.AppendLine("  <Folder Name=""/$t/"">")
-    foreach ($p in $byTopic[$t]) {
-        [void]$sb.AppendLine("    <Project Path=""$($p.RelDir)/$($p.ProjName).csproj"" />")
-    }
-    [void]$sb.AppendLine('  </Folder>')
+[void]$sb.AppendLine('  <Folder Name="/NeetCode/">')
+# Hand-written NeetCode-only exercises (not generated) live in src/NeetCode/<Name>/
+foreach ($c in Get-ChildItem (Join-Path $root 'src/NeetCode') -Recurse -Filter '*.csproj' -ErrorAction SilentlyContinue | Sort-Object FullName) {
+    [void]$sb.AppendLine("    <Project Path=""$(Get-RelPath $c.FullName)"" />")
 }
+[void]$sb.AppendLine('  </Folder>')
 [void]$sb.AppendLine('</Solution>')
 Write-Utf8 (Join-Path $root 'DSA.slnx') $sb.ToString()
 
@@ -150,13 +175,13 @@ $rb = New-Object System.Text.StringBuilder
 [void]$rb.AppendLine()
 foreach ($t in $byTopic.Keys) {
     $first = $byTopic[$t][0]
-    [void]$rb.AppendLine("## $($first.Topic)")
+    [void]$rb.AppendLine("### $($first.Topic)")
     [void]$rb.AppendLine()
-    [void]$rb.AppendLine('| # | Problem | Difficulty | LC # | Project |')
-    [void]$rb.AppendLine('|---|---|---|---|---|')
+    [void]$rb.AppendLine('| LC # | Problem | Difficulty | Project |')
+    [void]$rb.AppendLine('|---|---|---|---|')
     foreach ($p in $byTopic[$t]) {
         $tag = if ($p.Source -eq 'nc') { ' (NeetCode)' } else { '' }
-        [void]$rb.AppendLine("| $($p.Num) | [$($p.Title)]($($p.SolveUrl))$tag | $($p.Difficulty) | $($p.Lc) | [$($p.Num)-$($p.Pascal)]($($p.RelDir)/Solution.cs) |")
+        [void]$rb.AppendLine("| $($p.Lc) | [$($p.Title)]($($p.SolveUrl))$tag | $($p.Difficulty) | [$($p.ProjName)]($($p.RelDir)/Solution.cs) |")
     }
     [void]$rb.AppendLine()
 }

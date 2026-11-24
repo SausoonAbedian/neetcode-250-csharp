@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0304_RangeSumQuery2DImmutable</RootNamespace>
+  </PropertyGroup>
+</Project>

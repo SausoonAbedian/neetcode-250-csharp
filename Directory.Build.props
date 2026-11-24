@@ -7,21 +7,16 @@
     <Nullable>disable</Nullable>
     <NoWarn>$(NoWarn);CS8632;xUnit1026;CS0162;IDE0060</NoWarn>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-  </PropertyGroup>
-
-  <!-- Every problem project is also an xUnit test project -->
-  <PropertyGroup Condition="'$(MSBuildProjectName)' != 'DSA.Common'">
+    <!-- Every project is a self-contained xUnit test project (no shared project) -->
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(MSBuildProjectName)' != 'DSA.Common'">
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
-    <ProjectReference Include="$(MSBuildThisFileDirectory)src\Common\DSA.Common.csproj" />
     <Using Include="Xunit" />
-    <Using Include="DSA.Common" />
     <Using Include="System.Text" />
   </ItemGroup>
 </Project>

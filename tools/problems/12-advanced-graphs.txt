@@ -47,7 +47,7 @@ public class Solution
 [Fact] public void SmallestFirstIsDeadEnd() => Assert.Equal(new[] { "JFK", "NRT", "JFK", "KUL" }, new Solution().FindItinerary(Lc.Strings2D("""[["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]""")));
 [Fact] public void DuplicateTickets() => Assert.Equal(new[] { "JFK", "A", "JFK", "A" }, new Solution().FindItinerary(Lc.Strings2D("""[["JFK","A"],["A","JFK"],["JFK","A"]]""")));
 
-@@ 1584 | Min Cost to Connect All Points | Medium | lc | min-cost-to-connect-all-points | min-cost-to-connect-points
+@@ 1584 | Min Cost to Connect All Points | Medium | lc | min-cost-to-connect-all-points | min-cost-to-connect-points | MinCostConnectPoints
 ## Solution
 // Cost between two points is their Manhattan distance.
 public class Solution
@@ -115,7 +115,7 @@ private static void CheckValid(params string[] words)
 [Fact] public void PrefixAfterLongerWordIsInvalid() => Assert.Equal("", new Solution().ForeignDictionary(new[] { "abc", "ab" }));
 [Fact] public void SameWord() => CheckValid("abc", "abc");
 
-@@ 787 | Cheapest Flights Within K Stops | Medium | lc | cheapest-flights-within-k-stops | cheapest-flight-path
+@@ 787 | Cheapest Flights Within K Stops | Medium | lc | cheapest-flights-within-k-stops | cheapest-flight-path | CheapestFlightsKStops
 ## Solution
 // flights[i] = [from, to, price]. At most k stops (k + 1 flights).
 public class Solution
@@ -138,7 +138,7 @@ public void CheapestPathHasTooManyStops()
     Assert.Equal(6, new Solution().FindCheapestPrice(5, Lc.Grid(f), 0, 2, 3)); // 0-3-1-4-2
 }
 
-@@ 1489 | Find Critical and Pseudo Critical Edges in Minimum Spanning Tree | Hard | lc | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree
+@@ 1489 | Find Critical and Pseudo Critical Edges in Minimum Spanning Tree | Hard | lc | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree | find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree | CriticalEdgesInMst
 ## Solution
 // Return [criticalEdgeIndices, pseudoCriticalEdgeIndices]; each list may be in any order.
 public class Solution
@@ -160,7 +160,7 @@ private static void Check(int n, string edges, int[] critical, int[] pseudo)
 [Fact] public void Example2() => Check(4, "[[0,1,1],[1,2,1],[2,3,1],[0,3,1]]", new int[0], new[] { 0, 1, 2, 3 });
 [Fact] public void Tree() => Check(3, "[[0,1,4],[1,2,7]]", new[] { 0, 1 }, new int[0]);
 
-@@ 2392 | Build a Matrix With Conditions | Hard | lc | build-a-matrix-with-conditions | build-a-matrix-with-conditions
+@@ 2392 | Build a Matrix With Conditions | Hard | lc | build-a-matrix-with-conditions | build-a-matrix-with-conditions | BuildMatrixConditions
 ## Solution
 // Return any valid k x k matrix, or an empty array if impossible.
 public class Solution
@@ -199,7 +199,7 @@ private static void CheckValid(int k, string rows, string cols)
 [Fact] public void NoConditions() => CheckValid(4, "[]", "[]");
 [Fact] public void ColumnCycle() => Assert.Empty(new Solution().BuildMatrix(2, Lc.Grid("[[1,2]]"), Lc.Grid("[[1,2],[2,1]]")));
 
-@@ 2709 | Greatest Common Divisor Traversal | Hard | lc | greatest-common-divisor-traversal | greatest-common-divisor-traversal
+@@ 2709 | Greatest Common Divisor Traversal | Hard | lc | greatest-common-divisor-traversal | greatest-common-divisor-traversal | GcdTraversal
 ## Solution
 public class Solution
 {

@@ -17,7 +17,7 @@ public class Solution
 [Fact] public void AZ() => Assert.Equal("AZ", new Solution().ConvertToTitle(52));
 [Fact] public void MaxInt() => Assert.Equal("FXSHRXW", new Solution().ConvertToTitle(int.MaxValue));
 
-@@ 1071 | Greatest Common Divisor of Strings | Easy | lc | greatest-common-divisor-of-strings | greatest-common-divisor-of-strings
+@@ 1071 | Greatest Common Divisor of Strings | Easy | lc | greatest-common-divisor-of-strings | greatest-common-divisor-of-strings | GcdOfStrings
 ## Solution
 public class Solution
 {
@@ -33,7 +33,7 @@ public class Solution
 [Fact] public void Same() => Assert.Equal("XY", new Solution().GcdOfStrings("XY", "XY"));
 [Fact] public void SameLettersNoDivisor() => Assert.Equal("", new Solution().GcdOfStrings("ABAB", "ABA"));
 
-@@ 2807 | Insert Greatest Common Divisors in Linked List | Medium | lc | insert-greatest-common-divisors-in-linked-list | insert-greatest-common-divisors-in-linked-list
+@@ 2807 | Insert Greatest Common Divisors in Linked List | Medium | lc | insert-greatest-common-divisors-in-linked-list | insert-greatest-common-divisors-in-linked-list | InsertGcdsInLinkedList
 ## Solution
 public class Solution
 {

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0191_NumberOf1Bits</RootNamespace>
+  </PropertyGroup>
+</Project>

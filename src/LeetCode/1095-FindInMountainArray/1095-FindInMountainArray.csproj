@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC1095_FindInMountainArray</RootNamespace>
+  </PropertyGroup>
+</Project>

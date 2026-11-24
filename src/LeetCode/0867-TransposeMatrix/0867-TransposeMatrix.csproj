@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0867_TransposeMatrix</RootNamespace>
+  </PropertyGroup>
+</Project>

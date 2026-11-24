@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0015_3Sum</RootNamespace>
+  </PropertyGroup>
+</Project>

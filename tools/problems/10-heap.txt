@@ -1,6 +1,6 @@
 %% 10 | Heap / Priority Queue
 
-@@ 703 | Kth Largest Element In a Stream | Easy | lc | kth-largest-element-in-a-stream | kth-largest-integer-in-a-stream
+@@ 703 | Kth Largest Element In a Stream | Easy | lc | kth-largest-element-in-a-stream | kth-largest-integer-in-a-stream | KthLargestInStream
 ## Solution
 public class KthLargest
 {
@@ -63,7 +63,7 @@ public class Solution
 [Fact] public void Example2() => AssertEx.SameGroups(new[] { new[] { 3, 3 }, new[] { -2, 4 } }, new Solution().KClosest(new[] { new[] { 3, 3 }, new[] { 5, -1 }, new[] { -2, 4 } }, 2), innerOrderMatters: true);
 [Fact] public void All() => AssertEx.SameGroups(new[] { new[] { 0, 1 }, new[] { 1, 0 } }, new Solution().KClosest(new[] { new[] { 0, 1 }, new[] { 1, 0 } }, 2), innerOrderMatters: true);
 
-@@ 215 | Kth Largest Element In An Array | Medium | lc | kth-largest-element-in-an-array | kth-largest-element-in-an-array
+@@ 215 | Kth Largest Element In An Array | Medium | lc | kth-largest-element-in-an-array | kth-largest-element-in-an-array | KthLargestInArray
 ## Solution
 // Can you solve it without sorting?
 public class Solution

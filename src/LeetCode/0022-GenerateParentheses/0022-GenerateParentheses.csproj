@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0022_GenerateParentheses</RootNamespace>
+  </PropertyGroup>
+</Project>

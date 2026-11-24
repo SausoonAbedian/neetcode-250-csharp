@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC1631_PathWithMinimumEffort</RootNamespace>
+  </PropertyGroup>
+</Project>

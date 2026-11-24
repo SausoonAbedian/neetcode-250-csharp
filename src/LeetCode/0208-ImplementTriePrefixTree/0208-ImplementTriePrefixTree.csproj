@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0208_ImplementTriePrefixTree</RootNamespace>
+  </PropertyGroup>
+</Project>

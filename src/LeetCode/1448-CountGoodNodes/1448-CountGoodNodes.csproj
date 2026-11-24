@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC1448_CountGoodNodes</RootNamespace>
+  </PropertyGroup>
+</Project>

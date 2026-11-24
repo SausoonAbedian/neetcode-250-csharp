@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0047_PermutationsII</RootNamespace>
+  </PropertyGroup>
+</Project>

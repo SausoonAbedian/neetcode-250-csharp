@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0211_AddAndSearchWords</RootNamespace>
+  </PropertyGroup>
+</Project>

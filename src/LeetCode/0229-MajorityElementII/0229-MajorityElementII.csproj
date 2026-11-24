@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0229_MajorityElementII</RootNamespace>
+  </PropertyGroup>
+</Project>

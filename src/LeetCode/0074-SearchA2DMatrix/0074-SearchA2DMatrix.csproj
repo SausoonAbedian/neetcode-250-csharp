@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0074_SearchA2DMatrix</RootNamespace>
+  </PropertyGroup>
+</Project>

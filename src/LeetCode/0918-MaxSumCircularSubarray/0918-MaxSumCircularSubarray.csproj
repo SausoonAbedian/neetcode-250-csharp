@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0918_MaxSumCircularSubarray</RootNamespace>
+  </PropertyGroup>
+</Project>

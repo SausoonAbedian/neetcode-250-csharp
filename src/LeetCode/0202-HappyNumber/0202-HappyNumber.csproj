@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0202_HappyNumber</RootNamespace>
+  </PropertyGroup>
+</Project>

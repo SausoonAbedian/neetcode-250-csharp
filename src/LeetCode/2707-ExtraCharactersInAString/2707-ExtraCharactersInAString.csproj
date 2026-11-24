@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC2707_ExtraCharactersInAString</RootNamespace>
+  </PropertyGroup>
+</Project>

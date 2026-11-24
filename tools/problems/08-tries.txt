@@ -46,7 +46,7 @@ public void LongerThanStored()
     Assert.False(t.Search("b"));
 }
 
-@@ 211 | Design Add And Search Words Data Structure | Medium | lc | design-add-and-search-words-data-structure | design-word-search-data-structure
+@@ 211 | Design Add And Search Words Data Structure | Medium | lc | design-add-and-search-words-data-structure | design-word-search-data-structure | AddAndSearchWords
 ## Solution
 // '.' in a search matches any single letter.
 public class WordDictionary
