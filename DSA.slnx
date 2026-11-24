@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/00-Common/">
     <Project Path="src/Common/DSA.Common.csproj" />
+    <Project Path="src/00-Common/StaticArrays/StaticArrays.csproj" />
   </Folder>
   <Folder Name="/01-ArraysHashing/">
     <Project Path="src/01-ArraysHashing/001-ConcatenationOfArray/NC001_ConcatenationOfArray.csproj" />

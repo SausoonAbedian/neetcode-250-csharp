@@ -17,8 +17,14 @@ if ($Problems[0] -eq 'all') {
 
 $failed = 0
 foreach ($n in $Problems) {
-    $num = '{0:000}' -f [int]$n
-    $proj = Get-ChildItem (Join-Path $PSScriptRoot 'src') -Recurse -Filter "NC${num}_*.csproj" | Select-Object -First 1
+    if ($n -match '^\d+$') {
+        $num = '{0:000}' -f [int]$n
+        $proj = Get-ChildItem (Join-Path $PSScriptRoot 'src') -Recurse -Filter "NC${num}_*.csproj" | Select-Object -First 1
+    } else {
+        # Course exercises by project name, e.g. .\check.ps1 StaticArrays
+        $num = $n
+        $proj = Get-ChildItem (Join-Path $PSScriptRoot 'src/00-Common') -Recurse -Filter "$n.csproj" -ErrorAction SilentlyContinue | Select-Object -First 1
+    }
     if (-not $proj) { Write-Host "No project for problem $num" -ForegroundColor Red; $failed++; continue }
     Write-Host "=== $($proj.BaseName) ===" -ForegroundColor Cyan
     dotnet test $proj.FullName --nologo --logger "console;verbosity=normal"

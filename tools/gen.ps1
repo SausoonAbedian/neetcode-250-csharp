@@ -127,6 +127,12 @@ $sb = New-Object System.Text.StringBuilder
 [void]$sb.AppendLine('<Solution>')
 [void]$sb.AppendLine('  <Folder Name="/00-Common/">')
 [void]$sb.AppendLine('    <Project Path="src/Common/DSA.Common.csproj" />')
+# Hand-written NeetCode course exercises (not generated) live in src/00-Common/<Name>/
+foreach ($c in Get-ChildItem (Join-Path $root 'src/00-Common') -Recurse -Filter '*.csproj' -ErrorAction SilentlyContinue | Sort-Object FullName) {
+    # Substring, not [IO.Path]::GetRelativePath: that method is missing in Windows PowerShell 5.1
+    $rel = $c.FullName.Substring($root.TrimEnd('\', '/').Length + 1).Replace('\', '/')
+    [void]$sb.AppendLine("    <Project Path=""$rel"" />")
+}
 [void]$sb.AppendLine('  </Folder>')
 foreach ($t in $byTopic.Keys) {
     [void]$sb.AppendLine("  <Folder Name=""/$t/"">")
