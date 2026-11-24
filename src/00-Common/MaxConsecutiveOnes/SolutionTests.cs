@@ -1,0 +1,16 @@
+namespace MaxConsecutiveOnes;
+
+public class SolutionTests
+{
+    private static int Run(params int[] nums) => new Solution().FindMaxConsecutiveOnes(nums);
+
+    [Fact] public void Example1() => Assert.Equal(3, Run(1, 1, 0, 1, 1, 1));
+    [Fact] public void Example2() => Assert.Equal(2, Run(1, 0, 1, 1, 0, 1));
+    [Fact] public void SingleOne() => Assert.Equal(1, Run(1));
+    [Fact] public void SingleZero() => Assert.Equal(0, Run(0));
+    [Fact] public void AllZeros() => Assert.Equal(0, Run(0, 0, 0, 0));
+    [Fact] public void AllOnes() => Assert.Equal(5, Run(1, 1, 1, 1, 1));
+    [Fact] public void LongestRunAtStart() => Assert.Equal(4, Run(1, 1, 1, 1, 0, 1, 1));
+    [Fact] public void LongestRunAtEnd() => Assert.Equal(3, Run(1, 0, 1, 1, 0, 1, 1, 1));
+    [Fact] public void Alternating() => Assert.Equal(1, Run(1, 0, 1, 0, 1, 0));
+}
