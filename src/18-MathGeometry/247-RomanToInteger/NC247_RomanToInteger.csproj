@@ -1,5 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>NC247_RomanToInteger</RootNamespace>
-  </PropertyGroup>
-</Project>

@@ -1,5 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>NC070_LFUCache</RootNamespace>
-  </PropertyGroup>
-</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0621_TaskScheduler</RootNamespace>
+  </PropertyGroup>
+</Project>

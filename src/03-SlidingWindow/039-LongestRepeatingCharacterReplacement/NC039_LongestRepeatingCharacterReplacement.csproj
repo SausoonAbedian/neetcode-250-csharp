@@ -1,5 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>NC039_LongestRepeatingCharacterReplacement</RootNamespace>
-  </PropertyGroup>
-</Project>

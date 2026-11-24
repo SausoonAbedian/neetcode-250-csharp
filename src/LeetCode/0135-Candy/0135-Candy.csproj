@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0135_Candy</RootNamespace>
+  </PropertyGroup>
+</Project>

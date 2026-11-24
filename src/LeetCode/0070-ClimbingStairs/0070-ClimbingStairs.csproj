@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0070_ClimbingStairs</RootNamespace>
+  </PropertyGroup>
+</Project>

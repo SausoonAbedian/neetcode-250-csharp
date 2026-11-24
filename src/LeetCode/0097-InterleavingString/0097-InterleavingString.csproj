@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0097_InterleavingString</RootNamespace>
+  </PropertyGroup>
+</Project>

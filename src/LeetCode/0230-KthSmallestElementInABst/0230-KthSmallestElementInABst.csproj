@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0230_KthSmallestElementInABst</RootNamespace>
+  </PropertyGroup>
+</Project>

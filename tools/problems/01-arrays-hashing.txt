@@ -431,7 +431,7 @@ public void ColumnDuplicateInDifferentBoxes()
 }
 [Fact] public void Empty() => Assert.True(new Solution().IsValidSudoku(AssertEx.Board(Enumerable.Repeat(".........", 9).ToArray())));
 
-@@ 128 | Longest Consecutive Sequence | Medium | lc | longest-consecutive-sequence | longest-consecutive-sequence
+@@ 128 | Longest Consecutive Sequence | Medium | lc | longest-consecutive-sequence | longest-consecutive-sequence | LongestConsecutiveSeq
 ## Solution
 // Must run in O(n) time.
 public class Solution
@@ -454,7 +454,7 @@ public void LargeInputIsFast()
     Assert.Equal(100_000, new Solution().LongestConsecutive(nums));
 }
 
-@@ 122 | Best Time to Buy And Sell Stock II | Medium | lc | best-time-to-buy-and-sell-stock-ii | best-time-to-buy-and-sell-stock-ii
+@@ 122 | Best Time to Buy And Sell Stock II | Medium | lc | best-time-to-buy-and-sell-stock-ii | best-time-to-buy-and-sell-stock-ii | BestTimeToBuySellStockII
 ## Solution
 public class Solution
 {

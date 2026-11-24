@@ -15,7 +15,7 @@ public class Solution
 [Fact] public void Example3() => Assert.False(new Solution().ContainsNearbyDuplicate(new[] { 1, 2, 3, 1, 2, 3 }, 2));
 [Fact] public void KZero() => Assert.False(new Solution().ContainsNearbyDuplicate(new[] { 1, 1 }, 0));
 
-@@ 121 | Best Time to Buy And Sell Stock | Easy | lc | best-time-to-buy-and-sell-stock | buy-and-sell-crypto
+@@ 121 | Best Time to Buy And Sell Stock | Easy | lc | best-time-to-buy-and-sell-stock | buy-and-sell-crypto | BestTimeToBuySellStock
 ## Solution
 public class Solution
 {
@@ -30,7 +30,7 @@ public class Solution
 [Fact] public void Single() => Assert.Equal(0, new Solution().MaxProfit(new[] { 1 }));
 [Fact] public void LaterLowerMin() => Assert.Equal(7, new Solution().MaxProfit(new[] { 3, 8, 1, 2, 4, 8 }));
 
-@@ 3 | Longest Substring Without Repeating Characters | Medium | lc | longest-substring-without-repeating-characters | longest-substring-without-duplicates
+@@ 3 | Longest Substring Without Repeating Characters | Medium | lc | longest-substring-without-repeating-characters | longest-substring-without-duplicates | LongestSubstringNoRepeat
 ## Solution
 public class Solution
 {
@@ -48,7 +48,7 @@ public class Solution
 [Fact] public void LeftMustNotMoveBack() => Assert.Equal(2, new Solution().LengthOfLongestSubstring("abba"));
 [Fact] public void Dvdf() => Assert.Equal(3, new Solution().LengthOfLongestSubstring("dvdf"));
 
-@@ 424 | Longest Repeating Character Replacement | Medium | lc | longest-repeating-character-replacement | longest-repeating-substring-with-replacement
+@@ 424 | Longest Repeating Character Replacement | Medium | lc | longest-repeating-character-replacement | longest-repeating-substring-with-replacement | LongestRepeatingCharRepl
 ## Solution
 public class Solution
 {

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC1851_MinIntervalPerQuery</RootNamespace>
+  </PropertyGroup>
+</Project>

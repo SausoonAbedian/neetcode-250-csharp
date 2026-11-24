@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0155_MinStack</RootNamespace>
+  </PropertyGroup>
+</Project>

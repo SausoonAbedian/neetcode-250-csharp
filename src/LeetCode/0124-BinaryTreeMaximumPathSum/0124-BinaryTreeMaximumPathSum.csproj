@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0124_BinaryTreeMaximumPathSum</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -126,7 +126,7 @@ public class Solution
 [Fact] public void TieLowestRoom() => Assert.Equal(0, new Solution().MostBooked(3, Lc.Grid("[[0,1],[1,2],[2,3]]")));
 [Fact] public void SingleRoomDelaysEveryMeeting() =>Assert.Equal(0, new Solution().MostBooked(1, Lc.Grid("[[0,500000],[1,500000],[2,500000],[3,500000],[4,500000]]")));
 
-@@ 1851 | Minimum Interval to Include Each Query | Hard | lc | minimum-interval-to-include-each-query | minimum-interval-including-query
+@@ 1851 | Minimum Interval to Include Each Query | Hard | lc | minimum-interval-to-include-each-query | minimum-interval-including-query | MinIntervalPerQuery
 ## Solution
 // For each query, the size (right - left + 1) of the smallest interval containing it, or -1.
 public class Solution

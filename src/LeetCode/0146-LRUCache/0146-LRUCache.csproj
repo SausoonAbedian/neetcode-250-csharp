@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0146_LRUCache</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -77,7 +77,7 @@ public class Solution
 [Fact] public void Single() => Assert.Equal(3, new Solution().LastStoneWeightII(new[] { 3 }));
 [Fact] public void PerfectSplit() => Assert.Equal(0, new Solution().LastStoneWeightII(new[] { 1, 2, 3 }));
 
-@@ 309 | Best Time to Buy And Sell Stock With Cooldown | Medium | lc | best-time-to-buy-and-sell-stock-with-cooldown | buy-and-sell-crypto-with-cooldown
+@@ 309 | Best Time to Buy And Sell Stock With Cooldown | Medium | lc | best-time-to-buy-and-sell-stock-with-cooldown | buy-and-sell-crypto-with-cooldown | StockWithCooldown
 ## Solution
 // After selling you cannot buy on the next day.
 public class Solution
@@ -173,7 +173,7 @@ public class Solution
 [Fact] public void Single() => Assert.Equal(7, new Solution().StoneGameII(new[] { 7 }));
 [Fact] public void TwoPilesTakeBoth() => Assert.Equal(3, new Solution().StoneGameII(new[] { 1, 2 }));
 
-@@ 329 | Longest Increasing Path In a Matrix | Hard | lc | longest-increasing-path-in-a-matrix | longest-increasing-path-in-matrix
+@@ 329 | Longest Increasing Path In a Matrix | Hard | lc | longest-increasing-path-in-a-matrix | longest-increasing-path-in-matrix | LongestIncreasingPath
 ## Solution
 public class Solution
 {
@@ -240,7 +240,7 @@ public class Solution
 [Fact] public void Single() => Assert.Equal(7, new Solution().MaxCoins(new[] { 7 }));
 [Fact] public void WithZero() => Assert.Equal(9, new Solution().MaxCoins(new[] { 0, 2, 3 }));
 
-@@ 10 | Regular Expression Matching | Hard | lc | regular-expression-matching | regular-expression-matching
+@@ 10 | Regular Expression Matching | Hard | lc | regular-expression-matching | regular-expression-matching | RegexMatching
 ## Solution
 // '.' matches any single character, '*' matches zero or more of the preceding element. Match the WHOLE string.
 public class Solution

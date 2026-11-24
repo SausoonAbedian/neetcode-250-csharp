@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0033_SearchRotatedArray</RootNamespace>
+  </PropertyGroup>
+</Project>

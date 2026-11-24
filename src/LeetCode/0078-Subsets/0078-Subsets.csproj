@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0078_Subsets</RootNamespace>
+  </PropertyGroup>
+</Project>

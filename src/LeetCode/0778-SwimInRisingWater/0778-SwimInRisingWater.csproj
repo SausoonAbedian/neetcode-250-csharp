@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0778_SwimInRisingWater</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0622_DesignCircularQueue</RootNamespace>
+  </PropertyGroup>
+</Project>

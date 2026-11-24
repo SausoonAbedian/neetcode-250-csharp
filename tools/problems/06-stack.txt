@@ -32,7 +32,7 @@ public class Solution
 [Fact] public void OnlyOpen() => Assert.False(new Solution().IsValid("(("));
 [Fact] public void OnlyClose() => Assert.False(new Solution().IsValid("]"));
 
-@@ 225 | Implement Stack Using Queues | Easy | lc | implement-stack-using-queues | implement-stack-using-queues
+@@ 225 | Implement Stack Using Queues | Easy | lc | implement-stack-using-queues | implement-stack-using-queues | StackUsingQueues
 ## Solution
 // Use only standard queue operations (Queue<int>: Enqueue, Dequeue, Peek, Count).
 public class MyStack
@@ -88,7 +88,7 @@ public void Sequence()
     Assert.True(s.Empty());
 }
 
-@@ 232 | Implement Queue using Stacks | Easy | lc | implement-queue-using-stacks | implement-queue-using-stacks
+@@ 232 | Implement Queue using Stacks | Easy | lc | implement-queue-using-stacks | implement-queue-using-stacks | QueueUsingStacks
 ## Solution
 // Use only standard stack operations (Stack<int>: Push, Pop, Peek, Count). Follow up: amortized O(1).
 public class MyQueue
@@ -198,7 +198,7 @@ public void DuplicateMins()
     Assert.Equal(int.MinValue, s.GetMin());
 }
 
-@@ 150 | Evaluate Reverse Polish Notation | Medium | lc | evaluate-reverse-polish-notation | evaluate-reverse-polish-notation
+@@ 150 | Evaluate Reverse Polish Notation | Medium | lc | evaluate-reverse-polish-notation | evaluate-reverse-polish-notation | EvalReversePolishNotation
 ## Solution
 // Division truncates toward zero.
 public class Solution
@@ -375,7 +375,7 @@ public void PushAfterPop()
     Assert.Equal(1, s.Pop());
 }
 
-@@ 84 | Largest Rectangle In Histogram | Hard | lc | largest-rectangle-in-histogram | largest-rectangle-in-histogram
+@@ 84 | Largest Rectangle In Histogram | Hard | lc | largest-rectangle-in-histogram | largest-rectangle-in-histogram | LargestRectInHistogram
 ## Solution
 public class Solution
 {

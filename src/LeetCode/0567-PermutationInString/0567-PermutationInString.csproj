@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0567_PermutationInString</RootNamespace>
+  </PropertyGroup>
+</Project>

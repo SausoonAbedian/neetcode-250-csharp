@@ -30,7 +30,7 @@ public class Solution
 [Fact] public void Example3() => Assert.Equal(23, new Solution().MaxSubArray(new[] { 5, 4, -1, 7, 8 }));
 [Fact] public void AllNegative() => Assert.Equal(-1, new Solution().MaxSubArray(new[] { -3, -1, -2 }));
 
-@@ 918 | Maximum Sum Circular Subarray | Medium | lc | maximum-sum-circular-subarray | maximum-sum-circular-subarray
+@@ 918 | Maximum Sum Circular Subarray | Medium | lc | maximum-sum-circular-subarray | maximum-sum-circular-subarray | MaxSumCircularSubarray
 ## Solution
 public class Solution
 {
@@ -159,7 +159,7 @@ public class Solution
 [Fact] public void DireFirst() => Assert.Equal("Dire", new Solution().PredictPartyVictory("DDRRR"));
 [Fact] public void Single() => Assert.Equal("Radiant", new Solution().PredictPartyVictory("R"));
 
-@@ 1899 | Merge Triplets to Form Target Triplet | Medium | lc | merge-triplets-to-form-target-triplet | merge-triplets-to-form-target
+@@ 1899 | Merge Triplets to Form Target Triplet | Medium | lc | merge-triplets-to-form-target-triplet | merge-triplets-to-form-target | MergeTripletsToTarget
 ## Solution
 public class Solution
 {

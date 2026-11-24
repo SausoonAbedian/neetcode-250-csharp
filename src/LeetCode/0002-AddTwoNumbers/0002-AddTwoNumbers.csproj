@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0002_AddTwoNumbers</RootNamespace>
+  </PropertyGroup>
+</Project>

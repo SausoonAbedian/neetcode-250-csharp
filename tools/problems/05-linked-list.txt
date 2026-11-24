@@ -3,7 +3,7 @@
 @@ 206 | Reverse Linked List | Easy | lc | reverse-linked-list | reverse-a-linked-list
 ## Solution
 /**
- * ListNode is defined in DSA.Common:  public int val; public ListNode next;
+ * ListNode is defined in ListNode.cs:  public int val; public ListNode next;
  */
 public class Solution
 {
@@ -77,7 +77,7 @@ private static int[] Run(params int[] v) { var h = ListNode.From(v); new Solutio
 [Fact] public void Single() => Assert.Equal(new[] { 1 }, Run(1));
 [Fact] public void Two() => Assert.Equal(new[] { 1, 2 }, Run(1, 2));
 
-@@ 19 | Remove Nth Node From End of List | Medium | lc | remove-nth-node-from-end-of-list | remove-node-from-end-of-linked-list
+@@ 19 | Remove Nth Node From End of List | Medium | lc | remove-nth-node-from-end-of-list | remove-node-from-end-of-linked-list | RemoveNthFromEnd
 ## Solution
 // Follow up: one pass.
 public class Solution
@@ -94,7 +94,7 @@ private static int[] Run(int[] v, int n) => ListNode.ToArray(new Solution().Remo
 [Fact] public void Example3() => Assert.Equal(new[] { 1 }, Run(new[] { 1, 2 }, 1));
 [Fact] public void RemoveHead() => Assert.Equal(new[] { 2, 3 }, Run(new[] { 1, 2, 3 }, 3));
 
-@@ 138 | Copy List With Random Pointer | Medium | lc | copy-list-with-random-pointer | copy-linked-list-with-random-pointer
+@@ 138 | Copy List With Random Pointer | Medium | lc | copy-list-with-random-pointer | copy-linked-list-with-random-pointer | CopyListRandomPointer
 ## Solution
 // Definition for a Node (provided, do not edit).
 public class Node

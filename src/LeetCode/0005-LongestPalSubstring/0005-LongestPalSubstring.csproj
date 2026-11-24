@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LC0005_LongestPalSubstring</RootNamespace>
+  </PropertyGroup>
+</Project>
