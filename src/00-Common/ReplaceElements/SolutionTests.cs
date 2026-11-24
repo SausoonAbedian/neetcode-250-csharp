@@ -1,0 +1,14 @@
+namespace ReplaceElements;
+
+public class SolutionTests
+{
+    private static int[] Run(params int[] arr) => new Solution().ReplaceElements(arr);
+
+    [Fact] public void Example1() => Assert.Equal(new[] { 18, 6, 6, 6, 1, -1 }, Run(17, 18, 5, 4, 6, 1));
+    [Fact] public void Example2() => Assert.Equal(new[] { -1 }, Run(400));
+    [Fact] public void TwoElements() => Assert.Equal(new[] { 2, -1 }, Run(1, 2));
+    [Fact] public void Increasing() => Assert.Equal(new[] { 5, 5, 5, 5, -1 }, Run(1, 2, 3, 4, 5));
+    [Fact] public void Decreasing() => Assert.Equal(new[] { 4, 3, 2, 1, -1 }, Run(5, 4, 3, 2, 1));
+    [Fact] public void AllEqual() => Assert.Equal(new[] { 7, 7, 7, -1 }, Run(7, 7, 7, 7));
+    [Fact] public void MaxInMiddle() => Assert.Equal(new[] { 9, 3, 3, 3, -1 }, Run(2, 9, 1, 3, 3));
+}

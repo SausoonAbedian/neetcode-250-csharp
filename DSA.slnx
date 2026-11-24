@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/00-Common/">
     <Project Path="src/Common/DSA.Common.csproj" />
+    <Project Path="src/00-Common/MaxConsecutiveOnes/MaxConsecutiveOnes.csproj" />
+    <Project Path="src/00-Common/ReplaceElements/ReplaceElements.csproj" />
     <Project Path="src/00-Common/StaticArrays/StaticArrays.csproj" />
   </Folder>
   <Folder Name="/01-ArraysHashing/">
