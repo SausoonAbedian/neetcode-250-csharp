@@ -7,6 +7,15 @@ public class Solution
 {
     public int RemoveElement(int[] nums, int val)
     {
-        throw new NotImplementedException();
+        var k = 0;
+
+        for (var i = 0; i < nums.Length; i++)
+        {
+            nums[k] = nums[i];
+            if (nums[i] != val)
+                k++;
+        }
+
+        return k;
     }
 }
