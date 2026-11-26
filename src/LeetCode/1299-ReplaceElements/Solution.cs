@@ -10,6 +10,15 @@ public class Solution
     // Return the array.
     public int[] ReplaceElements(int[] arr)
     {
-        throw new NotImplementedException();
+        var max = -1;
+
+        for (var i = arr.Length - 1; i >= 0; i--)
+        {
+            var original = arr[i];
+            arr[i] = max;
+            max = Math.Max(max, original);
+        }
+        
+        return arr;
     }
 }
