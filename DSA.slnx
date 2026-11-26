@@ -254,6 +254,7 @@
     <Project Path="src/LeetCode/3133-MinimumArrayEnd/3133-MinimumArrayEnd.csproj" />
   </Folder>
   <Folder Name="/NeetCode/">
+    <Project Path="src/NeetCode/DynamicArrays/DynamicArrays.csproj" />
     <Project Path="src/NeetCode/StaticArrays/StaticArrays.csproj" />
   </Folder>
 </Solution>
